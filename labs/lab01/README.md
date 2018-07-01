@@ -1,4 +1,4 @@
-# Setup
+# Lab 01: Setup
 
 ## IntelliJ Setup
 

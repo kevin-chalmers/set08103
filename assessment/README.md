@@ -1,5 +1,7 @@
 # Coursework Assessment Details
 
+| | |
+| --- | --- |
 | Module number | SET08103 |
 | Module title | Software Engineering Methods |
 | Module leader | Kevin Chalmers |

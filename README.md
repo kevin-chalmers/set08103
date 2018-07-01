@@ -1,3 +1,9 @@
-# Software Engineering Methods Coursework
+# SET08103 Software Engineering Methods
 
-This is a readme.
+## Lecture Notes and Slides
+
+[Lecture 01](lectures/lecture01)
+
+## Labs
+
+## Example Project

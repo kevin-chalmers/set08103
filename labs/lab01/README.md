@@ -1,14 +1,53 @@
 # Lab 01: Setup
 
+The aim of this lab is to setup our development environment for the module.  There are a number of tools we are using in the module and we will set most of them up today.  The systems we will be using are:
+
+- Java
+- IntelliJ
+- Maven
+- Git and GitHub
+- Docker
+
+These provide a modern software development and delivery environment.  These tools will underpin the assessment for the module so getting everything setup correctly is key.
+
 ## IntelliJ Setup
 
-Create a new Maven project.  If necessary add new SDK.
+You will require Java and IntelliJ installed on the machine you plan to work on.  Once ready, startup IntelliJ.  You should be presented with the following screen:
 
-GroupID: com.napier.sem
+![IntelliJ Start Screen](img/intellij-start.png)
 
-ArtefactID: seMethods
+We need to create a new project, so click on **Create New Project** to open the following window:
 
-Version: 0.1.0.1 (0.1-alpha-1)
+![IntelliJ New Project](img/intellij-new-project.png)
+
+*Replicate the same settings as shown in the image.*  You need to do the following:
+
+1. Select **10** as Project SDK.  If IntelliJ has not detected the JDK you will need to find it.  For Windows see [here](https://stackoverflow.com/questions/16765726/how-to-set-intellij-idea-project-sdk).  If you are on Linux I assume you know what you are doing.  If you are on Mac OS X then the Windows help should be enough plus knowing where applications are installed.
+2. Select **Maven** as the project type on the left.
+
+Once done click on **Next**.  This will open the following window:
+
+![IntelliJ New Maven Project](img/intellij-new-maven.png)
+
+Enter the followin details:
+
+- **GroupID** *com.napier.sem*
+- **ArtifactID** *seMethods*
+- **Version** 0.1.0.1
+
+The version stands for 0.1-alpha-1.  It means this is the first version.
+
+Click **Next** to take you to the final window:
+
+![IntelliJ New Project Location](img/intellij-project-location.png)
+
+Leave **Project name** as *seMethods*.  You can store the project wherever you choose although the default location is normally best.
+
+Click **Finish** for your new project to be created.  This should open up the following window:
+
+![IntelliJ Main Window](img/intellij-main-window.png)
+
+If you do not have this window then ask try the instructions again and if you still have a problem ask for help.
 
 ## Git with IntelliJ
 

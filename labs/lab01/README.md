@@ -10,6 +10,10 @@ The aim of this lab is to setup our development environment for the module.  The
 
 These provide a modern software development and delivery environment.  These tools will underpin the assessment for the module so getting everything setup correctly is key.
 
+## Behavioural Objectives
+
+- [ ] TODO - use verbs that can be ticked off.
+
 ## IntelliJ Setup
 
 You will require Java and IntelliJ installed on the machine you plan to work on.  Once ready, startup IntelliJ.  You should be presented with the following screen:
@@ -180,7 +184,7 @@ If OK, VCS->Git->Add, VCS->Commit, VCS->Git->Push
 
 ## Getting Started with Docker
 
-### Checking if Docker is Installed
+### Checking if Docker is Installed and Workin
 
 The simplest method to check if Docker is installed on your system is to open a terminal (or Powershell in Windows) and issue the following command:
 
@@ -194,10 +198,105 @@ If installed you will get a response as follows:
 Docker version 18.05.0-ce, build f150324782
 ```
 
-If Docker is installed skip to [Basic Docker Usage](#basic-docker-usage).  If not, continue reading.
+To check if Docker is working correctly use the following command:
+
+```shell
+docker run hello-world
+```
+
+If Docker is working correctly you should get the following output:
+
+```shell
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+9db2ca6ccae0: Pull complete 
+Digest: sha256:4b8ff392a12ed9ea17784bd3c9a8b1fa3299cac44aca35a85c90c5e3c7afacdc
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
+
+```
+
+The output explains what Docker actually did when you issued the command.  We will cover aspects of these steps in the following sections.
+
+If Docker is installed and working skip to [Basic Docker Usage](#basic-docker-usage).  If not, continue reading.
 
 #### Installing Docker
 
 ### Basic Docker Usage
 
-Docker and containers are covered in [Lecture 02](../../lectures/lecture02/).
+Docker and containers are covered in [Lecture 02](../../lectures/lecture02/).  Here we are looking at the basic commands to get us started.
+
+Docker works by providing application containers.  Several container images already exist for our use: go to [Docker Hub](https://hub.docker.com/) and search to see the available options.  This means we can launch applications easily via Docker, including infrastructure services like web servers and databases.
+
+#### Pulling Docker Images
+
+To get started, let us pull a web server.  Nginx is a common lightweight web server that will illustrate the basic steps.  First, we must `pull` a Docker image from the server to our local repository (machine):
+
+```shell
+docker pull nginx
+```
+
+This will pull `nginx` image, which allows us to instantiate (run) it locally as a container.  We can also specify which version of Nginx we want by adding a *tag*:
+
+```shell
+docker pull nginx:latest
+```
+
+This will pull the latest Nginx version image, which is the default behaviour of `pull`.  See the Nginx image page on [Docker Hub](https://hub.docker.com/_/nginx/) for more details.
+
+#### Starting Docker Containers
+
+Once we have an image in our local repository, we can start it as a container.  To do this we use the `run` command:
+
+```shell
+docker run nginx
+```
+
+You will notice that nothing happened, and the command line is waiting.  Using `run` in this way is not recommended.  Press **Ctrl-C** to stop the running container.
+
+Docker containers should be started as detatched processes.  We do this using the `-d` flag.  Furthermore, for Nginx we need to open up a port for the web server.  We do this using the `-p` flag.  Let us try again and use these new flags:
+
+```shell
+docker run -d -p 8080:80 nginx
+```
+
+We have run the Nginx server as a detatched container, and mapped the local machine's port 8080 to the port 80 of the Nginx web server.  If you don't know, port 80 is the default port a web server operates on.  When you issue this command you will get a hash code value out.  Mine was:
+
+```shell
+c147e0b0386f50bc62c39ddeb422633aae6104093f28aa1bfc98fc18243c860b
+```
+
+But is a web server running?  We can test that by opening up a web browser and going to `localhost:8080`.
+
+![Nginx Running](img/nginx-running.png)
+
+If you see the Nginx welcome screen congratulations!  You are up and running with your first container.
+
+#### Docker Commands Covered
+
+| Docker Command | Description |
+| ----- | ----- |
+| `docker pull <name>` | *Pulls the named Docker image from the server to the local repository allowing it to be instantiated.* |
+| `docker run <name>` | *Starts running an instance of the image `name` as a container.* |
+| `docker run -d <name>` | *Starts running an instance of the image `name` as a detatched container.* |
+| `docker run -d -p <local>:<container> <name>` | *Starts a container, mapping the local port `local` to the container port `container`. |

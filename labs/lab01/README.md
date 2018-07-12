@@ -178,5 +178,26 @@ Select Build->Run
 
 If OK, VCS->Git->Add, VCS->Commit, VCS->Git->Push
 
-## Create Dockerhub Account
+## Getting Started with Docker
 
+### Checking if Docker is Installed
+
+The simplest method to check if Docker is installed on your system is to open a terminal (or Powershell in Windows) and issue the following command:
+
+```shell
+docker --version
+```
+
+If installed you will get a response as follows:
+
+```shell
+Docker version 18.05.0-ce, build f150324782
+```
+
+If Docker is installed skip to [Basic Docker Usage](#basic-docker-usage).  If not, continue reading.
+
+#### Installing Docker
+
+### Basic Docker Usage
+
+Docker and containers are covered in [Lecture 02](../../lectures/lecture02/).

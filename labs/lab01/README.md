@@ -292,6 +292,66 @@ But is a web server running?  We can test that by opening up a web browser and g
 
 If you see the Nginx welcome screen congratulations!  You are up and running with your first container.
 
+#### Stoping Containers
+
+It is easy to forget which containers are running on your system.  To check, use the following command:
+
+```shell
+docker ps
+```
+
+You will get an output similar to the following:
+
+```shell
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+c147e0b0386f        nginx               "nginx -g 'daemon of…"   14 minutes ago      Up 14 minutes       0.0.0.0:8080->80/tcp   thirsty_pasteur
+```
+
+There is quite a bit of information here, but what we are interested in is the `CONTAINER ID` (`c147e0b0386f`) and the `NAMES` (`thirsty_pasteur`).  Either of these identifiers we can use to stop the container.  We do so with the `stop` command:
+
+```shell
+docker stop c147e0b0386f
+```
+
+Executing `docker ps` again will now provide empty output:
+
+```shell
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS
+```
+
+And you can test that the web server is stopped by going to `localhost:8080` although you might have to hit refresh to ensure the cached version is not used.
+
+#### Removing Containers
+
+Although the container has stopped it has not been removed from your system.  To list containers on the local sytem run `ps` with the `-a` flag:
+
+```shell
+docker ps -a
+```
+
+You will get output similar to the following:
+
+```shell
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+c147e0b0386f        nginx               "nginx -g 'daemon of…"   28 minutes ago      Exited (0) 2 seconds ago                        thirsty_pasteur
+08b4881360f1        nginx               "nginx -g 'daemon of…"   28 minutes ago      Exited (0) 28 minutes ago                       hopeful_johnson
+ce91ec7aa627        hello-world         "/hello"                 38 minutes ago      Exited (0) 38 minutes ago                       modest_mestorf
+```
+
+These are the three containers we have started so far: two `nginx` (one detatched, one not) and `hello-world`.  To remove a container we use the `rm` command:
+
+```shell
+docker rm modest_mestorf
+```
+
+If you want a container to be automatically removed when stopped, we can use the `--rm` flag when startin a container:
+
+```shell
+docker run -d --rm -p 8080:80 nginx
+```
+
+When `stop` is called on this container it will be automatically removed from the local system.
+
 #### Docker Commands Covered
 
 | Docker Command | Description |
@@ -299,4 +359,9 @@ If you see the Nginx welcome screen congratulations!  You are up and running wit
 | `docker pull <name>` | *Pulls the named Docker image from the server to the local repository allowing it to be instantiated.* |
 | `docker run <name>` | *Starts running an instance of the image `name` as a container.* |
 | `docker run -d <name>` | *Starts running an instance of the image `name` as a detatched container.* |
-| `docker run -d -p <local>:<container> <name>` | *Starts a container, mapping the local port `local` to the container port `container`. |
+| `docker run -d -p <local>:<container> <name>` | *Starts a container, mapping the local port `local` to the container port `container`*. |
+| `docker run -d --rm <name>` | *Starts running an instance of `name` which will be automatically removed when the container is stopped.* |
+| `docker ps` | *Lists running containers.* |
+| `docker ps -a` | *Lists all containers.* |
+| `docker stop <id>` | *Stops the container with the given `id` which is the `CONTAINER ID` or `NAME`.*|
+| `docker rm <id>` | *Removes a container from the local system.* |

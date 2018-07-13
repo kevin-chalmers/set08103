@@ -197,19 +197,54 @@ Click **Push** and refresh the GitHub page.  You should see your files there:
 
 ## Hello World Sanity Check
 
-Add package com.napier.sem
+We have done quite a bit so far, but we have yet to write any actual code.  The module focuses on software engineering and methods rather than programming, but it is worth testing things are working.  Let us build a simple *Hello World* example.
 
-Add class App
+In IntelliJ, **right-click** on the folder **seMethods->src->main->java** and select **New** then **Package** to open the **New Package** window:
 
-Select Yes to add to Git
+![IntelliJ New Package](img/intellij-new-package.png)
 
-Enter code
+Call the package `com.napier.sem` and click **OK**.  Your **Project Structure** in IntelliJ should now look as follows:
 
-Select Build->Run
+![IntelliJ Project Package](img/intellij-project-package.png)
 
-If OK, VCS->Git->Add, VCS->Commit, VCS->Git->Push
+Now **right-click** on **com.napier.sem** and select **New** and **Class** to open the **New Class** window:
+
+![IntelliJ New Class](img/intellij-new-class.png)
+
+Call the class **App** and click **OK**.  IntelliJ will helpfully ask if you want to add the file to your Git repository.  Select **Yes**.
+
+![IntelliJ Add to Git](img/intellij-add-to-git.png)
+
+We will use the following code:
+
+```java
+package com.napier.sem;
+
+public class App
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Boo yah!");
+    }
+}
+```
+
+Now select **Build** from the main menu, and then **Build Project**.  If all goes to plan your project will build successfully and we can run it.  Select **Run** then **Run**.  Select **App** as the target, and you should get the output at the bottom of the screen:
+
+![IntelliJ Console Output](img/intellij-run.png)
+
+We now know that everything is working so far.  So let us commit the changes.  The steps to follow:
+
+1. Add the files to the commit - **VCS**, **Git**, then **Add**.
+2. Commit the changes - **VCS** then **Commit**.
+3. Make sure the author is updated, and add a suitable commit message before clicking **Commit**.
+4. Push the changes - **VCS**, **Git**, then **Push**.  Click **Push** in the **Push Commit** window.
+
+**Get used to this process - it will save your code from disaster!**.  We have again created a checkpoint where we know our code is working and doing what we expect.  Whenever you do a change - and make your changes small - and tested the build works, commit and push.  I will remind you a few more times, but this is a habit for you to form.
 
 ## Getting Started with Docker
+
+We will step away from IntelliJ for a while to use Docker.  Docker will support our deployment to ensure we run in the same configuration whereever we execute our code.  This ensures we do not have conflicts between what works on our development machine and the deployment machine.
 
 ### Checking if Docker is Installed and Working
 
@@ -482,3 +517,72 @@ Once IntelliJ has restarted we are ready to complete the Docker integration.  Se
 IntelliJ should open the Docker panel at the bottom of the window:
 
 ![IntelliJ's Docker Panel](img/intellij-and-docker.png)
+
+## Deploying Our Application to Docker in IntelliJ
+
+We are almost there.  It has been a long process to get to this stage, and it may seem we have not done any software development, which we haven't.  We have setup many processes which means our software development task will be easier.  Trust me!  The process might have been long in this first lab but we have made our lives substantially easier in the future.  Let us finish our process by deploying our application to a Docker image and running it.
+
+To finish our process we need to create a Dockerfile in IntelliJ.  **Right-click** on the project **seMethods** and select **New** then **File** to open the **New File** window:
+
+![IntelliJ New File](img/intellij-new-file.png)
+
+Call the file **Dockerfile** and click **OK**.  Select **Yes** to add it to the Git repository.  The contents of the file are as follows:
+
+```docker
+FROM openjdk:latest
+COPY ./target/classes/com /tmp/com
+WORKDIR /tmp
+ENTRYPOINT ["java", "com.napier.sem.App"]
+```
+
+We are using three new directives here:
+
+1. `COPY` will copy a file or folder from the source on the local machine to the destination in the Docker image.  Here we are copying the folder `com` from `target/classes` in the project to the folder `/tmp/com`.  The source is where IntelliJ has been building our classes.  The destination is the `/tmp` folder in the image.
+2. `WORKDIR` states where we want Docker to execute programs from in the container - the *working directory*.  This is `/tmp` - the same location we copied our classes to.
+3. `ENTRYPOINT` tells Docker what to execute when the container is created.  That is, run `java` with the class `com.napier.sem.App`.
+
+OK, moment of truth.  On the side of the Dockerfile code you will see two green play buttons that look like run symbols.  This is the easiest way to test our Dockerfile.  
+
+![IntelliJ Run Dockerfile](img/intellij-run-docker.png)
+
+**Click** the **triangles** and select **Run on Docker**.  The image should be built and your Docker containers and images will be updated:
+
+![IntelliJ Docker Container](img/intellij-docker-container.png)
+
+Now add the Dockerfile to our Git repository and push to GitHub:
+
+1. Add files to the commit.
+2. Create the commit.
+3. Push the commit.
+
+And you are done.  A lot of work just to print out a single string but we are in a good position to carry on in the next lab.  And just one final check for those of you who are interested.  Our created image exists in our local repository.  You can check this by using the `docker images` command:
+
+```shell
+docker images
+```
+
+You will get an output as follows:
+
+```shell
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+<none>              <none>              970c2949b6fc        5 minutes ago       624MB
+test-dockerfile     latest              4482338d49b4        3 hours ago         81.1MB
+hello-world         latest              2cb0d9787c4d        2 days ago          1.85kB
+nginx               latest              3c5a05123222        7 days ago          109MB
+openjdk             latest              fe9f7b1e4fa0        10 days ago         624MB
+ubuntu              latest              113a43faa138        5 weeks ago         81.1MB
+```
+
+The top image is the one IntelliJ just created.  We can create a new instance by using the `IMAGE ID`.  For example, if I run:
+
+```shell
+docker run --rm 970c2949b6fc
+```
+
+I get the output:
+
+```shell
+Boo yah!
+```
+
+We can share this image on Dockerhub (or via private Docker repositories) so others can run our application easily.

@@ -136,35 +136,64 @@ So to finish this stage of our setup perform the following actions:
 
 ## Getting Started with GitHub
 
-Create a repo on GitHub
+The whole point of version control is to maintain your code somewhere backed-up and sharable with your team.  We will use *GitHub* as a repository for this module.  First, you will need to create an account on GitHub if you haven't already.  Go to [GitHub](https://github.com/) and **Sign Up**.  Two things to note:
 
-- set08103, public
-- Add a license Apache 2.0
-- No README
+1. You do not need a paid for account.
+2. If you are a student, GitHub will give you [unlimited private repositories](https://education.github.com/pack).
 
-Add remote to IntelliJ
+Once you have an account, you need to create a repository.  In GitHub, you will see a **+** near the top of the page, which you can select **New repository** from:
 
-- VCS, Git, Remotes
-- (+ add)
-- Name origin, URL, as from Git
+![GitHub New Repository](img/github-new-repo.png)
 
-Pull
+This will open a new window.  You need to enter the name for the repository (`sem`), make sure the repository is **Public** and then select the **Apache 2.0** license type.  **Ensure that no README is added or `.gitignore`**.  You have one already.  This details are illustrated below:
 
-- Select origin, just default
-- Should now have a license file
+![GitHub Repository Details](img/github-repo-options.png)
 
-Add files - VCS->Git->Add
+Click on **Create repository** and you will be presented with the following:
 
-Commit
+![GitHub Repository Main Screen](img/github-repo-main.png)
 
-- VCS->commit
-- Message "First commit, adding initial files"
-- Set, another
-- Commit
+Now we need to tell IntelliJ the location of our repository.  This is the URL of the repository you created, which should be of the form `https:\\github.com\<user-name>\sem`.  For example, my repo is [https:\\github.com\kevin-chalmers\sem](https:\\github.com\kevin-chalmers\sem).
 
-Push - VCS->Git->Push
+To add the location to IntelliJ, select **VCS** from the main menu, then **Git** and **Remotes** to open the following window:
 
-Check GitHub
+![Add Remote to IntelliJ](img/intellij-add-remote.png)
+
+Click on the **+** button to open the **Define Remote** window, where the name **origin** should already defined.  `origin` is the standard remote name for the main origin of the code project.  Whenever you clone repositories this is the name used by default in the clone.  Add the URL of your repository into the URL textbox and click **OK**.
+
+![Setting Remote URL in IntelliJ](img/intellij-remote-url.png)
+
+IntelliJ will test if the URL is valid, and when successful click **OK** to go back to IntelliJ's main screen.
+
+We are now ready to pull the GitHub version of the repository to the local machine, which will add the license file from GitHub to our local machine.  To pull, select **VCS** from the main menu, then **Git** and **Pull**:
+
+![IntelliJ Pull Window](img/intellij-pull-start.png)
+
+At the moment, IntelliJ does not see anything that needs to be pulled.  We can refresh the remote status by pressing the **Refresh** button (the one next to the **Remote** dropdown).  Doing so will `fetch` the current state of the remote:
+
+![IntelliJ Pull Ready](img/intellij-pull-ready.png)
+
+Check the `origin/master` branch, and click **Pull**.  The `LICENSE` file should appear in your project - although it might take a minute.  You can go into the filesystem to check if you are impatient.
+
+Let us now add the rest of our files ready to `commit` to GitHub.  Select **VCS** then **Git** and **Add**.  This will add all the qualifying files to our commit.  They are sitting in the *staging* area.  We look at version control in more detail in [Lecture 02](../../lectures/lecture02).
+
+To create our commit, select **VCS** then **Commit** to open the **Commit Changes** window:
+
+![IntelliJ Commit Changes](img/intellij-commit.png)
+
+Ensure you add your name and email address in the **Author** textbox.  The image provides an example.  This should match the name and email address you are using in GitHub.
+
+Your commits always need a message.  Set the **Commit Message** textbox to `First commit, adding initial files.`  Then press **Commit**.
+
+We have now created a checkpoint in our code that we can **always** return to.  This is the power of version control.  We are checkpointing our code so we can rewind to previous versions.  As long as you commit often, you can always revert back to a previous version.
+
+Our commit only exists on the local machine at the moment.  To send it to GitHub we have to `push` the commit to the remote.  To do this, select **VCS** then **Git** and **Push** to open the **Push Commits** window:
+
+![IntelliJ Push Commit](img/intellij-push.png)
+
+Click **Push** and refresh the GitHub page.  You should see your files there:
+
+![GitHub after First Push](img/github-updated.png)
 
 ## Hello World Sanity Check
 

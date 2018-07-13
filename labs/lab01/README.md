@@ -138,7 +138,7 @@ So to finish this stage of our setup perform the following actions:
 
 Create a repo on GitHub
 
-- SET08103, public
+- set08103, public
 - Add a license Apache 2.0
 - No README
 
@@ -147,8 +147,6 @@ Add remote to IntelliJ
 - VCS, Git, Remotes
 - (+ add)
 - Name origin, URL, as from Git
-- Start ssh-agent.cmd
-- Have .ssh folder
 
 Pull
 
@@ -184,7 +182,7 @@ If OK, VCS->Git->Add, VCS->Commit, VCS->Git->Push
 
 ## Getting Started with Docker
 
-### Checking if Docker is Installed and Workin
+### Checking if Docker is Installed and Working
 
 The simplest method to check if Docker is installed on your system is to open a terminal (or Powershell in Windows) and issue the following command:
 
@@ -344,7 +342,7 @@ These are the three containers we have started so far: two `nginx` (one detatche
 docker rm modest_mestorf
 ```
 
-If you want a container to be automatically removed when stopped, we can use the `--rm` flag when startin a container:
+If you want a container to be automatically removed when stopped, we can use the `--rm` flag when starting a container:
 
 ```shell
 docker run -d --rm -p 8080:80 nginx
@@ -353,6 +351,8 @@ docker run -d --rm -p 8080:80 nginx
 When `stop` is called on this container it will be automatically removed from the local system.
 
 #### Docker Commands Covered
+
+Below are the Docker commands we have covered so far.
 
 | Docker Command | Description |
 | ----- | ----- |
@@ -365,3 +365,91 @@ When `stop` is called on this container it will be automatically removed from th
 | `docker ps -a` | *Lists all containers.* |
 | `docker stop <id>` | *Stops the container with the given `id` which is the `CONTAINER ID` or `NAME`.*|
 | `docker rm <id>` | *Removes a container from the local system.* |
+
+### Writing Dockerfiles
+
+Our aim with Docker is to run our applications within containers.  To do this, we need to create our own Docker images, which we do by writing a **Dockerfile**.  A Dockerfile specifies the setup for a image which we can create containers from, and the syntax is simple.  Writing Dockerfiles falls into *infrastructure as code* since we can define our execution infrastructure in code files (Dockerfiles).
+
+To start, create a new folder called `test-dockerfile` in the filesystem and open the terminal (Powershell, command prompt) in that folder.  Now create a file called `Dockerfile` and use the following:
+
+```docker
+FROM ubuntu:latest
+CMD ["echo", "'It worked!'"]
+```
+
+We have defined two items for our Docker image:
+
+1. It uses the latest Ubuntu image as its parent (base).  This is the `FROM` statement.
+2. It executes `echo 'It worked!'` whenever the container is started.  This is the `CMD` statement.
+
+To build our image we use the following (from the directory that `Dockerfile` is saved):
+
+```shell
+docker build -t test-dockerfile .
+```
+
+The command tells docker to *build* an image (`build`), with the name `test-dockerfile` (`-t` means we are providing a name), and to use the current directory (`.`).  So the command format is:
+
+```shell
+docker build -t <name> <folder>
+```
+
+When executed you will get the following output:
+
+```shell
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM ubuntu:latest
+latest: Pulling from library/ubuntu
+6b98dfc16071: Pull complete 
+4001a1209541: Pull complete 
+6319fc68c576: Pull complete 
+b24603670dc3: Pull complete 
+97f170c87c6f: Pull complete 
+Digest: sha256:5f4bdc3467537cbbe563e80db2c3ec95d548a9145d64453b06939c4592d67b6d
+Status: Downloaded newer image for ubuntu:latest
+ ---> 113a43faa138
+Step 2/2 : CMD ["echo", "It worked!"]
+ ---> Running in 3fcfdc028360
+Removing intermediate container 3fcfdc028360
+ ---> 4482338d49b4
+Successfully built 4482338d49b4
+Successfully tagged test-dockerfile:latest
+```
+
+OK, let us run an instance of our image.
+
+```shell
+docker run --rm test-dockerfile
+```
+
+And you should have the received the following output:
+
+```shell
+It worked!
+```
+
+If so, congratulations!  You have created and run your first personal Docker image.  We will look at further Dockerfile commands as we need them.  Let us get back to IntelliJ.
+
+## Docker in IntelliJ
+
+Thankfully, there is a Docker plugin for IntelliJ.  To install, in IntelliJ, select **File** then **Settings**, and select **Plugins** on the right-hand side:
+
+![IntelliJ Settings](img/intellij-settings.png)
+
+Click the **Install Jetbrains plugin...** button to open the following window:
+
+![IntelliJ Plugins](img/intellij-plugins.png)
+
+Find **Docker Integration** (as shown) and click **Install**.  The plugin will install, and when done a **Restart IntelliJ** button will appear.  Click on it to return to the Settings window, and click **OK**.  IntelliJ will prompt for a restart, so click **Restart**.
+
+Once IntelliJ has restarted we are ready to complete the Docker integration.  Select **File** then **Settings**.  Under **Build, Execution, Deployment**, find the **Docker** section:
+
+![Docker Settings in IntelliJ](img/intellij-docker-settings.png)
+
+**Click** the **+** near the top of the window, and Docker should be detected.  You will know when as the message **Connection successful** will appear as below.  When it does click on **OK**.  
+
+![Adding Docker to IntelliJ](img/intellij-added-docker.png)
+
+IntelliJ should open the Docker panel at the bottom of the window:
+
+![IntelliJ's Docker Panel](img/intellij-and-docker.png)

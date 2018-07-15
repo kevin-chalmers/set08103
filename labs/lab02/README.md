@@ -196,14 +196,221 @@ Now let us test this with Travis by first adding the updates:
 
 Go to your Travis CI dashboard for the repository and wait for the build to complete.  Everything should go well, and you can check that the final output - `Boo yah!` - is in the build log.
 
-## Setting up GitFlow Workflow
+## Setting up Gitflow Workflow
+
+Our next step is to setup our workflow.  This is our approach to managing seperate features and collaborators in our project.  [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is one such workflow that works well with Git.  Gitflow is examine further in [Lecture 02](../../lectures/lecture02).  To work with Gitflow we manage several brances:
+
+- **master** which is the main Git branch.  This is created automatically when a Git repository is created.  Only main releases are tracked in this branch.
+- **develop** is the integration branch.  Features are merged into this branch as they are completed. It is a *feature integration* branch.
+- **feature** branches are where new features are worked on before integration with with `develop`.
+- **release** is where releases are made.  A release is normally a collection of features, or a set point in time.  Note that a release must be a working version.  The `release` branch comes from a version of `develop`.  `master` is a version of `release`.
+- **hotfix** branches are *maintenance* ones based on `master`.  We are fixing a poduction version of the code, so rather than working from `develop` we work from `master`.
 
 ### Develop Branch
 
+The first step in setting up Gitflow is the creation of a `develop` branch in our project.  We can do this in IntelliJ.  Select **VCS**, **Git** then **Branches...** to open the branches window:
+
+![IntelliJ Git Branches](img/intellij-git-branch.png)
+
+Select **New Branch** and call the branch **develop**.  Make sure the **Checkout branch** checkbox is ticked.
+
+The `develop` branch only exists on the local system.  To add it to GitHub we have to perform a push.  Do this now.  From IntelliJ, **VCS**, **Git** then **Push**. Click **Push** and the branch will be added to GitHub. You can confirm this on GitHub by opening the branches dropdown, refreshing the page if you are currently on it:
+
+![GitHub Branches](img/github-branches.png)
+
 #### Adding Develop Build Status to GitHub
 
-### Feature Branch
+Travis CI will have automatically added this branch to its build.  As `develop` is a key branch of our project we will add this build status to the `README.md` file.  Get the necessary code from Travis CI as before, remembering to select the **develop** branch.  Update the `README.md` as below:
 
-## Versioning and Version Tags
+```markdown
+# Software Engineering Methods
+
+- Master Build Status [![Build Status](https://travis-ci.org/kevin-chalmers/sem.svg?branch=master)](https://travis-ci.org/kevin-chalmers/sem)
+- Develop Build Status [![Build Status](https://travis-ci.org/kevin-chalmers/sem.svg?branch=develop)](https://travis-ci.org/kevin-chalmers/sem)
+- License [![LICENSE](https://img.shields.io/github/license/kevin-chalmers/sem.svg?style=flat-square)](https://github.com/kevin-chalmers/sem/blob/master/LICENSE)
+- Release [![Releases](https://img.shields.io/github/release/kevin-chalmers/sem/all.svg?style=flat-square)](https://github.com/kevin-chalmers/sem/releases)
+```
+
+And add this to GitHub:
+
+1. Add files to commit.
+2. Create commit.
+3. Push commit to GitHub.
+
+And if you go to the dashboard for the repository on GitHub you will see that nothing has changed.  That is because we have pushed to our `develop` branch, not the `master` branch.  You can see the updates by switching to the `develop` branch on GitHub using the branches dropdown from earlier:
+
+![Develop Branch Status on GitHub](img/github-develop-status.png)
 
 ## Updating our Example Application
+
+To end this lab we will add a new feature to our application - database support via [MongoDB](https://docs.mongodb.com/).  We will perform the following steps:
+
+1. Start a MongoDB server via Docker.
+2. Start a new feature in our project.
+3. Add MongoDB support to our application.
+4. Link our container with the MongoDB container.
+5. Test that eveything works.
+6. Merge the feature into our `develop` branch.
+7. Create a release.
+8. Add a version.
+
+This may seem like a lot of steps, but individually they are simple.  What could be seen as the hardest part - setting up a database and connecting to it - is simple in our build pipeline.
+
+### Running a MongoDB Docker Image
+
+Our first step is to start a new MongoDB container.  Let us do this via IntelliJ rather than the command line.
+
+Open the Docker panel at the bottom of IntelliJ and make sure **Images** is highlighted:
+
+![IntelliJ Docker Panel](img/intellij-docker-panel.png)
+
+The button on the top-left allows us to pull images for Docker.  Click this button to open the **Pull Image** window:
+
+![IntelliJ Pull Image](img/intellij-pull-image.png)
+
+Type **mongo** as the **Repository** and click **OK**.  The latest version of MongoDB will now be pulled as an image. It will appear in the Docker panel of IntelliJ:
+
+![IntelliJ with MongoDB Image](img/intellij-mongo-image.png)
+
+With `mongo:latest` selected, click the **blue plus sign** to **Create Container**.  This will open the following window:
+
+![IntelliJ Create Container](img/intellij-create-container.png)
+
+MongoDB is a server application which listens on port 27017.  We could just open that port, but just in case MongoDB is already running locally we will switch ports.  We looked at this in the last lab.  In the **Command Line Options** text box add **-p 27000:27017** as shown in the image.  Then click **Run**.  IntelliJ will start the container and it will be waiting for you to use.
+
+### Starting a Feature Branch
+
+We are going to add a new feature to our application.  To do this, we need to create a new branch as we did for `develop`.  The steps you need to undertake are:
+
+1. Create a new branch called `feature/mongo-intergration` (**VCS**, **Git** then **Branches**.  **Create Branch**).
+2. Push the branch to GitHub.
+
+That is it.  We are now working on a feature branch, which we created from our `develop` branch since it was the one we had checked out.
+
+### Adding MongoDB Support to Our Application
+
+We will use Maven to manage the import of MongoDB functionality into our application.  This is done by adding **dependencies** to our `pom.xml` file.  IntelliJ will recognise these dependencies and pull in the relevant libraries and functionality.  The new code we want is:
+
+```xml
+    <dependencies>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>3.6.4</version>
+        </dependency>
+    </dependencies>
+```
+
+We add this to the `pom.xml` file as follows:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.napier.sem</groupId>
+    <artifactId>seMethods</artifactId>
+    <version>0.1.0.1</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>3.6.4</version>
+        </dependency>
+    </dependencies>
+
+</project>
+```
+
+IntelliJ will manage everything for us.  Initially the test `org.mongodb` and `mongodb-driver` will be red, but once the import is complete it will turn black.  Let us to a commit.
+
+1. Add files to the commit.
+2. Create the commit.
+3. Push the commit to GitHub.
+
+Now we can test that we can talk to the MongoDB server.  We will update `App.java` to the following:
+
+```java
+package com.napier.sem;
+
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
+public class App
+{
+    public static void main(String[] args)
+    {
+        // Connect to MongoDB on local system - we're using port 27000
+        MongoClient mongoClient = new MongoClient("localhost", 27000);
+        // Get a database - will create when we use it
+        MongoDatabase database = mongoClient.getDatabase("mydb");
+        // Get a collection from the database
+        MongoCollection<Document> collection = database.getCollection("test");
+        // Create a document to store
+        Document doc = new Document("name", "Kevin Chalmers")
+                           .append("class", "Software Engineering Methods")
+                           .append("year", "2018/19")
+                           .append("result", new Document("CW", 95).append("EX", 85));
+        // Add document to collection
+        collection.insertOne(doc);
+
+        // Check document in collection
+        Document myDoc = collection.find().first();
+        System.out.println(myDoc.toJson());
+    }
+}
+```
+
+Now all we have to do is run the application normally (i.e. not as a Docker container).  Select **Run** then **Run** and select **App** as the configuration.  Your application should launch, connect to the MongoDB server running in the Docker container and perform some basic operations as shown.  The console output will look something like the following:
+
+```shell
+/usr/lib/jvm/java-10-jdk/bin/java -javaagent:/opt/JetBrains/apps/IDEA-U/ch-0/182.3458.5/lib/idea_rt.jar=37241:/opt/JetBrains/apps/IDEA-U/ch-0/182.3458.5/bin -Dfile.encoding=UTF-8 -classpath /home/kevin/IdeaProjects/sem/target/classes:/home/kevin/.m2/repository/org/mongodb/mongodb-driver/3.6.4/mongodb-driver-3.6.4.jar:/home/kevin/.m2/repository/org/mongodb/bson/3.6.4/bson-3.6.4.jar:/home/kevin/.m2/repository/org/mongodb/mongodb-driver-core/3.6.4/mongodb-driver-core-3.6.4.jar com.napier.sem.App
+Jul 15, 2018 3:05:09 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Cluster created with settings {hosts=[localhost:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+Jul 15, 2018 3:05:09 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Cluster description not yet available. Waiting for 30000 ms before timing out
+Jul 15, 2018 3:05:10 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27000
+Jul 15, 2018 3:05:10 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27000, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 0]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4442274}
+Jul 15, 2018 3:05:10 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27000
+{ "_id" : { "$oid" : "5b4b5495da12e64fb1d0b7cc" }, "name" : "Kevin Chalmers", "class" : "Software Engineering Methods", "year" : "2018/19", "result" : { "CW" : 95, "EX" : 85 } }
+
+Process finished with exit code 0
+```
+
+If you look at the logs of the MongoDB container in IntelliJ you will see the following lines added:
+
+```shell
+2018-07-15T14:05:09.917+0000 I NETWORK  [listener] connection accepted from 172.17.0.1:57888 #1 (1 connection now open)
+2018-07-15T14:05:09.978+0000 I NETWORK  [conn1] received client metadata from 172.17.0.1:57888 conn1: { driver: { name: "mongo-java-driver", version: "3.6.4" }, os: { type: "Linux", name: "Linux", architecture: "amd64", version: "4.17.5-1-ARCH" }, platform: "Java/Oracle Corporation/10.0.1+10" }
+2018-07-15T14:05:10.055+0000 I NETWORK  [listener] connection accepted from 172.17.0.1:57892 #2 (2 connections now open)
+2018-07-15T14:05:10.056+0000 I NETWORK  [conn2] received client metadata from 172.17.0.1:57892 conn2: { driver: { name: "mongo-java-driver", version: "3.6.4" }, os: { type: "Linux", name: "Linux", architecture: "amd64", version: "4.17.5-1-ARCH" }, platform: "Java/Oracle Corporation/10.0.1+10" }
+2018-07-15T14:05:10.113+0000 I STORAGE  [conn2] createCollection: mydb.test with generated UUID: a549ece2-96cb-4995-85af-5db19e0336b0
+2018-07-15T14:05:10.559+0000 I NETWORK  [conn1] end connection 172.17.0.1:57888 (0 connections now open)
+2018-07-15T14:05:10.559+0000 I NETWORK  [conn2] end connection 172.17.0.1:57892 (1 connection now open)
+```
+
+A good time to push this update to GitHub.
+
+1. Add files to commit.
+2. Create commit.
+3. Push to GitHub.
+
+Now we need to modify our application so that it runs in our Docker container.
+
+### Linking Containers
+
+### Merging Feature
+
+### Creating a Release
+
+### Versioning and Version Tags
+
+### Clearing Up

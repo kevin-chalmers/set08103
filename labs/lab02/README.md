@@ -56,7 +56,7 @@ Click **Next**.  The following window will open:
 
 Click **Next** again.  The following window will open:
 
-![IntelliJ Import Project Name](img/intellij-import-project.png)
+![IntelliJ Import Project Name](img/intellij-import-end.png)
 
 Click **Finish** to complete the import process and open the main IntelliJ window.
 

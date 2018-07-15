@@ -2,8 +2,8 @@
 
 | Week | Lectures | Lab | Assessment |
 |------|----------|-----|------------|
-| 1 | [Lecture 01](lectures/lecture01) <br> [Lecture 02](lectures/lecture02) | [Lab 01](labs/lab01) | Coursework Released |
-| 2 | [Lecture 03](lectures/lecture03) <br> [Lecture 04](lectures/lecture04) | [Lab 02](labs/lab02) | |
+| 1 | [Lecture 01](lectures/lecture01) <br> [Lecture 02](lectures/lecture02) | [Lab 01: Setup](labs/lab01) | Coursework Released |
+| 2 | [Lecture 03](lectures/lecture03) <br> [Lecture 04](lectures/lecture04) | [Lab 02: Continous Integration Setup](labs/lab02) | |
 | 3 | [Lecture 05](lectures/lecture05) <br> [Lecture 06](lectures/lecture06) | [Lab 03](labs/lab03) | Code Review 1 |
 | 4 | [Lecture 07](lectures/lecture07) <br> [Lecture 08](lectures/lecture08) | [Lab 04](labs/lab04) | |
 | 5 | [Lecture 09](lectures/lecture09) <br> [Lecture 10](lectures/lecture10) | [Lab 05](labs/lab05) | |

@@ -165,6 +165,37 @@ If you go to your repository's dashboard in GitHub you should see your new badge
 
 ## Travis and Docker
 
+We can also have Travis build and test our Dockerfile build.  This requires updates to our `.travis.yml` file:
+
+```yml
+sudo: required
+
+language: java
+
+services:
+  - docker
+
+after_success:
+  - docker build -t se_methods .
+  - docker run se_methods
+```
+
+What we have done:
+
+- Added superuser (`sudo`) status for the build.  This is required for Docker builds on Travis.
+- Stated we want the `docker` service available in our build system.
+- `after_success` means after the project has been successfully built.  Two commands are executed:
+  - Build the Docker image.
+  - Run an instance of the created Docker image.
+
+Now let us test this with Travis by first adding the updates:
+
+1. Add files to the commit.
+2. Create commit.
+3. Push to GitHub.
+
+Go to your Travis CI dashboard for the repository and wait for the build to complete.  Everything should go well, and you can check that the final output - `Boo yah!` - is in the build log.
+
 ## Setting up GitFlow Workflow
 
 ### Develop Branch

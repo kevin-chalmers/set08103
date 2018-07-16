@@ -403,14 +403,263 @@ A good time to push this update to GitHub.
 2. Create commit.
 3. Push to GitHub.
 
-Now we need to modify our application so that it runs in our Docker container.
+Now we need to modify our application so that it runs in our Docker containers.
 
 ### Linking Containers
 
+Linking containers requires container discovery.  There are a few ways to do this, but we will use the simplest.  Docker networking and container discovery is an entire subject in itself, and outside the scope of this module.
+
+We are going to undertake the following steps:
+
+1. Create a self-contained JAR for our project - this will include any external libraries.
+2. Add a network bridge to docker.
+3. Update our code files, Dockerfile, and MongoDB instance.
+4. Update Travis CI build file.
+
+#### Creating a Self-contained JAR
+
+So far we have not been doing good practice.  For Java, JAR (Java ARchive) files should be deployed and not individual code files as we have been doing.  The advantage of a JAR file is it can contain library dependencies, such as the MongoDB one we have added.  Maven can build this for us automatically.
+
+First we must update our `pom.xml` file.  Add the following below the `dependencies` section:
+
+```xml
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.napier.sem.App</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+```
+
+We have added two new sections:
+
+1. `properties` - here we are telling Maven to produce Java 8 code (1.8).
+2. `build` - there is quite a bit going on here.  You can happily reuse the code though:
+    - We are defining how Maven assembles the JAR file.
+    - We are telling Maven which class to run when the JAR is executed (`mainClass`).
+    - We are telling Maven to build the `jar-with-dependencies` - in other words pull in the MongoDB code.
+
+First rebuild your project so that everything is up to date: **Build** then **Build Project**. We can now ask Maven to package up our application.  In IntelliJ open the **Maven Panel** on the right hand side:
+
+![IntelliJ with Maven Panel Open](img/intellij-maven-panel.png)
+
+Open the **Lifecycle** collapsed menu, and select **package** and click the **green triangle in the Maven panel** to start the package process.  This will take a few seconds as your code and the external JAR libraries are combined into a single JAR.  You will see this in the **target** folder in the **Project Structure** as `seMethods-0.1.0.1-jar-with-dependencies.jar`.  So we have successfully built our project into a single JAR for deployment.  Time to push to GitHub.
+
+1. Add files to commit.
+2. Create commit.
+3. Push to GitHub.
+
+#### Creating a Network Bridge in Docker
+
+In Docker, containers can discover each other by name if they are on the same Docker network bridge which is not the default one.  Therefore, we need to create a new bridge for our applications to talk on.  This is actually quite easy.  Run the following command from the command line:
+
+```shell
+docker network create --driver bridge se-methods
+```
+
+This will have created a new network called `se-methods`.  We can use this network to connect our main application to our MongoDB server.  Let us do this now.
+
+#### Updating Our System
+
+First we need to stop our current MongoDB server.  In IntelliJ you should be able to see this in the Docker panel under **Containers**.  To stop it, select the container and **click** the **red stop button** on the left:
+
+![IntelliJ Docker Container List](img/intellij-stop-container.png)
+
+Once stopped, **right-click** on the container, and select **Delete Container** and then **Yes** in the prompt.
+
+We need to create a new MongoDB server that uses our network infrastructure, and we also want to define the name of the server.  We do this by creating a new container from `mongo:latest` in IntelliJ using the following parameters:
+
+![MongoDB Container Settings](img/intellij-mongo-settings.png)
+
+Click **Run** and the container will start.  Next we need to update our main application so it can talk to this MongoDB server.  The only line that needs updating is the `MongoClient` creation one:
+
+```java
+// Connect to MongoDB
+MongoClient mongoClient = new MongoClient("mongo-dbserver");
+```
+
+We are now explicitly connecting to the server called `mongo-dbserver`, which is the name we gave to our MongoDB container.  To test this, we need to update our Dockerfile:
+
+```docker
+FROM openjdk:latest
+COPY ./target/seMethods-0.1.0.1-jar-with-dependencies.jar /tmp
+WORKDIR /tmp
+ENTRYPOINT ["java", "-jar", "seMethods-0.1.0.1-jar-with-dependencies.jar"]
+```
+
+We have changed what we are copying to the JAR file that has been created.  We are also changing our entry point to execute this JAR.  Let us build the image for this.  You can do this by clicking the **green triangles** in the Dockerfile and selecting **Build Image for Dockerfile**.  The image will be created and added to the list of images in IntelliJ's Docker Panel, near the bottom with an `sha256` name.  If you have more than one of these because of previous builds, delete all the `sha256` images and rebuild to have only one.
+
+To test our new image, select **Create Container** with it selected and use the following properties:
+
+![Application Docker Settings](img/intellij-app-container.png)
+
+Click **Run** and our container will start our application which will connect to the MongoDB server and exit.  Time for an update to GitHub:
+
+1. Add files to commit.
+2. Create commit.
+3. Push to GitHub.
+
+#### Updating Travis Build
+
+Now to put this into our Travis build file:
+
+```yml
+sudo: required
+
+language: java
+
+services:
+  - docker
+
+after_success:
+  - docker network create --driver bridge se-methods
+  - docker pull mongo
+  - docker run -d --name mongo-dbserver --network se-methods mongo
+  - docker build -t se_methods .
+  - docker run --network se-methods se_methods
+```
+
+We have a few more Docker commands but these are just the ones we added via IntelliJ or otherwise.  Now push this to GitHub:
+
+1. Add files to commit.
+2. Create commit.
+3. Push to GitHub.
+
+Check with Travis CI and ensure that not only is the project building but that it successfully runs in Docker.  You will need to open some of the code folds to verify.
+
 ### Merging Feature
+
+It's time to merge our feature back into the `develop` branch.  Before doing this, we need to check that no changes have occurred in `develop`.  Although we know there hasn't been, we need to get into the habit of managing the workflow.
+
+To `merge` any changes in the `develop` branch onto our feature branch, select **VCS**, **Git**, then **Branches...**.  This will open up the **Branches Popup**:
+
+![IntelliJ Branches Popup](img/intellij-merge-branch.png)
+
+Select the `orign/develop` branch (this is the one in GitHub) and then select **Merge into Current**.  You might spot a little pop-up at the bottom stating **Already Up-to-date** which means we can proceed and merge our feature back into `develop`.
+
+Now we just need to switch back to the `develop` branch.  Open the **Branches Popup** again, and select the `develop` branch in **Local Branches** and select **Checkout**:
+
+![IntelliJ Switch Branch](img/intellij-switch-branch.png)
+
+And now `merge` the `feature/mongo-integration` branch in the **Local Branches** into the current branch as before.  This will complete the feature.  We just need to `push` this change into GitHub.  It is just a `push` as all the feature changes have been added to `develop`.
 
 ### Creating a Release
 
-### Versioning and Version Tags
+Now we need to create a release.  First, **create a new release branch**.  Follow the instructions as before.
+
+We are going to call this release `0.1.0.2` (`0.1-alpha-2`).  You will need to change the following files to reflect this:
+
+- `pom.xml` - the `version` tag.
+- `Dockerfile` - the `COPY` and `ENTRYPOINT` values need updated with the new JAR file name.
+
+Once you've done that, test that everything still works locally.  This involves:
+
+1. Rebuilding the project.
+2. Telling Maven to package the project.
+3. Building the Docker image.
+4. Running the Docker image.
+
+If everything goes well, push the changes to GitHub:
+
+1. Add files to commit.
+2. Create commit.
+3. Push to GitHub.
+
+Now we need to `merge` this release back into `master`.  The steps you need to take are:
+
+1. **Checkout** `master`.
+2. **Merge** `release` onto `master`.
+3. **Push** to GitHub.
+
+#### Version Tags
+
+Git commits can also be tagged.  To do this in IntelliJ, select **VCS**, **Git** then **Tag** to open the **Tag** window:
+
+![intelliJ Create Tag](img/intellij-git-tag.png)
+
+Use the name provided, and click **Create Tag**.  Now we just need to `push` the tag to GitHub.  Select push, but this time ensure the **Push Tags** checkbox is ticked as indicated:
+
+![IntelliJ Push Tag](img/intellij-push-tag.png)
+
+Click **Push** and your tag will be added to GitHub.
+
+#### GitHub Release
+
+Now to create a release on GitHub.  Go to the GitHub page for your project and select the **Releases** tab to open the following window:
+
+![GitHub Releases](img/github-release.png)
+
+Click **Create new release** to start entering the release details:
+
+![GitHub Release Details](img/github-release-details.png)
+
+The details we want are below:
+
+![GitHub First Release](img/github-first-release.png)
+
+Also make sure the checkbox **This is a pre-release** is ticked.  Then click **Publish release**.  Your release details will then be presented:
+
+![GitHub Release Created](img/github-release-created.png)
+
+And if you go back to the main GitHub repository page you will find that your badges have been updated:
+
+![GitHub Updated Badges](img/github-badges.png)
+
+All you need to do now is merge the `release` branch back into `develop`:
+
+1. Checkout `develop`.
+2. Merge `release` into `develop`.
+3. Push `develop`.
+
+And we are done.  We have done a lot, but still not much code.  We have built our development pipeline, defined our workflow, and integrated a database along the way.  Not bad work.
 
 ### Clearing Up
+
+Before stepping away from your machine there are some things you should do:
+
+1. Stop any running Docker containers.
+2. Delete any uneeded containers.
+3. Delete any uneeded images.
+4. Ensure any changes have been pushed.
+
+With that done, you can happily walk away from the machine.
+
+### Our Current Process
+
+This is our current workflow.  This is an important set of steps so document them:
+
+1. Pull the latest `develop` branch.
+2. Start a new feature branch.
+3. Once feature is finished, create JAR file.
+4. Update and test Docker configuration with Travis.
+5. Update feature branch with `develop` to ensure feature is up-to-date.
+6. Check feature branch still works.
+7. Merge feature branch into `develop`.
+8. Repeat 2-7 until release is ready.
+9. Merge `develop` branch into `release` and create release.
+10. Merge `release` into `master` and `develop`.

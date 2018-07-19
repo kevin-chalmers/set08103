@@ -1,12 +1,82 @@
 # Lecture 01: Introduction to the Module
 
+- [ ] Add Improvement Kata idea
+- [ ] Add picture from Skyscanner + Ego is the Enemy
+- [ ] Types of thinking from a Mind for Numbers [here](https://fastertomaster.com/a-mind-for-numbers-barbara-oakley/)
+- [ ] Add Respect for People -supports-> Continous Improvement idea
+
+## Behavioural Objects
+
+At the end of this lecture you will be able to:
+
+- [ ] **Define** what a *software engineering method* is.
+- [ ] **List** the *three Software Development Lifecycle* types.
+- [ ] **List** the *four points of the Agile Manifesto*.
+
 ## What is a Software Engineering Method?
+
+What is a Software Engineering Method?  We have two terms we have to define here:
+
+- **Software Engineering**
+- **Method**
 
 ### What is Software Engineering?
 
+From [Wikipedia](https://en.wikipedia.org/wiki/Software_engineering) (emphasis mine):
+
+> Software engineering is the **application of engineering** to the **development of software** in a **systematic method**.
+
+#### What is Software Development?
+
+The development of software you are probably familiar with in principle, at least from a *programming* perspective.  Software Development is bigger than programming though.  Again from [Wikipedia](https://en.wikipedia.org/wiki/Software_development) (emphasis mine):
+
+> Software development is the process of **conceiving**, **specifying**, **designing**, **programming**, **documenting**, **testing**, and **bug fixing** involved in creating and maintaining applications, frameworks, or other software components.
+
+So we have seven areas defined for software development:
+
+1. **Conceiving** or coming up with an idea.  This is an open-ended question based on personal choice and market need.
+2. **Specifying** is coming up with requirements to build the software.  We will only skim across this idea with use case modelling.
+3. **Desigining** takes the specification to produce some form of model for the software.  We will do a bit of UML in this module.
+4. **Programming** is the one most students are familiar with.
+5. **Documenting** is the part most people dislike, but is fundamental for software reuse.  We will touch on areas of documenting.
+6. **Testing** is another area people dislike.  We will look at testing and test automation in this module.
+7. **Bug fixing** is an area that a lot of time is spent on.  This is not debugging your local code, but fixing bugs in production software.
+
+As you can see, it is likely your software development education has only scratched the surface of software development.  The focus will have been on programming.  We will cover the other areas (except *conceiving*) through this module.
+
+#### What is Engineering?
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Engineering) (emphasis mine):
+
+> Engineering is the **creative application of science**, **mathematical methods**, and **empirical evidence** to the innovation, design, construction, operation and maintenance of structures, machines, materials, devices, systems, processes, and organizations.
+
+Engineering has three strands:
+
+1. The **application of science** - you could say engineering is applied science.  There are a collection of theories underpinning software (*computer science*) which we apply in our development process.
+2. **Mathematical methods** really just means any mathematical approach involved in modelling.  We do not do mathematical modelling in the module.  These ideas come from *computer science*.
+3. **Empirical evidence** means that we measure something to gain information.  We do this in the module through testing and build automation.
+
+#### What is a Systematic Method?
+
+Is the next main section.
+
+#### So what is Software Engineering?
+
+A collection of techniques (e.g. designing, programming, testing) to develop sofware using ideas from computer science in a manner that is systematic.  We require evidence about our software to determine if it is working as expected.
+
 ### What is a Method?
 
+Put simply, a method is just an approach.  We effectively have a series of steps that we follow to get a result.  You may have heard of the *scientific method*.  Method as used in *Software Engineering Methods* is related - we build a process for the development of software.
+
+Most of the ideas of *Software Engineering Methods* can be underpinned by something called the **Software Development Lifecycle**.
+
 #### Software Development Lifecycle (SDLC)
+
+This is the process of developing software from conception through to depoyment and maintenance.  The term has been around since about the 1960s.  The following image illustrates the main phases:
+
+![Systems Development Lifecycle](https://commons.wikimedia.org/wiki/File:Systems_Development_Life_Cycle.jpg#/media/File:Systems_Development_Life_Cycle.jpg)**From Wikimedia Commons**
+
+
 
 #### Three Key Methods in Software Development
 

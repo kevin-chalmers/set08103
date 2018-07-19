@@ -74,23 +74,52 @@ Most of the ideas of *Software Engineering Methods* can be underpinned by someth
 
 This is the process of developing software from conception through to depoyment and maintenance.  The term has been around since about the 1960s.  The following image illustrates the main phases:
 
-![Systems Development Lifecycle](https://commons.wikimedia.org/wiki/File:Systems_Development_Life_Cycle.jpg#/media/File:Systems_Development_Life_Cycle.jpg)**From Wikimedia Commons**
+<p><a href="https://commons.wikimedia.org/wiki/File:Systems_Development_Life_Cycle.jpg#/media/File:Systems_Development_Life_Cycle.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Systems_Development_Life_Cycle.jpg" alt="Systems Development Life Cycle.jpg"></a><br>By US Department of Justice (redrawn by <a href="//commons.wikimedia.org/wiki/User:Mdd" title="User:Mdd">Eugene Vincent Tantog</a>) - <a rel="nofollow" class="external text" href="http://www.usdoj.gov/jmd/irm/lifecycle/ch1.htm">INFORMATION RESOURCES MANAGEMENT</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=5530145">Link</a></p>
 
-
+These stages are still used today, but how we use them have changed.  The software industry has effectively produced three key approaches.
 
 #### Three Key Methods in Software Development
 
-1. Waterfall.
-2. Spiral.
-3. Agile.
+1. **Waterfall** - original ideas from 1950s, formally defined in the 1970s.  Still common today.
+2. **Spiral** or incremental development - originally from the late 1980s.
+3. **Agile** is from the mid 1990s.
 
 ##### Waterfall
 
+The waterfall model gets a lot of bad press, but is still successfully used in industry today.  The biggest criticism is the rigid format it uses, in that each stage must be completed before moving onto the next stage.  This means we cannot adapt to changing customer needs.  Below is a typical representation:
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Waterfall_model.svg#/media/File:Waterfall_model.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Waterfall_model.svg/1200px-Waterfall_model.svg.png" alt="Waterfall model.svg"></a><br>By Peter Kemp / Paul Smith - Adapted from Paul Smith's work at <a href="https://en.wikipedia.org/wiki/File:Waterfall_model.svg" class="extiw" title="en:File:Waterfall model.svg">wikipedia</a>, <a href="https://creativecommons.org/licenses/by/3.0" title="Creative Commons Attribution 3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=10633070">Link</a></p>
+
+The original phases are:
+
+- **Requirements gathering** or defining what is needed in the software.
+- **Analysis** of the requirements to define models and rules.
+- **Design** to produce the software architecture.
+- **Coding** to build the software.
+- **Testing** to ensure the software is working as expected.
+- **Operation** of the software where needed.
+
 ##### Spiral
+
+The spiral model builds on some of the ideas of the waterfall model but provides ability to adapt due to its iterative nature.
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Spiral_model_(Boehm,_1988).svg#/media/File:Spiral_model_(Boehm,_1988).svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Spiral_model_%28Boehm%2C_1988%29.svg/1200px-Spiral_model_%28Boehm%2C_1988%29.svg.png" alt="Spiral model (Boehm, 1988).svg"></a><br>By Conny derivative work: <a href="//commons.wikimedia.org/wiki/File:Spiral_model_(Boehm,_1988).png" title="File:Spiral model (Boehm, 1988).png">Spiral_model_(Boehm,_1988).png</a>: Marctroy
+derivative work: <a href="//commons.wikimedia.org/wiki/User:Conan" title="User:Conan">Conan</a> (<a href="//commons.wikimedia.org/wiki/User_talk:Conan" title="User talk:Conan"><span class="signature-talk">talk</span></a>) - <a href="//commons.wikimedia.org/wiki/File:Spiralmodel_nach_Boehm.png" title="File:Spiralmodel nach Boehm.png">File:Spiralmodel_nach_Boehm.png</a>, <a href="//commons.wikimedia.org/wiki/File:Spiral_model_(Boehm,_1988).png" title="File:Spiral model (Boehm, 1988).png">Spiral_model_(Boehm,_1988).png</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=9000950">Link</a></p>
+
+Spiral works by iterating through the following four stages until software is released:
+
+1. **Determine objectives** for this iteration.
+2. **Identify and resolve risks** for this iteration.
+3. **Development and test** for this iteration.
+4. **Plan the next iteration**.
 
 ##### Agile
 
+Agile methods build on the iterative approach, but focus on **human-centric** approaches where software is evolved by collaboration between teams and customers.  Teams are self-organising, and support multiple parts of the development process.  The point is that the teams can adapt (*be agile*) as requirements evolve with the client and the problems in development are discovered.
+
 ### Linking to Module Learning Outcomes
+
+How does all this relate to the module.  The learning outcomes are:
 
 1. Demonstrate understanding of a modern software development lifecycle.
 2. Explain the different techniques supporting modern software engineering methods.
@@ -98,6 +127,8 @@ This is the process of developing software from conception through to depoyment 
 4. Apply modern software engineering methods and techniques to a software development project.
 5. Explain the role of a computing professional in relation to social, ethical and legal issues surrounding projects.
 6. Consider information security requirements in the development and delivery of software.
+
+Our assessment strategy is:
 
 | Learning Outcome | Assessment |
 | ---------------- | ---------- |
@@ -108,7 +139,15 @@ This is the process of developing software from conception through to depoyment 
 | Explain the role of a computing professional in relation to social, ethical and legal issues surrounding projects | Exam
 | Consider information security requirements in the development and delivery of software | Exam |
 
+We are going to use a SDLC to deliver a software product.  Our SDLC will be agile in nature - that is our method.  For our software, we will define requirements and specify a system to deliver.  Finally, we will build a software development pipeline to automate our product delivery.  This is the coursework you will deliver.  See the [Assessment Brief](../../assessment/) for details.
+
+The exam will look at the theoretical aspects of what we are doing.  We will look at the different techniques underpinning modern software development, understand the professional aspects of being a software developer, and consider how security requirements integrate into our SDLC.  This will form the exam part of the assessment.
+
+Both the lectures and labs intertwine to support both the coursework and exam.  The labs provide the step-by-step instructions on how to undergo our development process.  The exam will go into more detail around this process and augment it with areas of working in teams, professionalism, ethics, and security.
+
 ## History of Software Engineering Approaches
+
+The following is some of the highlights in software development:
 
 - **Pre 1965** work on defining a discipline, but the term Software Engineering unused.
 - **1965** various letters to the ACM, lectures, and advertisements mention the term Sofware Engineering.

@@ -1,11 +1,74 @@
 # Lecture 01: Introduction to the Module
 
-- [ ] Add Improvement Kata idea
-- [ ] Add picture from Skyscanner + Ego is the Enemy
-- [ ] Types of thinking from a Mind for Numbers [here](https://fastertomaster.com/a-mind-for-numbers-barbara-oakley/)
-- [ ] Add Respect for People -supports-> Continous Improvement idea
+## Creating a Cooperative Learning Community Environment for the Module
 
-## Behavioural Objects
+Before starting the module, I want to create a suitable learning environment for everyone in the module.  I will do this from four resources:
+
+1. Toyato Improvement Kata.
+2. Ideas from the book *A Mind for Numbers*.
+3. An industry perspective - *Meeting Norms at Skyscanner*.
+4. Ideas from Lean and Continous Improvement.
+
+### Toyota Improvement Kata
+
+Toyota is given a lot of recognition for lean organisation development and creating learning environments in organisations.  The *Improvement Kata* is a routine to move from the current situation to a new situation in a *creative*, *directed*, and *meaningful* way.  It has four stages:
+
+1. In consideration of a vision or direction...
+2. Grasp the current condition.
+3. Define the next target condition.
+4. Move toward that target condition iteratively, which uncovers obstacles that need to be worked on.
+
+**Consider learning as an improvement kata**:
+
+1. In consideration of the outcomes of your education...
+2. Grasp your current level of knowledge and understanding.
+3. Define what you want to learn next - e.g. the ideas in this module.
+4. Move toward that target level iteratively, which will uncover areas you don't know that need to be worked on.
+
+### A Mind for Numbers
+
+This is a book I recommend everyone reads to improve their learning.  One of the key messages is that our mind has two ways of thinking:
+
+1. **Focused thinking** requires active attention, and is concious, analytical, and serial.  It could be called the *hard* thinking your brain avoids doing unless necessary.
+2. **Diffuse thinking** requires passive attention, and is subconcious, creative and parallel.  It is more like daydreaming, and is more *easy* in that your brain does it automatically.
+
+You need to use both types of thinking to learn.  Learning helps us to problem-solve, which is the key element of being a software developer;
+
+- **Learning** is joining *chunks* of information together into larger structures.
+- **Problem-solving** is identifying the necessary chunks to apply to a problem.
+
+**Focused** thinking is gathering new information and forming new chunks, while **diffuse** thinking is connecting chunks together.  We learn poorly when we don't use both modes of thinking:
+
+- We let ourselves get too distracted or too engaged with multiple attentional things to think deeply (focused), for example using your phone or laptop during a lecture.
+- We fool ourselves into thinking that following and copying is the same as understanding - related to *ego is the enemy*.
+- We think focused attention is all we need and fail to use diffuse thinking
+
+### An Industry Perspective
+
+![Skyscanner Meeting Norms](img/skyscanner-meeting.jpg)
+
+- **Be present** both physically and mentally.
+- **Ask why** to me and yourself.
+- **All voices are equal**.
+- **Listen actively** which normally means close your laptop - take written notes instead.
+- **Don't call people resources** which is more about the work place than studying, but keep it in mind when working in teams.
+- And one addition from me - remember that **ego is the enemy**.
+
+### Continous Improvement
+
+One final point comes from ideas of lean.  We have two objectives:
+
+1. Have **respect for people**.
+2. **Continously improve**.
+
+Education is a form of continous improvement - you will never stop learning.  However, a key concept is this:
+
+- **Respect for people** supports **continous improvement**.
+- **Continous improvement** does not in itself support **respect for people**.
+
+This module has you working in a team, and you need to have respect for your team members.  That means doing your share of work, supporting them in challenges, and see this as a team resort.  This can be expanded to the class - *respect* each other, and give each other support, and you can improve yourself and your class mates together.
+
+## Behavioural Objectivess
 
 At the end of this lecture you will be able to:
 
@@ -174,6 +237,8 @@ Signatories state that as developers they value:
 - **Working Software** over *comprehensive documentation*.
 - **Customer Collaboration** over *contract negotiation*.
 - **Responding to Change** over *following a plan*.
+
+This is where the term agile came from.  It is worth considering what the signatories meant:
 
 - [ ] Reflect on the [Agile Manifesto](http://agilemanifesto.org/) and analyse what the individual points mean to you.
 - [ ] Read the [Wikipedia section](https://en.wikipedia.org/wiki/Agile_software_development#The_Agile_Manifesto) on the Agile Manifesto.  Reflect how your original analysis is similar and different to that presented on Wikipedia.

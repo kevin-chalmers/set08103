@@ -66,7 +66,7 @@ Education is a form of continous improvement - you will never stop learning.  Ho
 - **Respect for people** supports **continous improvement**.
 - **Continous improvement** does not in itself support **respect for people**.
 
-This module has you working in a team, and you need to have respect for your team members.  That means doing your share of work, supporting them in challenges, and see this as a team resort.  This can be expanded to the class - *respect* each other, and give each other support, and you can improve yourself and your class mates together.
+This module has you working in a team, and you need to have respect for your team members.  That means doing your share of work, supporting them in challenges, and see this as a team effort.  This can be expanded to the class - *respect* each other, and give each other support, and you can improve yourself and your class mates together.
 
 ## Behavioural Objectivess
 
@@ -75,6 +75,9 @@ At the end of this lecture you will be able to:
 - [ ] **Define** what a *software engineering method* is.
 - [ ] **List** the *three Software Development Lifecycle* types.
 - [ ] **List** the *four points of the Agile Manifesto*.
+- [ ] **Define** what *DevOps* is and its *five goals*.
+- [ ] **List** the *seven parts of a DevOps toolchain*.
+- [ ] **Define** the metrics of *lead-time*, *process-time*, and *%C/A*.
 
 ## What is a Software Engineering Method?
 
@@ -102,7 +105,7 @@ So we have seven areas defined for software development:
 3. **Desigining** takes the specification to produce some form of model for the software.  We will do a bit of UML in this module.
 4. **Programming** is the one most students are familiar with.
 5. **Documenting** is the part most people dislike, but is fundamental for software reuse.  We will touch on areas of documenting.
-6. **Testing** is another area people dislike.  We will look at testing and test automation in this module.
+6. **Testing** is another area people dislike.  We will look at unit testing and test automation in this module.
 7. **Bug fixing** is an area that a lot of time is spent on.  This is not debugging your local code, but fixing bugs in production software.
 
 As you can see, it is likely your software development education has only scratched the surface of software development.  The focus will have been on programming.  We will cover the other areas (except *conceiving*) through this module.
@@ -139,7 +142,7 @@ This is the process of developing software from conception through to depoyment 
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Systems_Development_Life_Cycle.jpg#/media/File:Systems_Development_Life_Cycle.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Systems_Development_Life_Cycle.jpg" alt="Systems Development Life Cycle.jpg"></a><br>By US Department of Justice (redrawn by <a href="//commons.wikimedia.org/wiki/User:Mdd" title="User:Mdd">Eugene Vincent Tantog</a>) - <a rel="nofollow" class="external text" href="http://www.usdoj.gov/jmd/irm/lifecycle/ch1.htm">INFORMATION RESOURCES MANAGEMENT</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=5530145">Link</a></p>
 
-These stages are still used today, but how we use them have changed.  The software industry has effectively produced three key approaches.
+These stages are still used today, but how we use them has changed.  The software industry has produced three key approaches.
 
 #### Three Key Methods in Software Development
 
@@ -178,7 +181,7 @@ Spiral works by iterating through the following four stages until software is re
 
 ##### Agile
 
-Agile methods build on the iterative approach, but focus on **human-centric** approaches where software is evolved by collaboration between teams and customers.  Teams are self-organising, and support multiple parts of the development process.  The point is that the teams can adapt (*be agile*) as requirements evolve with the client and the problems in development are discovered.
+Agile methods build on the iterative approach, but focus on **human-centric** ideas where software is evolved by collaboration between teams and customers.  Teams are self-organising, and support multiple parts of the development process.  The point is that the teams can adapt (*be agile*) as requirements evolve with the client and the problems in development are discovered.
 
 ### Linking to Module Learning Outcomes
 
@@ -245,8 +248,83 @@ This is where the term agile came from.  It is worth considering what the signat
 
 ## Lean Software Development
 
+Lean as a concept comes from manufacturing, but has been successfully applied to a number of industries.  In software development, a number of areas have been impacted by lean principles.  We will touch on these areas as we move through the module.
+
+Lean software development can be summarised as seven principles:
+
+1. **Eliminate waste** - do not do work that does not add value to the customer.
+2. **Amplify learning** - usually by short iteration cycles with feedback from the client and the team.
+3. **Decide as late as possible** - wait until all the facts are available before deciding how features are implemented.
+4. **Deliver as fast as possible** - can be broken down into agreeing what will be delivered in this iteration using a pull-based approach.
+5. **Empower the team** - let the team make decisions on the work to be done: *find good people and let them do their own job* (Lines and Ambler, *Disciplined Agile Delivery: A Practitioner's Guide to Agile Software Delivery in the Enterprise*, 2012).
+6. **Build integrity in** - keep the system simple to update and modify, for example by applying *refactoring* techniques.
+7. **See the whole** - see the system as a whole and work to ensure the component interactions work.  *Think big, act small, fail fast; learn rapidly* (Poppendieck and Poppendieck, *Lean Software Development: An Agile Toolkit*, 2003).
+
 ## DevOps
+
+The combination of agile, lean, and modern build tools has lead to the DevOps (**Development** and **Operations**) culture.  Here, developers (e.g. software engineers) work closely with the operators (e.g. system deployment) to automate and monitor the entire software development lifecycle.  It can be seen as the intersection of three core software delivery ideas:
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Devops.svg#/media/File:Devops.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Devops.svg/1200px-Devops.svg.png" alt="Devops.svg"></a><br>By <a href="//commons.wikimedia.org/wiki/File:Devops.png" title="File:Devops.png">Devops.png</a>: <a href="//commons.wikimedia.org/w/index.php?title=User:Rajiv.Pant&amp;action=edit&amp;redlink=1" class="new" title="User:Rajiv.Pant (page does not exist)">Rajiv.Pant</a>
+derivative work: <a href="//commons.wikimedia.org/wiki/User:Wylve" title="User:Wylve">Wylve</a> - This file was derived from:&nbsp;<a href="//commons.wikimedia.org/wiki/File:Devops.png" title="File:Devops.png">Devops.png</a>:&nbsp;<a href="//commons.wikimedia.org/wiki/File:Devops.png" class="image"></a>, <a href="https://creativecommons.org/licenses/by/3.0" title="Creative Commons Attribution 3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=20202905">Link</a></p>
+
+1. **Development** is typically seen as the software engineers role.  The focus of this module is software engineering so we will look at DevOps ideas through this lens.
+2. **Operations** is the management of systems where software runs.  Software does not exist on a developers machine, but integrates with existing systems and on platforms managed by the business.
+3. **Quality Assurance** is where testing typically resides, although software quality is a bigger area than just testing.  Ensuring *production* quality software is the key for a DevOps team.
+
+DevOps is not just about tools and techniques - *DevOps is also a cultural idea in an organisation*.  It requires parts of the organisation traditionally seen as adverserial to work together in a trusting environment.
+
+DevOps has five goals (taken from [Wikipedia](https://en.wikipedia.org/wiki/DevOps)):
+
+1. Improved deployment frequency.
+2. Faster time to market.
+3. Lower failure rate of new releases.
+4. Shortened lead time between fixes.
+5. Faster mean time to recovery.
+
+Notice that all these ideas are about speed and effectiveness.  **Flow of work** is a key idea in DevOps.  Ideas such as number of deployments per day are key concepts in DevOps that you should explore.
+
+- [ ] Watch the video below about Flickr's adoption of DevOps.
+- [ ] Reflect on what it would take to do multiple software deployments a day, and how your own software development practice should change to reflect this.
+- [ ] Do some research (e.g. a web search) on other deployment frequency stories.  Google and Amazon are particularly frequent.
+
+[![10+ Deploys Per Day](https://img.youtube.com/vi/LdOe18KhtT4/0.jpg)](https://www.youtube.com/watch?v=LdOe18KhtT4)
+
+### DevOps-toolchain
+
+A key concept in DevOps is the creation of a *DevOps-toolchain*: a series of tools and techniques that support the goals of DevOps.  There are different interpreations, but the image below illustrates one set of stages:
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Devops-toolchain.svg#/media/File:Devops-toolchain.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Devops-toolchain.svg/1200px-Devops-toolchain.svg.png" alt="Devops-toolchain.svg"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Kharnagy&amp;action=edit&amp;redlink=1" class="new" title="User:Kharnagy (page does not exist)">Kharnagy</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=51215412">Link</a></p>
+
+There are seven stages here:
+
+1. **Plan** the work to be done and its requirements from both the development and operation side.  We will do very minimal planning in the module only looking at **use cases** and **user stories** for software requirements.  We will use **Kanban**-style boards via **GitHub** to support planning.
+2. **Create** the software - that is design and code the application with consideration of quality and performance requirements.  This is more the realm of software development covered in other modules, but we do add **UML** and **model-driven development** into the mix of techniques available to you.  Extensive use of version control with **Git** is also used to ensure different parts of the development are managed.
+3. **Verify** is the testing of the software, including that the code is of production quality.  **Unit testing** vaguely falls into this category, although is arguably also a *create* task due to its granuality.  We do look at **configuration testing** and **continous integration** to an extent via **Travis CI** and **Docker**.
+4. **Package** the software ready for release/deployment.  We do a *very* light approach to packaging via **Maven** and the creation of a deployable JAR file.
+5. **Release** the software into production in the target environment.  We will deploy our software to **Amazon Web Services** as a simulation of this idea, but releasing software to a production environment is not about *greenfield* (new software) environments.
+6. **Configure** the IT infrastructure that the software runs in.  This falls under the operations side of DevOps, and we will only touch on basic concepts such as **Docker** and configuration in **Amazon Web Services**.
+7. **Monitor** the running software on the target infrastructure.  Monitoring our system allows us to *plan* the next work.  We will do little on monitoring beyond information returned by **Amazon Web Services** although we will consider **bug-tracking** and **issue-tracking** concepts which can be utilised to monitor software.
 
 ## Metrics for Software Development
 
-Some basic metrics ideas.
+Our final section will be on three metrics we can use to discuss the work of software development:
+
+- The **Lead Time** is the time from when the task is created to when it is completed.  This is what the customer experiences when you deliver software, or any other service or product delivery - it is the time we should aim to **reduce**.  Today you have been given the [coursework specification](../../assessment) which has created a lead time until the end-of-trimester.
+- The **Process Time** is the time from when work on the task is started until when it is completed.  Our goal is to **increase the percentage** of process time in lead time while **minimising** process time.  In other words, we start work quickly, and get it done quickly.  We want work to **flow** rather than be held up waiting in queues.
+- **%C/A** or **percentage complere and accurate** helps us measure the quality of the work produced.  We can do this by asking if the work produced was *usable as-is*.
+
+Lead-time and process-time can be visualised as follows:
+
+![Lead Time and Process Time](img/lead-process-time.png)
+
+## Summary
+
+The aim of this lecture is to cover the basic concepts underpinning the module.  We will examine several of these concepts in more detail as we continue through the module.  In summary, we have:
+
+- Specified the learning environment for the module.
+- Defined what a software engineering method is.
+- Listed the three Software Development Lifecycle types.
+- Listed the four points of the Agile Manifesto.
+- Defined what DevOps is and its five goals.
+- Listed the seven parts of a DevOps toolchain.
+- Defined the metrics of lead-time, process-time, and %C/A.

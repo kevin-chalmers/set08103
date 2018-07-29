@@ -60,9 +60,9 @@ derivative work: <a href="//commons.wikimedia.org/w/index.php?title=User:Echion2
 There are many version control tools available to the software engineer.  A few of the more popular ones are:
 
 - [**Git**](https://git-scm.com/) which is commonly associated with popular repository sites such as [**GitHub**](https://github.com/), [**GitLab**](https://about.gitlab.com/), and [**Bitbucket**](https://bitbucket.org/).  Git is independant of these platforms and should not be confused with them.
-- [**Mercurial**](https://www.mercurial-scm.org/) is a popular alternative to Git, and developed as a replacement for *BitKeeper* which itself led to the development of Git.  The history of why BitKeeper is not popular and led to both Git and Mercurial is [interesting](https://en.wikipedia.org/wiki/BitKeeper).
+- [**Mercurial**](https://www.mercurial-scm.org/) is a popular alternative to Git, and developed as a replacement for *BitKeeper* which itself led to the development of Git.  The history of why BitKeeper is not popular and led to both Git and Mercurial is [interesting](https://en.wikipedia.org/wiki/BitKeeper).  Mercurial, although less well known, is used by big organisations such as Facebook and Mozilla.
 - [**Subversion (SVN)**](https://subversion.apache.org/) which is an *Apache* project that derived from an older tool called *Concurrent Versions System (CVS)*.
-- [**Visual SourceSafe**](https://msdn.microsoft.com/en-us/library/ms181038(v=vs.80).aspx) and [**Visual Studio Team Services**](https://visualstudio.microsoft.com/team-services/) are both Microsoft products, although the latter can use Git as a backend.
+- [**Visual SourceSafe**](https://msdn.microsoft.com/en-us/library/ms181038(v=vs.80).aspx) and [**Visual Studio Team Services**](https://visualstudio.microsoft.com/team-services/) are both Microsoft products, although the latter can use Git as a backend.  *SourceSafe* has had no major releases since 2005, and support was ended in 2017.
 
 ### Version Control Approaches
 
@@ -97,9 +97,61 @@ Before looking at the history of version control let us define some common terms
 
 ## History of Version Control
 
+Version control of documents has been around almost as long as writing.  For code, version control likely had primitive approaches in the early days, but the the 1970s is where work seen to begin:
+
+- **1972** *Source Code Control System* developed at Bell Labs - aimed at single mainframe code access model that was prevelant at the time.
+- **1977** *SCCS* given general release.
+- **1982** *Revision Control System (RCS)* introduced as an alternative to *SCCS*.
+- **1986** Original version of *Concurrent Versions Control (CVS)* released as a series of shell scripts as a front-end to *RCS*.
+- **1990** *CVS* 1.0 released as a seperate tool.
+- **1994** *SourceSafe* is bought by Microsoft from One Tree Software.
+- **1998** *BitKeeper* first mentioned as a solution to managing the Linux kernel source.
+- **1999** *SourceForge* launched - one of the first major web-based code repository platforms or **forges**.
+- **2000** 
+    - *Subversion (SVN)* released as a generally compatible successor to *CVS*.  
+    - *BitKeeper* launched.
+- **2002** Linux kernel development moved to *BitKeeper* - this was controversial as BitKeeper was proprietary.
+- **2005** 
+    - Microsoft release *Team Foundation Server* which includes source code management.  
+    - Last major version of *Visual SourceSafe* released.  
+    - *BitKeeper* becomes commercially licensed - the **BitKeeper Controversy**.
+    - Linus Torvalds releases *Git* to overcome the *BitKeeper Controversy*.
+    - *Mercurial* is created in response to overcome the *BitKeeper Controversy*.
+- **2006** 
+    - Google launch *Google Code Project Hosting* which supports *Subversion*, *Git* and *Mercurial*.
+    - Microsoft launch *CodePlex* which supports *Team Foundation Services*, *Subversion*, *Mercurial*, and *Git*.
+- **2008** 
+    - *GitHub* launches.
+    - *Bitbucket* launches orignally only supporting *Mercurial* but adds *Git* in 2011.
+- **2011** *GitLab* launches.
+- **2013** Microsoft launches *Visual Studio Team Services* (originally named *Visual Studio Online*) as an Internet service version of *Team Foundation Server*.
+- **2016** 
+    - *BitKeeper* moves to an open-source license.
+    - *Google Code Project Hosting* shuts down.
+- **2017** Microsoft closes *CodePlex*.
+- **2018** Microsoft buys *GitHub* - *Git* seen as the major VCS for Microsoft.
+
+As you can see, the 1990s was were version control started to take off, but it was in the 2000s where modern tooling emerged.  The nexus point in 2005 is particularly interesting due to the *BitKeeper Controversy* and development of the Linux kernel.  This module will work using *Git* and using *GitHub* as our *forge*.
+
 ## What is Git?
 
+Git is a **distributed VCS** where developers clone a complete copy of the repository, including its history, within the local file system.  Born from the *BitKeeper Controversy*, Linus Torvalds wanted a system that was fast.  He used three points to drive the design of Git:
+
+1. See Concurrent Versions System (CVS) as the model of what **not** to do.
+2. Support a distributed workflow, as in BitKeeper.
+3. Have strong safeguards against corruption.
+
+So, Git has the following properties:
+
+1. It is fast.
+2. It has data integrity features.
+3. It is distributed, thus supporting non-linear workflows.
+
+Git is likely the most popular and well known VCS at the moment, although this is partly due to the popularity of GitHub.  The two are often confused, but there is no link between the two beyond GitHub supporting Git repositories.
+
 ## Principles of Git
+
+<p><a href="https://commons.wikimedia.org/wiki/File:Git_operations.svg#/media/File:Git_operations.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/1200px-Git_operations.svg.png" alt="Git operations.svg"></a><br>By <a href="//commons.wikimedia.org/wiki/User:Duesentrieb" title="User:Duesentrieb">Daniel Kinzler</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by/3.0" title="Creative Commons Attribution 3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=25223536">Link</a></p>
 
 ## Teminology of Git
 

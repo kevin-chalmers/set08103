@@ -4,10 +4,10 @@
 
 Before starting the module, I want to create a suitable learning environment for everyone in the module.  I will do this from four resources:
 
-1. Toyato Improvement Kata.
+1. Toyota Improvement Kata.
 2. Ideas from the book *A Mind for Numbers*.
 3. An industry perspective - *Meeting Norms at Skyscanner*.
-4. Ideas from Lean and Continous Improvement.
+4. Ideas from Lean and Continuous Improvement.
 
 ### Toyota Improvement Kata
 
@@ -29,8 +29,8 @@ Toyota is given a lot of recognition for lean organisation development and creat
 
 This is a book I recommend everyone reads to improve their learning.  One of the key messages is that our mind has two ways of thinking:
 
-1. **Focused thinking** requires active attention, and is concious, analytical, and serial.  It could be called the *hard* thinking your brain avoids doing unless necessary.
-2. **Diffuse thinking** requires passive attention, and is subconcious, creative and parallel.  It is more like daydreaming, and is more *easy* in that your brain does it automatically.
+1. **Focused thinking** requires active attention, and is conscious, analytical, and serial.  It could be called the *hard* thinking your brain avoids doing unless necessary.
+2. **Diffuse thinking** requires passive attention, and is subconscious, creative and parallel.  It is more like daydreaming, and is more *easy* in that your brain does it automatically.
 
 You need to use both types of thinking to learn.  Learning helps us to problem-solve, which is the key element of being a software developer;
 
@@ -54,19 +54,21 @@ You need to use both types of thinking to learn.  Learning helps us to problem-s
 - **Don't call people resources** which is more about the work place than studying, but keep it in mind when working in teams.
 - And one addition from me - remember that **ego is the enemy**.
 
-### Continous Improvement
+### Continuous Improvement
 
 One final point comes from ideas of lean.  We have two objectives:
 
 1. Have **respect for people**.
-2. **Continously improve**.
+2. **Continuously improve**.
 
-Education is a form of continous improvement - you will never stop learning.  However, a key concept is this:
+Education is a form of continuous improvement - you will never stop learning.  However, a key concept is this:
 
-- **Respect for people** supports **continous improvement**.
-- **Continous improvement** does not in itself support **respect for people**.
+- **Respect for people** supports **continuous improvement**.
+- **Continuous improvement** does not in itself support **respect for people**.
 
 This module has you working in a team, and you need to have respect for your team members.  That means doing your share of work, supporting them in challenges, and see this as a team effort.  This can be expanded to the class - *respect* each other, and give each other support, and you can improve yourself and your class mates together.
+
+Fundamentally, you should recognise that **education is not a competition**.  You will learn more through collaboration rather than competition.
 
 ## Behavioural Objectivess
 
@@ -102,7 +104,7 @@ So we have seven areas defined for software development:
 
 1. **Conceiving** or coming up with an idea.  This is an open-ended question based on personal choice and market need.
 2. **Specifying** is coming up with requirements to build the software.  We will only skim across this idea with use case modelling.
-3. **Desigining** takes the specification to produce some form of model for the software.  We will do a bit of UML in this module.
+3. **Designing** takes the specification to produce some form of model for the software.  We will do a bit of UML in this module.
 4. **Programming** is the one most students are familiar with.
 5. **Documenting** is the part most people dislike, but is fundamental for software reuse.  We will touch on areas of documenting.
 6. **Testing** is another area people dislike.  We will look at unit testing and test automation in this module.
@@ -128,7 +130,7 @@ Is the next main section.
 
 #### So what is Software Engineering?
 
-A collection of techniques (e.g. designing, programming, testing) to develop sofware using ideas from computer science in a manner that is systematic.  We require evidence about our software to determine if it is working as expected.
+A collection of techniques (e.g. designing, programming, testing) to develop software using ideas from computer science in a manner that is systematic.  We require evidence about our software to determine if it is working as expected.
 
 ### What is a Method?
 
@@ -216,7 +218,7 @@ Both the lectures and labs intertwine to support both the coursework and exam.  
 The following is some of the highlights in software development:
 
 - **Pre 1965** work on defining a discipline, but the term Software Engineering unused.
-- **1965** various letters to the ACM, lectures, and advertisements mention the term Sofware Engineering.
+- **1965** various letters to the ACM, lectures, and advertisements mention the term Software Engineering.
 - **1965** to **1985** the software crisis - software runs over budget, schedule, causes faults that lead to loss of life.  Software quality becomes a key idea (not the focus of this module).
 - **1970s** structured programming - using `if`, functions, etc.
 - **1980s** Structured Systems Analysis and Design Methodology (SSADM) - waterfall method of software development.
@@ -230,7 +232,7 @@ The following is some of the highlights in software development:
 - **2000 to today** rise of lightweight methods (the focus of this module).
 - **2000s** various agile methods defined.
 - **2001** [The Manifesto for Agile Software Development](http://agilemanifesto.org/).
-- **2008** DevOps (Developer Operations) coined.
+- **2008** DevOps (Development Operations) coined.
 
 ## Agile Manifesto
 
@@ -311,7 +313,7 @@ Our final section will be on three metrics we can use to discuss the work of sof
 
 - The **Lead Time** is the time from when the task is created to when it is completed.  This is what the customer experiences when you deliver software, or any other service or product delivery - it is the time we should aim to **reduce**.  Today you have been given the [coursework specification](../../assessment) which has created a lead time until the end-of-trimester.
 - The **Process Time** is the time from when work on the task is started until when it is completed.  Our goal is to **increase the percentage** of process time in lead time while **minimising** process time.  In other words, we start work quickly, and get it done quickly.  We want work to **flow** rather than be held up waiting in queues.
-- **%C/A** or **percentage complere and accurate** helps us measure the quality of the work produced.  We can do this by asking if the work produced was *usable as-is*.
+- **%C/A** or **percentage complete and accurate** helps us measure the quality of the work produced.  We can do this by asking if the work produced was *usable as-is*.
 
 Lead-time and process-time can be visualised as follows:
 

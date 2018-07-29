@@ -1,3 +1,7 @@
-# Lecture 04: Continous Integration Tools
+# Lecture 04: Three Principles of DevOps
 
-Basically talk through travis.
+Concepts of WIP and time to deliver.
+
+GitFlow workflow
+
+Continuous integration???

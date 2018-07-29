@@ -1,1 +1,1 @@
-# Lecture 07: Kanban
+# Lecture 07: The First Way of DevOps - Flow

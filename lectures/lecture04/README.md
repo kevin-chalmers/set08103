@@ -1,7 +1,2 @@
-# Lecture 04: Three Principles of DevOps
+# Lecture 04: Lean Software Development
 
-Concepts of WIP and time to deliver.
-
-GitFlow workflow
-
-Continuous integration???

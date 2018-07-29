@@ -1,3 +1,3 @@
-# Lecture 02: Flow and GitFlow Workflow
+# Lecture 02: Team Forming
 
-- [ ] Needs to have Docker and containers or move to other lecture.  Update link in lab 01 if changed.
+This lecture will be used to form the teams to undertake the assessment.

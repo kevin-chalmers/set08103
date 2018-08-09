@@ -28,7 +28,8 @@
 At the end of this lecture you will be able to:
 
 - [ ] **Define** what *version control is*.
-- [ ] 
+- [ ] **Describe** the *key differences* between *client-server* and *distributed VCS*.
+- [ ] **Define** what *Git is*.
 
 ## What is Version Control?
 
@@ -116,7 +117,7 @@ Version control of documents has been around almost as long as writing.  For cod
     - Last major version of *Visual SourceSafe* released.  
     - *BitKeeper* becomes commercially licensed - the **BitKeeper Controversy**.
     - Linus Torvalds releases *Git* to overcome the *BitKeeper Controversy*.
-    - *Mercurial* is created in response to overcome the *BitKeeper Controversy*.
+    - *Mercurial* is created in response to the *BitKeeper Controversy*.
 - **2006** 
     - Google launch *Google Code Project Hosting* which supports *Subversion*, *Git* and *Mercurial*.
     - Microsoft launch *CodePlex* which supports *Team Foundation Services*, *Subversion*, *Mercurial*, and *Git*.
@@ -131,7 +132,7 @@ Version control of documents has been around almost as long as writing.  For cod
 - **2017** Microsoft closes *CodePlex*.
 - **2018** Microsoft buys *GitHub* - *Git* seen as the major VCS for Microsoft.
 
-As you can see, the 1990s was were version control started to take off, but it was in the 2000s where modern tooling emerged.  The nexus point in 2005 is particularly interesting due to the *BitKeeper Controversy* and development of the Linux kernel.  This module will work using *Git* and using *GitHub* as our *forge*.
+As you can see, the 1990s was were version control started to take off, but it was in the 2000s where modern tooling emerged.  The nexus point in 2005 is particularly interesting due to the *BitKeeper Controversy* and managing the development of the Linux kernel.  This module will work using *Git* and using *GitHub* as our *forge*.
 
 ## What is Git?
 
@@ -149,7 +150,25 @@ So, Git has the following properties:
 
 Git is likely the most popular and well known VCS at the moment, although this is partly due to the popularity of GitHub.  The two are often confused, but there is no link between the two beyond GitHub supporting Git repositories.
 
+Let us move onto the principles of Git, which will provide a deeper understanding of how Git works.
+
 ## Principles of Git
+
+The following section will step through numerous principles in Git with the relevant commands.  We will look at the basics of repositories, basic workflow for submitting changes, the basic workflow for fetching and merging changes, and the basics of branching.
+
+### Working with Repositories
+
+![Git Clone](img/git-clone.png)
+
+### Submitting Changes
+
+### Fetching and Merging Changes
+
+### Branching
+
+### A Primitive Git Workflow
+
+### Summary
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Git_operations.svg#/media/File:Git_operations.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/1200px-Git_operations.svg.png" alt="Git operations.svg"></a><br>By <a href="//commons.wikimedia.org/wiki/User:Duesentrieb" title="User:Duesentrieb">Daniel Kinzler</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by/3.0" title="Creative Commons Attribution 3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=25223536">Link</a></p>
 

@@ -158,13 +158,30 @@ The following section will step through numerous principles in Git with the rele
 
 ### Working with Repositories
 
+Git works with *repositories*.  A repository is the code and history of a code-base.  Every time you work with Git you are working within a repository: your local repository, and some remote repositories.  That is a key idea with Git - your local machine working copy is also a repository.
+
+You can create your local repository in one of two ways:
+
+1. Initialise an empty repository using `git init` in a folder.
+2. Call `git clone <url>` to clone an existing repository from a remote repository as shown below:
+
 ![Git Clone](img/git-clone.png)
+
+When you *clone* a repository you also set up a link to the remote repository called `origin`.  We will discuss [remotes later](#Remotes).
+
+There is a special version of empty initialisation: `git init --bare`.  This is usually used on a server that is used to coordinate teams.  In general, you should *not* use `git init --bare`.
 
 ### Submitting Changes
 
+#### Diffs
+
 ### Fetching and Merging Changes
 
+#### Managing Conflicts
+
 ### Branching
+
+### Remotes
 
 ### A Primitive Git Workflow
 

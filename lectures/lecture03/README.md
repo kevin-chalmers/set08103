@@ -60,18 +60,18 @@ derivative work: <a href="//commons.wikimedia.org/w/index.php?title=User:Echion2
 
 There are many version control tools available to the software engineer.  A few of the more popular ones are:
 
-- [**Git**](https://git-scm.com/) which is commonly associated with popular repository sites such as [**GitHub**](https://github.com/), [**GitLab**](https://about.gitlab.com/), and [**Bitbucket**](https://bitbucket.org/).  Git is independant of these platforms and should not be confused with them.
+- [**Git**](https://git-scm.com/) which is commonly associated with popular repository sites such as [**GitHub**](https://github.com/), [**GitLab**](https://about.gitlab.com/), and [**Bitbucket**](https://bitbucket.org/).  Git is independent of these platforms and should not be confused with them.
 - [**Mercurial**](https://www.mercurial-scm.org/) is a popular alternative to Git, and developed as a replacement for *BitKeeper* which itself led to the development of Git.  The history of why BitKeeper is not popular and led to both Git and Mercurial is [interesting](https://en.wikipedia.org/wiki/BitKeeper).  Mercurial, although less well known, is used by big organisations such as Facebook and Mozilla.
 - [**Subversion (SVN)**](https://subversion.apache.org/) which is an *Apache* project that derived from an older tool called *Concurrent Versions System (CVS)*.
-- [**Visual SourceSafe**](https://msdn.microsoft.com/en-us/library/ms181038(v=vs.80).aspx) and [**Visual Studio Team Services**](https://visualstudio.microsoft.com/team-services/) are both Microsoft products, although the latter can use Git as a backend.  *SourceSafe* has had no major releases since 2005, and support was ended in 2017.
+- [**Visual SourceSafe**](https://msdn.microsoft.com/en-us/library/ms181038(v=vs.80).aspx) and [**Visual Studio Team Services**](https://visualstudio.microsoft.com/team-services/) are both Microsoft products, although the latter can use Git as a back-end.  *SourceSafe* has had no major releases since 2005, and support was ended in 2017.
 
 ### Version Control Approaches
 
 There are three approaches a Version Control System (VCS) can take:
 
-- **Localised**, which means developers must be working on the same filesystem.  These were early approaches and no longer relevant today.
+- **Localised**, which means developers must be working on the same file-system.  These were early approaches and no longer relevant today.
 - **Client-server** where multiple developers (*clients*) can work locally and push changes to a single server repository.
-- **Distributed** where the complete codebase and history is stored by each developer locally, thus replicating the repository.  Developers can collaborate via remote repositories - such as on GitHub.
+- **Distributed** where the complete code-base and history is stored by each developer locally, thus replicating the repository.  Developers can collaborate via remote repositories - such as on GitHub.
 
 Of the tools mentioned above:
 
@@ -84,27 +84,27 @@ Before looking at the history of version control let us define some common terms
 
 - **Repository** is where the code and history is stored.  In a *client-server* model this is on the server.  In a *distributed* model this is any local version.
 - **Checkout** or **clone** is the process of getting a copy of the code from the repository.  In a *client-server* model, we *checkout* the code.  In a *distributed* model, we *clone* the entire repository, including the history.
-- **Working copy** is the local version of the codebase.  We can make any changes we want to the working copy as it is not reflected anywhere else - it is a sandbox.
-- **Fetch** or **pull** is to get the most recent version of the codebase from the remote repository.  In *Git*, *fetch* and *pull* are different in that pull will also merge any changes into the local working copy.
+- **Working copy** is the local version of the code-base.  We can make any changes we want to the working copy as it is not reflected anywhere else - it is a sandbox.
+- **Fetch** or **pull** is to get the most recent version of the code-base from the remote repository.  In *Git*, *fetch* and *pull* are different in that pull will also merge any changes into the local working copy.
 - **Push** is when we push our local changes to the remote repository.  To do this we have to create a commit.
-- **Commit** is a new version of the codebase.  Typically a commit contains the changes added in the local *working copy* which can then be sent to the remote repository if need be.  In *distributed* models, working copies are repositories, so we can undertake numerous commits before pushing all the changes to the remote repository.
+- **Commit** is a new version of the code-base.  Typically a commit contains the changes added in the local *working copy* which can then be sent to the remote repository if need be.  In *distributed* models, working copies are repositories, so we can undertake numerous commits before pushing all the changes to the remote repository.
 - **Tag** or **label** is extra information we can add to a particular commit, such as `v0.1.0`.
 - **Head** is a special *tag* or *label* for the most recent *commit* on a *branch*.
-- **Branch** is another version of the codebase.  Branches are independant, meaning they can be worked on without causing conflicts.  We *merge* branches when we wish to synchronise them.
+- **Branch** is another version of the code-base.  Branches are independent, meaning they can be worked on without causing conflicts.  We *merge* branches when we wish to synchronise them.
 - **Master** or **trunk** is the name of the main *branch* in a repository.  Git uses the term *master* and SVN uses the term *trunk*.
 - **Merge** is the process of combining one *branch* into another.  Any differences between files in the branches have to be resolved before the merge can be completed.
 - **Conflict** occurs when different change versions of the same document exist while merging branches which must be fixed.
-- **Resolve** is the process of fixing *clonflicts*.  There are tools that can support this process, but it does require human intervention.
+- **Resolve** is the process of fixing *conflicts*.  There are tools that can support this process, but it does require human intervention.
 
 ## History of Version Control
 
 Version control of documents has been around almost as long as writing.  For code, version control likely had primitive approaches in the early days, but the the 1970s is where work seen to begin:
 
-- **1972** *Source Code Control System* developed at Bell Labs - aimed at single mainframe code access model that was prevelant at the time.
+- **1972** *Source Code Control System* developed at Bell Labs - aimed at single mainframe code access model that was prevalent at the time.
 - **1977** *SCCS* given general release.
 - **1982** *Revision Control System (RCS)* introduced as an alternative to *SCCS*.
 - **1986** Original version of *Concurrent Versions Control (CVS)* released as a series of shell scripts as a front-end to *RCS*.
-- **1990** *CVS* 1.0 released as a seperate tool.
+- **1990** *CVS* 1.0 released as a separate tool.
 - **1994** *SourceSafe* is bought by Microsoft from One Tree Software.
 - **1998** *BitKeeper* first mentioned as a solution to managing the Linux kernel source.
 - **1999** *SourceForge* launched - one of the first major web-based code repository platforms or **forges**.
@@ -123,7 +123,7 @@ Version control of documents has been around almost as long as writing.  For cod
     - Microsoft launch *CodePlex* which supports *Team Foundation Services*, *Subversion*, *Mercurial*, and *Git*.
 - **2008** 
     - *GitHub* launches.
-    - *Bitbucket* launches orignally only supporting *Mercurial* but adds *Git* in 2011.
+    - *Bitbucket* launches originally only supporting *Mercurial* but adds *Git* in 2011.
 - **2011** *GitLab* launches.
 - **2013** Microsoft launches *Visual Studio Team Services* (originally named *Visual Studio Online*) as an Internet service version of *Team Foundation Server*.
 - **2016** 

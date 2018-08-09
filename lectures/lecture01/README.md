@@ -140,7 +140,7 @@ Most of the ideas of *Software Engineering Methods* can be underpinned by someth
 
 #### Software Development Lifecycle (SDLC)
 
-This is the process of developing software from conception through to depoyment and maintenance.  The term has been around since about the 1960s.  The following image illustrates the main phases:
+This is the process of developing software from conception through to deployment and maintenance.  The term has been around since about the 1960s.  The following image illustrates the main phases:
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Systems_Development_Life_Cycle.jpg#/media/File:Systems_Development_Life_Cycle.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Systems_Development_Life_Cycle.jpg" alt="Systems Development Life Cycle.jpg"></a><br>By US Department of Justice (redrawn by <a href="//commons.wikimedia.org/wiki/User:Mdd" title="User:Mdd">Eugene Vincent Tantog</a>) - <a rel="nofollow" class="external text" href="http://www.usdoj.gov/jmd/irm/lifecycle/ch1.htm">INFORMATION RESOURCES MANAGEMENT</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=5530145">Link</a></p>
 
@@ -273,7 +273,7 @@ derivative work: <a href="//commons.wikimedia.org/wiki/User:Wylve" title="User:W
 2. **Operations** is the management of systems where software runs.  Software does not exist on a developers machine, but integrates with existing systems and on platforms managed by the business.
 3. **Quality Assurance** is where testing typically resides, although software quality is a bigger area than just testing.  Ensuring *production* quality software is the key for a DevOps team.
 
-DevOps is not just about tools and techniques - *DevOps is also a cultural idea in an organisation*.  It requires parts of the organisation traditionally seen as adverserial to work together in a trusting environment.
+DevOps is not just about tools and techniques - *DevOps is also a cultural idea in an organisation*.  It requires parts of the organisation traditionally seen as adversarial to work together in a trusting environment.
 
 DevOps has five goals (taken from [Wikipedia](https://en.wikipedia.org/wiki/DevOps)):
 
@@ -293,7 +293,7 @@ Notice that all these ideas are about speed and effectiveness.  **Flow of work**
 
 ### DevOps-toolchain
 
-A key concept in DevOps is the creation of a *DevOps-toolchain*: a series of tools and techniques that support the goals of DevOps.  There are different interpreations, but the image below illustrates one set of stages:
+A key concept in DevOps is the creation of a *DevOps-toolchain*: a series of tools and techniques that support the goals of DevOps.  There are different interpretations, but the image below illustrates one set of stages:
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Devops-toolchain.svg#/media/File:Devops-toolchain.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Devops-toolchain.svg/1200px-Devops-toolchain.svg.png" alt="Devops-toolchain.svg"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Kharnagy&amp;action=edit&amp;redlink=1" class="new" title="User:Kharnagy (page does not exist)">Kharnagy</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=51215412">Link</a></p>
 
@@ -301,7 +301,7 @@ There are seven stages here:
 
 1. **Plan** the work to be done and its requirements from both the development and operation side.  We will do very minimal planning in the module only looking at **use cases** and **user stories** for software requirements.  We will use **Kanban**-style boards via **GitHub** to support planning.
 2. **Create** the software - that is design and code the application with consideration of quality and performance requirements.  This is more the realm of software development covered in other modules, but we do add **UML** and **model-driven development** into the mix of techniques available to you.  Extensive use of version control with **Git** is also used to ensure different parts of the development are managed.
-3. **Verify** is the testing of the software, including that the code is of production quality.  **Unit testing** vaguely falls into this category, although is arguably also a *create* task due to its granuality.  We do look at **configuration testing** and **continous integration** to an extent via **Travis CI** and **Docker**.
+3. **Verify** is the testing of the software, including that the code is of production quality.  **Unit testing** vaguely falls into this category, although is arguably also a *create* task due to its granularity.  We do look at **configuration testing** and **continuous integration** to an extent via **Travis CI** and **Docker**.
 4. **Package** the software ready for release/deployment.  We do a *very* light approach to packaging via **Maven** and the creation of a deployable JAR file.
 5. **Release** the software into production in the target environment.  We will deploy our software to **Amazon Web Services** as a simulation of this idea, but releasing software to a production environment is not about *greenfield* (new software) environments.
 6. **Configure** the IT infrastructure that the software runs in.  This falls under the operations side of DevOps, and we will only touch on basic concepts such as **Docker** and configuration in **Amazon Web Services**.

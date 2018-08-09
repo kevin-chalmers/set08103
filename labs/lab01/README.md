@@ -1,6 +1,6 @@
-# Lab 01: Setup
+# Lab 01: Set-up
 
-The aim of this lab is to setup our development environment for the module.  There are a number of tools we are using in the module and we will set most of them up today.  The systems we will be using are:
+The aim of this lab is to set-up our development environment for the module.  There are a number of tools we are using in the module and we will set most of them up today.  The systems we will be using are:
 
 - Java
 - IntelliJ
@@ -8,7 +8,7 @@ The aim of this lab is to setup our development environment for the module.  The
 - Git and GitHub
 - Docker
 
-These provide a modern software development and delivery environment.  These tools will underpin the assessment for the module so getting everything setup correctly is key.
+These provide a modern software development and delivery environment.  These tools will underpin the assessment for the module so getting everything set-up correctly is key.
 
 ## Behavioural Objectives
 
@@ -16,7 +16,7 @@ These provide a modern software development and delivery environment.  These too
 
 ## IntelliJ Setup
 
-You will require Java and IntelliJ installed on the machine you plan to work on.  Once ready, startup IntelliJ.  You should be presented with the following screen:
+You will require Java and IntelliJ installed on the machine you plan to work on.  Once ready, start-up IntelliJ.  You should be presented with the following screen:
 
 ![IntelliJ Start Screen](img/intellij-start.png)
 
@@ -33,7 +33,7 @@ Once done click on **Next**.  This will open the following window:
 
 ![IntelliJ New Maven Project](img/intellij-new-maven.png)
 
-Enter the followin details:
+Enter the following details:
 
 - **GroupID** *com.napier.sem*
 - **ArtifactID** *seMethods*
@@ -55,7 +55,7 @@ If you do not have this window then ask try the instructions again and if you st
 
 ## Git with IntelliJ
 
-Our next step is to setup [version control](https://en.wikipedia.org/wiki/Version_control) for our project.  We will be using [Git](https://git-scm.com/) ([Wikipedia Entry](https://en.wikipedia.org/wiki/Git)).  Git is becoming the standard version control approach in software development, so you should see this as an opportunity to learn Git.  The module does not specifically cover the mechanics of Git.  There is a dedicated [website](https://try.github.io/) for Git learning resources.  This module will focus on using Git and version control correctly to deliver software.
+Our next step is to set-up [version control](https://en.wikipedia.org/wiki/Version_control) for our project.  We will be using [Git](https://git-scm.com/) ([Wikipedia Entry](https://en.wikipedia.org/wiki/Git)).  Git is becoming the standard version control approach in software development, so you should see this as an opportunity to learn Git.  The module does not specifically cover the mechanics of Git.  There is a dedicated [website](https://try.github.io/) for Git learning resources.  This module will focus on using Git and version control correctly to deliver software.
 
 IntelliJ has version control built in.  Therefore we can use version control from within our development environment.  This is also becoming the standard in software development.
 
@@ -69,7 +69,7 @@ To setup Git version control in IntelliJ undertake the following steps:
 
 A little notification should appear at the bottom of the window confirming that Git has been initialised for the project.
 
-Our next step is to add a `.gitignore` file.  This file tells Git which type of files to ignore.  This is important in software development as compilers and build systems add numerous tempory files and output files that we do not need to track.
+Our next step is to add a `.gitignore` file.  This file tells Git which type of files to ignore.  This is important in software development as compilers and build systems add numerous temporary files and output files that we do not need to track.
 
 To add a `.gitignore` file just add a new file to the project.  To do so, either use the main menu (**File** then **New** then **File**) or **right-click** on the project and select **New** then **File**.  Call the file `.gitignore` and save.  Yes, include the dot in front of the name.  Ensure the name is correct.  Git will only recognise the file with that exact name in the main folder of the repository.
 
@@ -128,7 +128,7 @@ With these in the `.gitignore` file we can add it to version control.  To do thi
 
 We will also add another new file: `README.md`.  This file is the readme for the project, and is written in [Markdown](https://en.wikipedia.org/wiki/Markdown).  You will be using Markdown a lot in the module for documentation.  A [tutorial](https://www.markdowntutorial.com/) is available.
 
-So to finish this stage of our setup perform the following actions:
+So to finish this stage of our set-up perform the following actions:
 
 1. Add a new file - `README.md` to the root directory of the project.
 2. Add some text to the readme - keep it simple at the moment.
@@ -136,7 +136,7 @@ So to finish this stage of our setup perform the following actions:
 
 ## Getting Started with GitHub
 
-The whole point of version control is to maintain your code somewhere backed-up and sharable with your team.  We will use *GitHub* as a repository for this module.  First, you will need to create an account on GitHub if you haven't already.  Go to [GitHub](https://github.com/) and **Sign Up**.  Two things to note:
+The whole point of version control is to maintain your code somewhere backed-up and shareable with your team.  We will use *GitHub* as a repository for this module.  First, you will need to create an account on GitHub if you haven't already.  Go to [GitHub](https://github.com/) and **Sign Up**.  Two things to note:
 
 1. You do not need a paid for account.
 2. If you are a student, GitHub will give you [unlimited private repositories](https://education.github.com/pack).
@@ -153,13 +153,13 @@ Click on **Create repository** and you will be presented with the following:
 
 ![GitHub Repository Main Screen](img/github-repo-main.png)
 
-Now we need to tell IntelliJ the location of our repository.  This is the URL of the repository you created, which should be of the form `https:\\github.com\<user-name>\sem`.  For example, my repo is [https:\\github.com\kevin-chalmers\sem](https:\\github.com\kevin-chalmers\sem).
+Now we need to tell IntelliJ the location of our repository.  This is the URL of the repository you created, which should be of the form `https:\\github.com\<user-name>\sem`.  For example, my repository is [https:\\github.com\kevin-chalmers\sem](https:\\github.com\kevin-chalmers\sem).
 
 To add the location to IntelliJ, select **VCS** from the main menu, then **Git** and **Remotes** to open the following window:
 
 ![Add Remote to IntelliJ](img/intellij-add-remote.png)
 
-Click on the **+** button to open the **Define Remote** window, where the name **origin** should already defined.  `origin` is the standard remote name for the main origin of the code project.  Whenever you clone repositories this is the name used by default in the clone.  Add the URL of your repository into the URL textbox and click **OK**.
+Click on the **+** button to open the **Define Remote** window, where the name **origin** should already defined.  `origin` is the standard remote name for the main origin of the code project.  Whenever you clone repositories this is the name used by default in the clone.  Add the URL of your repository into the URL text-box and click **OK**.
 
 ![Setting Remote URL in IntelliJ](img/intellij-remote-url.png)
 
@@ -169,11 +169,11 @@ We are now ready to pull the GitHub version of the repository to the local machi
 
 ![IntelliJ Pull Window](img/intellij-pull-start.png)
 
-At the moment, IntelliJ does not see anything that needs to be pulled.  We can refresh the remote status by pressing the **Refresh** button (the one next to the **Remote** dropdown).  Doing so will `fetch` the current state of the remote:
+At the moment, IntelliJ does not see anything that needs to be pulled.  We can refresh the remote status by pressing the **Refresh** button (the one next to the **Remote** drop-down).  Doing so will `fetch` the current state of the remote:
 
 ![IntelliJ Pull Ready](img/intellij-pull-ready.png)
 
-Check the `origin/master` branch, and click **Pull**.  The `LICENSE` file should appear in your project - although it might take a minute.  You can go into the filesystem to check if you are impatient.
+Check the `origin/master` branch, and click **Pull**.  The `LICENSE` file should appear in your project - although it might take a minute.  You can go into the file-system to check if you are impatient.
 
 Let us now add the rest of our files ready to `commit` to GitHub.  Select **VCS** then **Git** and **Add**.  This will add all the qualifying files to our commit.  They are sitting in the *staging* area.  We look at version control in more detail in [Lecture 03](../../lectures/lecture03).
 
@@ -181,11 +181,11 @@ To create our commit, select **VCS** then **Commit** to open the **Commit Change
 
 ![IntelliJ Commit Changes](img/intellij-commit.png)
 
-Ensure you add your name and email address in the **Author** textbox.  The image provides an example.  This should match the name and email address you are using in GitHub.
+Ensure you add your name and email address in the **Author** text-box.  The image provides an example.  This should match the name and email address you are using in GitHub.
 
-Your commits always need a message.  Set the **Commit Message** textbox to `First commit, adding initial files.`  Then press **Commit**.
+Your commits always need a message.  Set the **Commit Message** text-box to `First commit, adding initial files.`  Then press **Commit**.
 
-We have now created a checkpoint in our code that we can **always** return to.  This is the power of version control.  We are checkpointing our code so we can rewind to previous versions.  As long as you commit often, you can always revert back to a previous version.
+We have now created a checkpoint in our code that we can **always** return to.  This is the power of version control.  We are check-pointing our code so we can rewind to previous versions.  As long as you commit often, you can always revert back to a previous version.
 
 Our commit only exists on the local machine at the moment.  To send it to GitHub we have to `push` the commit to the remote.  To do this, select **VCS** then **Git** and **Push** to open the **Push Commits** window:
 
@@ -244,7 +244,7 @@ We now know that everything is working so far.  So let us commit the changes.  T
 
 ## Getting Started with Docker
 
-We will step away from IntelliJ for a while to use Docker.  Docker will support our deployment to ensure we run in the same configuration whereever we execute our code.  This ensures we do not have conflicts between what works on our development machine and the deployment machine.
+We will step away from IntelliJ for a while to use Docker.  Docker will support our deployment to ensure we run in the same configuration wherever we execute our code.  This ensures we do not have conflicts between what works on our development machine and the deployment machine.
 
 ### Checking if Docker is Installed and Working
 
@@ -336,13 +336,13 @@ docker run nginx
 
 You will notice that nothing happened, and the command line is waiting.  Using `run` in this way is not recommended.  Press **Ctrl-C** to stop the running container.
 
-Docker containers should be started as detatched processes.  We do this using the `-d` flag.  Furthermore, for Nginx we need to open up a port for the web server.  We do this using the `-p` flag.  Let us try again and use these new flags:
+Docker containers should be started as detached processes.  We do this using the `-d` flag.  Furthermore, for Nginx we need to open up a port for the web server.  We do this using the `-p` flag.  Let us try again and use these new flags:
 
 ```shell
 docker run -d -p 8080:80 nginx
 ```
 
-We have run the Nginx server as a detatched container, and mapped the local machine's port 8080 to the port 80 of the Nginx web server.  If you don't know, port 80 is the default port a web server operates on.  When you issue this command you will get a hash code value out.  Mine was:
+We have run the Nginx server as a detached container, and mapped the local machine's port 8080 to the port 80 of the Nginx web server.  If you don't know, port 80 is the default port a web server operates on.  When you issue this command you will get a hash code value out.  Mine was:
 
 ```shell
 c147e0b0386f50bc62c39ddeb422633aae6104093f28aa1bfc98fc18243c860b
@@ -354,7 +354,7 @@ But is a web server running?  We can test that by opening up a web browser and g
 
 If you see the Nginx welcome screen congratulations!  You are up and running with your first container.
 
-#### Stoping Containers
+#### Stopping Containers
 
 It is easy to forget which containers are running on your system.  To check, use the following command:
 
@@ -385,7 +385,7 @@ And you can test that the web server is stopped by going to `localhost:8080` alt
 
 #### Removing Containers
 
-Although the container has stopped it has not been removed from your system.  To list containers on the local sytem run `ps` with the `-a` flag:
+Although the container has stopped it has not been removed from your system.  To list containers on the local system run `ps` with the `-a` flag:
 
 ```shell
 docker ps -a
@@ -400,7 +400,7 @@ c147e0b0386f        nginx               "nginx -g 'daemon of…"   28 minutes ag
 ce91ec7aa627        hello-world         "/hello"                 38 minutes ago      Exited (0) 38 minutes ago                       modest_mestorf
 ```
 
-These are the three containers we have started so far: two `nginx` (one detatched, one not) and `hello-world`.  To remove a container we use the `rm` command:
+These are the three containers we have started so far: two `nginx` (one detached, one not) and `hello-world`.  To remove a container we use the `rm` command:
 
 ```shell
 docker rm modest_mestorf
@@ -422,7 +422,7 @@ Below are the Docker commands we have covered so far.
 | ----- | ----- |
 | `docker pull <name>` | *Pulls the named Docker image from the server to the local repository allowing it to be instantiated.* |
 | `docker run <name>` | *Starts running an instance of the image `name` as a container.* |
-| `docker run -d <name>` | *Starts running an instance of the image `name` as a detatched container.* |
+| `docker run -d <name>` | *Starts running an instance of the image `name` as a detached container.* |
 | `docker run -d -p <local>:<container> <name>` | *Starts a container, mapping the local port `local` to the container port `container`*. |
 | `docker run -d --rm <name>` | *Starts running an instance of `name` which will be automatically removed when the container is stopped.* |
 | `docker ps` | *Lists running containers.* |
@@ -432,9 +432,9 @@ Below are the Docker commands we have covered so far.
 
 ### Writing Dockerfiles
 
-Our aim with Docker is to run our applications within containers.  To do this, we need to create our own Docker images, which we do by writing a **Dockerfile**.  A Dockerfile specifies the setup for a image which we can create containers from, and the syntax is simple.  Writing Dockerfiles falls into *infrastructure as code* since we can define our execution infrastructure in code files (Dockerfiles).
+Our aim with Docker is to run our applications within containers.  To do this, we need to create our own Docker images, which we do by writing a **Dockerfile**.  A Dockerfile specifies the set-up for a image which we can create containers from, and the syntax is simple.  Writing Dockerfiles falls into *infrastructure as code* since we can define our execution infrastructure in code files (Dockerfiles).
 
-To start, create a new folder called `test-dockerfile` in the filesystem and open the terminal (Powershell, command prompt) in that folder.  Now create a file called `Dockerfile` and use the following:
+To start, create a new folder called `test-dockerfile` in the file-system and open the terminal (Powershell, command prompt) in that folder.  Now create a file called `Dockerfile` and use the following:
 
 ```docker
 FROM ubuntu:latest
@@ -496,7 +496,7 @@ If so, congratulations!  You have created and run your first personal Docker ima
 
 ## Docker in IntelliJ
 
-Thankfully, there is a Docker plugin for IntelliJ.  To install, in IntelliJ, select **File** then **Settings**, and select **Plugins** on the right-hand side:
+Thankfully, there is a Docker plug-in for IntelliJ.  To install, in IntelliJ, select **File** then **Settings**, and select **Plugins** on the right-hand side:
 
 ![IntelliJ Settings](img/intellij-settings.png)
 
@@ -504,7 +504,7 @@ Click the **Install Jetbrains plugin...** button to open the following window:
 
 ![IntelliJ Plugins](img/intellij-plugins.png)
 
-Find **Docker Integration** (as shown) and click **Install**.  The plugin will install, and when done a **Restart IntelliJ** button will appear.  Click on it to return to the Settings window, and click **OK**.  IntelliJ will prompt for a restart, so click **Restart**.
+Find **Docker Integration** (as shown) and click **Install**.  The plug-in will install, and when done a **Restart IntelliJ** button will appear.  Click on it to return to the Settings window, and click **OK**.  IntelliJ will prompt for a restart, so click **Restart**.
 
 Once IntelliJ has restarted we are ready to complete the Docker integration.  Select **File** then **Settings**.  Under **Build, Execution, Deployment**, find the **Docker** section:
 

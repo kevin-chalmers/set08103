@@ -1,5 +1,5 @@
 # Lecture 02: Team Forming
 
-- [ ] Need to add something on Scrum.
+- [ ] TODO: Need to add something on Scrum.
 
 This lecture will be used to form the teams to undertake the assessment.

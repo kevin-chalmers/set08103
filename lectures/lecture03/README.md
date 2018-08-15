@@ -158,7 +158,7 @@ The following section will step through numerous principles in Git with the rele
 
 ### Working with Repositories
 
-Git works with *repositories*.  A repository is the code and history of a code-base.  Every time you work with Git you are working within a repository: your local repository, and some remote repositories.  That is a key idea with Git - your local machine working copy is also a repository.
+Git works with *repositories*.  A repository is the code and history of a code-base.  Every time you work with Git you are working within a repository: your local repository.  You may also work with some remote repositories.  That is a key idea with Git - your local machine working copy is also a repository.
 
 You can create your local repository in one of two ways:
 
@@ -171,9 +171,97 @@ When you *clone* a repository you also set up a link to the remote repository ca
 
 There is a special version of empty initialisation: `git init --bare`.  This is usually used on a server that is used to coordinate teams.  In general, you should *not* use `git init --bare`.
 
-### Submitting Changes
+### Working with Changes
+
+A Git repository is a folder which contains a hidden folder (`.git`).  The hidden folder contains the history and other status information of the repository.  Otherwise, the repository just looks like a folder - there is nothing extra managed.
+
+Whenever you add, remove or edit a file in the repository, Git can tell based on the information in the hidden `.git` folder.  Any changes at this point are not saved by Git.  To save the changes, we have to go through two steps:
+
+1. **Add** the changes we want to save at this point.
+2. **Commit** the changes to the repository.
+3. (optional) **Push** the changes to the remote(s).
+
+#### Adding Changes
+
+Before step 1 (adding changes) we are in a working files state.  We are editing files and working on our code but not ready to store the changes long term.  This is usually because we are not finished whatever change we have in mind.
+
+Once we are ready to add the changes we can use the following command:
+
+```shell
+git add <filename>
+```
+
+We can name each file individually, name a folder, or use a wildcard (e.g., `git add *`).  In any case, we have moved changes from the working area to the **staging area**.
+
+We can see files that are different from the currently Git version or staged using the following command:
+
+```shell
+git status
+```
+
+`git status` is useful for keeping track of the work we are doing.  You should use it often to remind yourself what you are doing.
+
+Once we have added all the changes we want for a particular feature/task, we create a **commit**.
+
+#### Committing Changes
+
+A **commit** is just a group of changes.  A commit operation takes the changes currently in the staging area and creates a new **snapshot** of our code at this point.  Git stores this snapshot in its history.  To create a commit, we use the following:
+
+```shell
+git commit -m "<message>"
+```
+
+The `message` should be informative about what the changes are.  A `message` should ideally be simple and to the point (e.g., do not use the word *and* if you can avoid it).  The messages allow others to see the changes made and (hopefully) why, thus providing more information to your fellow software developers.
+
+A commit is a store piece of history, and Git keeps track of all the history in a repository.  This actually has an advantage - *you can ask Git to go back to a previous version*.  In simple terms, Git provides you with a big rewind button that allows you to go back to previous versions of your code, so as advice:
+
+- Create commits often, from simple little changes that don't break the build.
+- Experiment in the comfort that you can always go back to a previous working version of your application.
+
+The big idea is to **commit often**.  Commits allow you to **checkout** a previous commit if anything goes wrong.  *But always ensure your commit works!*
+
+#### Pushing Changes
+
+Any commit created on your machine is only stored locally.  So, although you have been keeping a good record of your changes locally, they can not be seen by others.  Your changes have also not been stored on a remote server.  To do this, we use the `git push` command:
+
+```shell
+git push
+```
+
+`git push` will push the current branch (e.g., `master`) to the current remote (normally `origin`).  You can be more explicit with a push:
+
+```shell
+git push <remote> <branch>
+```
+
+For example, it is common to see `git push origin master`.  This will push your local version of branch `master` to the `origin` remote.
+
+There are other options with `git push` such as:
+
+- `git push --force` forces your local branch version to become the remote's.  **Not recommended!**
+- `git push --all` pushes updates to all local branches to the remote.  Useful shortcut if needed.
 
 #### Diffs
+
+Git keeps track of history by storing the *differences* between files.  We can simplify a difference to four types:
+
+1. The addition of a new file and its initial contents.
+2. The removal of a file.
+3. The addition of new lines to a file.
+4. The removal of lines from a file.
+
+If you edit a line it is considered a new line addition and the old line being removed.  To see the changes made, we can use the `git diff` command:
+
+![Git Difference Between Two Files](img/diff.png)
+
+As Git tracks changes as line additions and removals, it is very good at monitoring text files (such as code files).  It is very bad at binary data such as executables and images.  A couple of rules:
+
+- **Do not store executables in your Git repository** - even those built by the project.
+- **Be careful when working with media files** - only store versions that will not change.
+
+The `.git` folder contains all the changes, and so a repository can become large if you do not behave yourself.  If your repository becomes many megabytes in size you are probably tracking something you shouldn't.
+
+#### Going Backwards
 
 ### Fetching and Merging Changes
 
@@ -183,12 +271,21 @@ There is a special version of empty initialisation: `git init --bare`.  This is 
 
 ### Remotes
 
+### Ignoring Files
+
 ### A Primitive Git Workflow
+
+1. Modify files to make a working change.
+2. Add changes to the staging area with `git add`.
+3. Create a commit from the changes with `git commit`.
+4. Send the changes to the remote with `git push`.
 
 ### Summary
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Git_operations.svg#/media/File:Git_operations.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/1200px-Git_operations.svg.png" alt="Git operations.svg"></a><br>By <a href="//commons.wikimedia.org/wiki/User:Duesentrieb" title="User:Duesentrieb">Daniel Kinzler</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by/3.0" title="Creative Commons Attribution 3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=25223536">Link</a></p>
 
 ## Teminology of Git
+
+## Gitflow Workflow / Collaboration Model
 
 ## Summary

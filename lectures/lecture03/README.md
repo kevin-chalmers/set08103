@@ -259,13 +259,158 @@ As Git tracks changes as line additions and removals, it is very good at monitor
 - **Do not store executables in your Git repository** - even those built by the project.
 - **Be careful when working with media files** - only store versions that will not change.
 
-The `.git` folder contains all the changes, and so a repository can become large if you do not behave yourself.  If your repository becomes many megabytes in size you are probably tracking something you shouldn't.
+The `.git` folder contains all the changes, and so a repository can become large if you do not behave yourself.  If your repository becomes many megabytes in size you are probably tracking something you should not be.
+
+#### Git Log
+
+Once we have some commits, we can ask Git to provide us with the history of commits in the **Git Log**.  To open the log use the `log` command:
+
+```shell
+git log
+```
+
+`log` opens the Git log file, for example:
+
+```shell
+commit e426d2c1b1aa7f732c5b863708de4e3a29da3b52 (HEAD -> feature/lecture03, origin/feature/lecture03)
+Author: Kevin Chalmers <k.chalmers@napier.ac.uk>
+Date:   Wed Aug 15 16:32:59 2018 +0100
+
+    Almost completed section on adding changes to lecture 03.
+
+commit b53479816d69a0d6254f9501d636f6b6e75460fb
+Author: Kevin Chalmers <k.chalmers@napier.ac.uk>
+Date:   Thu Aug 9 15:23:16 2018 +0100
+
+    Added working with repositories section.
+
+commit b9001d50cc976e70a150d129fe5aeb9e67e8c210
+Author: Kevin Chalmers <k.chalmers@napier.ac.uk>
+Date:   Thu Aug 9 15:11:29 2018 +0100
+
+    Spell check.
+
+commit dcbc34b2d990f768317c7e7a684b1de037ac199c
+Author: Kevin Chalmers <k.chalmers@napier.ac.uk>
+Date:   Thu Aug 9 14:31:58 2018 +0100
+```
+
+The hex value is the [SHA-1](https://en.wikipedia.org/wiki/SHA-1) hash of the commit which Git generates automatically for every commit you make. The SHA-1 hash is after the word **commit**.
+
+A better way to use `log` is to display simple information.  For example, we can provide the information on one line
+
+```shell
+git log --pretty=oneline
+```
+
+Which provides the following:
+
+```shell
+e426d2c1b1aa7f732c5b863708de4e3a29da3b52 (HEAD -> feature/lecture03, origin/feature/lecture03) Almost completed section on adding changes to lecture 03.
+b53479816d69a0d6254f9501d636f6b6e75460fb Added working with repositories section.
+b9001d50cc976e70a150d129fe5aeb9e67e8c210 Spell check.
+dcbc34b2d990f768317c7e7a684b1de037ac199c Added intro to git.
+bc03649d4aee053ddd3174676484ee7c6aaaafb0 Fix to image file.
+9dbd514068d6af135b55e8e7e49181c38e831b19 Fix to image file.
+```
+
+The SHA-1 hash can be shortened to a more usable version as follows:
+
+```shell
+git log --pretty="%h %s"
+```
+
+The `%h` will provide the short SHA-1 hash, and `%s` the commit message:
+
+```shell
+e426d2c Almost completed section on adding changes to lecture 03.
+b534798 Added working with repositories section.
+b9001d5 Spell check.
+dcbc34b Added intro to git.
+bc03649 Fix to image file.
+9dbd514 Fix to image file.
+```
 
 #### Going Backwards
 
+Once you have a chain of commits it is possible to go backwards through our work.  There are various methods to return to previous states of the repository - some of which can be destructive.  We will look at the basic approach which is non-destructive.
+
+Git provides a command - `checkout` - that allows you to revert to a previous commit.  It has the following form:
+
+```shell
+git checkout <hash>
+```
+
+The `<hash>` value is the SHA-1 hash from the log.  You can use the shortened hash:
+
+```shell
+git checkout b9001d5
+```
+
+Checking out previous commits allows you to revert to a previous repository state which may fix errors with your work.  The ability to go backwards is one of the key features of version control.
+
 ### Fetching and Merging Changes
 
+When multiple people are working on a single code-base we often want to take their changes and merge them into our own.  There are essentially two methods to do this:
+
+#### Fetch and Merge
+
+We can fetch the current version of the remote repository using the `fetch` command:
+
+```shell
+git fetch <remote>
+```
+
+`<remote>` is the name of the remote repository you want to fetch from - in the initial case this will likely be `origin`:
+
+```shell
+git fetch origin
+```
+
+We can also fetch from different branches or from everything.
+
+A `fetch` operation does not do anything to change the files you are working with.  `fetch` simply gets the remote history.  To see any changes you have to `merge`:
+
+```shell
+git merge <branch>
+```
+
+To start with you will likely use `origin/master` to merge the `master` branch from the `origin` remote:
+
+```shell
+git merge origin/master
+```
+
+You will now be able to see any changes made to the remote repository in your local files.
+
+Merging with `merge` is also how you combine changes from one branch into another.  For example, say you are working on a `feature` branch and want to merge the changes there into the main `master` branch.  To do so we must perform the following steps:
+
+1. Commit any changes to the `feature` branch.
+2. Checkout the `master` branch.
+3. Merge the `feature` branch into the `master` branch.
+
+The commands for 2. and 3. are:
+
+```shell
+git checkout master
+git merge feature
+```
+
+We will look at branching presently.
+
+#### Pulling
+
+Fetching and merging provide a fine-grained control over managing changes, but often you just want to get the most recent updates without any worry.  To do this, we use the `pull` command:
+
+```shell
+git pull
+```
+
+And that is it.  `pull` will perform the fetching and merging (if it can) for you.  Generally, as a beginner you will find `pull` provides the functionality you need.
+
 #### Managing Conflicts
+
+Problems arise when you have changed a file that has also been changed by someone else.  Managing conflicts can be a tricky business, and rather than try to explain it here we will provide a [reference](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/) for you to read.
 
 ### Branching
 

@@ -30,6 +30,8 @@ At the end of this lecture you will be able to:
 - [ ] **Define** what *version control is*.
 - [ ] **Describe** the *key differences* between *client-server* and *distributed VCS*.
 - [ ] **Define** what *Git is*.
+- [ ] **List** the basic *Git commands*.
+- [ ] **Define** the *Gitflow workflow*.
 
 ## What is Version Control?
 
@@ -414,9 +416,91 @@ Problems arise when you have changed a file that has also been changed by someon
 
 ### Branching
 
+A powerful technique of version control is the ability to create different *branches*.  A **branch** is a new *version* of the code that is independent to other branches, including the main one.  For example:
+
+![Git Branches](img/branches.png)
+
+Here, four branches are in operation.  The one on the left will be `master`.  From this two further branches were made, and from one of these a further branch, leading to four.  Each have their own commits and therefore history.
+
+To create a branch we use the following command:
+
+```shell
+git branch <name>
+```
+
+This will create a new branch with the given name from the current state of the repository.  We then need to switch to that branch:
+
+```shell
+git checkout <name>
+```
+
+This will switch to (`checkout`) the new branch, and allow you to work in a new unique instance of the codebase.  You can do both operations at once:
+
+```shell
+git checkout -b <name>
+```
+
+The `-b` flag also creates a branch while switching.
+
+Once you have a new branch and do some work on it, we will want to **merge** these changes back into single branch - this is the collaborative nature of version control.  To combine branches we do the following:
+
+```shell
+git merge <name>
+```
+
+This will merge the named branch into the current branch.  We can now define a typical branching workflow:
+
+1. Create a new branch and check it out - `git checkout -b my_branch`.
+2. Do some work.
+3. Add necessary changes to the commit - `git add *` for example.
+4. Commit the changes - `git commit -m "Did some changes"`.
+5. Checkout the original branch - `git checkout master` for example.
+6. Perform the merge - `git merge my_branch`.
+7. Commit the new changes to the original branch - `git commit -m "Merged with my_branch"`.
+8. Push the changes to the main remote - `git push`.
+
+Steps 2-4 are repeated until you are ready to do the final merge - **do not merge every small change**.  The point is that changes are isolated and kept to the branch they are being undertaken in.
+
 ### Remotes
 
+A final command we will look at is `git remote`.  This allows us to view or add remotes.  A remote is just a remote repository - such as a GitHub one.  Remote repositories are used for collaboration..  To view the current remote we use the raw command:
+
+```shell
+git remote
+```
+
+Which will display the name of the current remote, e.g.,:
+
+```shell
+origin
+```
+
+We can also list all current remotes:
+
+```shell
+git remote -v
+```
+
+For example:
+
+```shell
+origin  https://github.com/kevin-chalmers/set08103.git (fetch)
+origin  https://github.com/kevin-chalmers/set08103.git (push)
+```
+
+And to add a new remote we use the following command:
+
+```shell
+git remote add <name> <url>
+```
+
+This will add a new remote with the given name using the given URL.  We can now push and pull from this remote using the given name.
+
 ### Ignoring Files
+
+A final piece of functionality is ignoring files.  It is often the case that the build system and other functions will generate files we do not want to store in our repository.  Binary files are such an example.
+
+To ignore files, we specify a `.gitignore` file.  This file uses wildcards, folder names, etc. to specify files to ignore.  We look at examples in the [lab](../../labs/lab01).
 
 ### A Primitive Git Workflow
 
@@ -427,10 +511,60 @@ Problems arise when you have changed a file that has also been changed by someon
 
 ### Summary
 
+The following diagram attempts to summarise some of the concepts we have looked at in this lecture:
+
 <p><a href="https://commons.wikimedia.org/wiki/File:Git_operations.svg#/media/File:Git_operations.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/1200px-Git_operations.svg.png" alt="Git operations.svg"></a><br>By <a href="//commons.wikimedia.org/wiki/User:Duesentrieb" title="User:Duesentrieb">Daniel Kinzler</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by/3.0" title="Creative Commons Attribution 3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=25223536">Link</a></p>
 
-## Teminology of Git
+We have covered the following commands:
+
+| Command | Description |
+| ------- | ----------- |
+| `init`  | Initialises a new Git repository. |
+| `clone` | Clones an existing Git repository. |
+| `add`   | Adds files to a the staging area for a commit. |
+| `status` | Gets the current status of the Git repository. |
+| `commit` | Creates a new commit (checkpoint) in the code base. |
+| `push`  | Pushes changes (commits) to a remote. |
+| `diff`  | Provides information on differences between commits. |
+| `log`   | Provides history of Git commits. |
+| `checkout` | Switches to a given branch or commit. |
+| `fetch` | Fetches changes from a remote repository. |
+| `merge` | Merges changes from another branch into the current one. |
+| `pull`  | Fetches and merges changes. |
+| `branch` | Creates a new branch. |
+| `remote` | Allows working with (e.g., adding, listing) remotes for the current repository. | 
 
 ## Gitflow Workflow / Collaboration Model
 
+To wrap-up we will look at a basic Git workflow called the **Gitflow Workflow**.  This workflow defines a number of different branches:
+
+| Branch | Description |
+| ------ | ----------- |
+| `master` | The main branch. |
+| `develop` | The main development branch - work is normally undertaken here. |
+| `feature` | The development of an actual feature, e.g., `feature/get-details`. |
+| `release` | Actual releases are tagged here. |
+| `hotfix` | Fixes to releases are undertaken here. |
+
+The basic idea of the Gitflow is as follows:
+
+* The initial repository has the `master` branch.
+* `develop` is created from the `master` branch.
+* `release` is created from the `develop` branch.
+* `feature` is created from `develop`.
+* When a `feature` is completed, it is merged back into `develop`.
+* When enough features are completed, a new release is created on the `release` branch.
+* Releases are mirrored on the `master` branch.
+* Problems to releases are fixed on the `hotfix` branches.
+
+This workflow allows a good understanding of the work undertaken, allows easy collaboration (each person works on a `feature` branch), and allows changes to be isolated to keep the `master` branch clean.  We will implement the Gitflow workflow in the [lab](../../labs/lab02).
+
 ## Summary
+
+We have covered a lot in this lecture:
+
+- Defined what version control is.
+- Described the key differences between client-server and distributed VCS.
+- Defined what Git is.
+- Listed the basic Git commands.
+- Defined the Gitflow workflow.

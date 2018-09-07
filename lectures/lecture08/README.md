@@ -1,1 +1,1 @@
-# Lecture 08: Pull-based versus Push-based Planning
+# Lecture 08: Kanban

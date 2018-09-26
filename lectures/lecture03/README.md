@@ -463,7 +463,7 @@ Steps 2-4 are repeated until you are ready to do the final merge - **do not merg
 
 ### Remotes
 
-A final command we will look at is `git remote`.  This allows us to view or add remotes.  A remote is just a remote repository - such as a GitHub one.  Remote repositories are used for collaboration..  To view the current remote we use the raw command:
+A final command we will look at is `git remote`.  This allows us to view or add remotes.  A remote is just a remote repository - such as a GitHub one.  Remote repositories are used for collaboration.  To view the current remote we use the raw command:
 
 ```shell
 git remote

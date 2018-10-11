@@ -1,6 +1,6 @@
 # Lab 02: Continous Integration Setup
 
-In this lab we will automate our build process using [Travis CI](https://travis-ci.org/).  CI is [Continous Integration](https://en.wikipedia.org/wiki/Continuous_integration), a software engineering method where we ensure our local development software versions are merged into the mainline code several times a day.  There are several CI approaches available, but Travis is easy to plug into our software production pipeline.
+In this lab we will automate our build process using [Travis CI](https://travis-ci.org/).  CI is [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration), a software engineering method where we ensure our local development software versions are merged into the mainline code several times a day.  There are several CI approaches available, but Travis is easy to plug into our software production pipeline.
 
 ## Behavioural Objectives
 
@@ -12,7 +12,7 @@ At the end of the last lab we had a working application that we could deploy to 
 
 - A **pom.xml** Maven build file, which we have not explored further yet.
 - An **App.java** code file that contains our current code which is just a *Hello World* example.
-- A **Dockerfile** that specifies how to run our application in a seperate Docker container.
+- A **Dockerfile** that specifies how to run our application in a separate Docker container.
 
 We have three other files in our repository:
 
@@ -71,7 +71,7 @@ Hopefully everything has worked and we are back to the point we left off at last
 
 ## Adding Travis CI to Your Repository
 
-With our project back on our local machine we can setup Travis CI.  This is automated via the [Travis CI website](https://travis-ci.org/).  Go there now:
+With our project back on our local machine we can set-up Travis CI.  This is automated via the [Travis CI website](https://travis-ci.org/).  Go there now:
 
 ![Travis CI Website](img/travis-ci.png)
 
@@ -198,13 +198,13 @@ Go to your Travis CI dashboard for the repository and wait for the build to comp
 
 ## Setting up Gitflow Workflow
 
-Our next step is to setup our workflow.  This is our approach to managing seperate features and collaborators in our project.  [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is one such workflow that works well with Git.  Gitflow is examine further in [Lecture 02](../../lectures/lecture02).  To work with Gitflow we manage several brances:
+Our next step is to set-up our workflow.  This is our approach to managing separate features and collaborators in our project.  [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is one such workflow that works well with Git.  Gitflow is examine further in [Lecture 02](../../lectures/lecture02).  To work with Gitflow we manage several branches:
 
 - **master** which is the main Git branch.  This is created automatically when a Git repository is created.  Only main releases are tracked in this branch.
 - **develop** is the integration branch.  Features are merged into this branch as they are completed. It is a *feature integration* branch.
 - **feature** branches are where new features are worked on before integration with with `develop`.
 - **release** is where releases are made.  A release is normally a collection of features, or a set point in time.  Note that a release must be a working version.  The `release` branch comes from a version of `develop`.  `master` is a version of `release`.
-- **hotfix** branches are *maintenance* ones based on `master`.  We are fixing a poduction version of the code, so rather than working from `develop` we work from `master`.
+- **hotfix** branches are *maintenance* ones based on `master`.  We are fixing a production version of the code, so rather than working from `develop` we work from `master`.
 
 ### Develop Branch
 
@@ -214,7 +214,7 @@ The first step in setting up Gitflow is the creation of a `develop` branch in ou
 
 Select **New Branch** and call the branch **develop**.  Make sure the **Checkout branch** checkbox is ticked.
 
-The `develop` branch only exists on the local system.  To add it to GitHub we have to perform a push.  Do this now.  From IntelliJ, **VCS**, **Git** then **Push**. Click **Push** and the branch will be added to GitHub. You can confirm this on GitHub by opening the branches dropdown, refreshing the page if you are currently on it:
+The `develop` branch only exists on the local system.  To add it to GitHub we have to perform a push.  Do this now.  From IntelliJ, **VCS**, **Git** then **Push**. Click **Push** and the branch will be added to GitHub. You can confirm this on GitHub by opening the branches drop-down, refreshing the page if you are currently on it:
 
 ![GitHub Branches](img/github-branches.png)
 
@@ -237,7 +237,7 @@ And add this to GitHub:
 2. Create commit.
 3. Push commit to GitHub.
 
-And if you go to the dashboard for the repository on GitHub you will see that nothing has changed.  That is because we have pushed to our `develop` branch, not the `master` branch.  You can see the updates by switching to the `develop` branch on GitHub using the branches dropdown from earlier:
+And if you go to the dashboard for the repository on GitHub you will see that nothing has changed.  That is because we have pushed to our `develop` branch, not the `master` branch.  You can see the updates by switching to the `develop` branch on GitHub using the branches drop-down from earlier:
 
 ![Develop Branch Status on GitHub](img/github-develop-status.png)
 
@@ -249,7 +249,7 @@ To end this lab we will add a new feature to our application - database support 
 2. Start a new feature in our project.
 3. Add MongoDB support to our application.
 4. Link our container with the MongoDB container.
-5. Test that eveything works.
+5. Test that everything works.
 6. Merge the feature into our `develop` branch.
 7. Create a release.
 8. Add a version.
@@ -643,8 +643,8 @@ And we are done.  We have done a lot, but still not much code.  We have built ou
 Before stepping away from your machine there are some things you should do:
 
 1. Stop any running Docker containers.
-2. Delete any uneeded containers.
-3. Delete any uneeded images.
+2. Delete any unneeded containers.
+3. Delete any unneeded images.
 4. Ensure any changes have been pushed.
 
 With that done, you can happily walk away from the machine.

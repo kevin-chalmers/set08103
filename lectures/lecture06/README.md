@@ -1,3 +1,5 @@
-# Lecture 06: Defining Issues and Trackin Issues
+# Lecture 06: The Three Ways - Underpinning Principles of DevOps
 
-Link to WIP and workflow
+Concepts of WIP and time to deliver.
+
+GitFlow workflow

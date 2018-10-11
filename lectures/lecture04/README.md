@@ -1,3 +1,2 @@
-# Lecture 04: Continous Integration Tools
+# Lecture 04: Lean Software Development
 
-Basically talk through travis.

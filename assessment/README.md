@@ -39,7 +39,7 @@ The meetings will take place during the lab sessions.  Each group will be given 
 - **Being late** for the meeting or **not being ready** when the meeting starts will result in the grade for that review being capped at 40%.
 - **Not attending** the meeting will mean the code review will be marked at 0%.
 
-**All team members** should attend the code review, however commitments and other considerations will be taken into account.  **Individuals attendence at reviews will be monitored** to ensure the team is contributing collectively to the project.
+**All team members** should attend the code review, however commitments and other considerations will be taken into account.  **Individuals attendance at reviews will be monitored** to ensure the team is contributing collectively to the project.
 
 #### Code Review 1
 
@@ -47,11 +47,11 @@ The meetings will take place during the lab sessions.  Each group will be given 
 
 ##### Checklist Submission 1 (16% of CW mark)
 
-- [ ] GitHub project for coursework setup.
+- [ ] GitHub project for coursework set-up.
 - [ ] MongoDB integrated into project.
 - [ ] Project builds to self-contained JAR with Maven.
-- [ ] Dockerfile for project setup and works.
-- [ ] Travis CI for project setup and build is working using JAR, Docker, and MongoDB on Travis CI.
+- [ ] Dockerfile for project set-up and works.
+- [ ] Travis CI for project set-up and build is working using JAR, Docker, and MongoDB on Travis CI.
 - [ ] Correct branches for GitFlow workflow created - includes `master`, `develop`, and `release` branches.
 - [ ] Correct usage of branches.
 - [ ] First release created on GitHub.
@@ -77,7 +77,7 @@ The meetings will take place during the lab sessions.  Each group will be given 
 - Metrics from GitHub.  Also used to assess individual contribution.
 - Code quality including comments.
 - Correct usage of branches.
-- Continous interation working.
+- Continuous integration working.
 - Project requirements met.
 
 #### Code Review 3
@@ -88,14 +88,14 @@ The meetings will take place during the lab sessions.  Each group will be given 
 
 - [ ] UML developed.
 - [ ] Unit tests defined.
-- [ ] TDD setup.
+- [ ] TDD set-up.
 
 ##### Graded Criteria Submission 3
 
 - Metrics from GitHub.  Also used to assess individual contribution.
 - Code quality including comments.
 - Correct usage of branches.
-- Continous interation working.
+- Continuous integration working.
 - Kanban/Project Board being used.
 - Acceptance tests being met.
 - Project requirements met.
@@ -107,14 +107,14 @@ The meetings will take place during the lab sessions.  Each group will be given 
 ##### Checklist Submission 4
 
 - [ ] Deployment working.
-- [ ] Bug reporting system setup.
+- [ ] Bug reporting system set-up.
 
 ##### Graded Criteria Submission 4
 
 - Metrics from GitHub.  Also used to assess individual contribution.
 - Code quality including comments.
 - Correct usage of branches.
-- Continous interation working.
+- Continuous integration working.
 - Kanban/Project Board being used.
 - Acceptance tests being met.
 - Unit tests being met.

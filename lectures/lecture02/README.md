@@ -1,6 +1,6 @@
 # Lecture 02: Scrum and Team Forming
 
-This lecture will be used to form the teams to undertake the assessment.  The material presented will focus on Scrum and how Scrum can be initiated in your project.
+This lecture will be used to form the teams to undertake the assessment.  The material presented will focus on Scrum and how Scrum can be used in your project.
 
 ## Behavioural Objectives
 
@@ -12,16 +12,16 @@ This lecture will be used to form the teams to undertake the assessment.  The ma
 
 ## What is Scrum?
 
-Scrum is a project management and group working philosophy.  For project management, the idea is simple: check your project regularly and see if it is heading in the right direction.  It is that simple, but surprisingly few people try to manage a project this way.  But the idea has been around for a while:
+Scrum is a project management and group working philosophy.  For project management, the idea is simple: check your project regularly to see if it is heading in the right direction.  It is that simple, but few people manage a project this way.  The idea has been around for a while:
 
 - *"In preparing for battle I have always found that plans are useless, but planning is indispensable."* Dwight D. Eisenhower.
 - *"Plans are of little importance, but planning is essential."* Winston Churchill.
 - *"All human plans [are] subject to ruthless revision by Nature, or Fate, or whatever one preferred to call the powers behind the Universe."* Arthur C. Clarke.
 - *"Planning is useful.  Blindly following plans is stupid."* Jeff Sutherland, co-creator of Scrum.
 
-Basically, a plan is never right.  It will be wrong from the start.  So you need to constantly change the plan, so why not build that into your process by monitoring your plan.
+A plan is never right.  It will be wrong from the start.  So you need to constantly change the plan, so why not build that into your process by monitoring your current plan.
 
-Scrum works in iterations, called **Sprints**.  A Sprint has a fixed length of time (typically a week) where a set of tasks will be completed.  The team decide how which tasks they will complete in a week and then analyse how well they did at the end of the week.  This allows a team to work towards a goal in increments.  The team need to *know the goal*, *see the goal*, and *work incrementally towards the goal.*
+Scrum works in iterations, called **Sprints**.  A Sprint has a fixed length of time (typically a week) where a set of tasks will be completed.  The team decide how which tasks they will complete in a week and then analyse how well they did at the end of the week.  This allows a team to work towards a goal in increments.  The team need to *know the goal*, *see the goal*, and *work incrementally towards the goal.*  This is as far as you plan in detail.
 
 And as a plan is always wrong, you will constantly analyse the work to be done.  Unforeseen circumstances will arise, so to quote Jeff Sutherland: *"Never forget: the map is not the terrain."*
 
@@ -34,21 +34,21 @@ Scrum changes how we approach work.  It asks the questions:
 
 **You should constantly ask these questions when working on a project.**
 
-Scrum's core ethos of change is that we no longer look for blame and fault when projects go wrong.  It aims to get teams working towards the goal by rewarding the behaviour of working together and getting work done.
+Scrum's core ethos of change is that we no longer look for blame and fault when projects go wrong.  It aims to get teams working towards the goal by rewarding the behaviour of collaboration and getting work done.
 
-When selecting tasks, the team prioritise tasks by what returns the most value to the customer.  This requires constant communication with the customer.  If done well, the team deliver a product quickly that delivers the majority of the value quickly.  The [*Pareto Principle*](https://en.wikipedia.org/wiki/Pareto_principle) tells us that 80% of the value comes from 20% of the features.  If we can deliver that 20% first, we provide the most value to the customer.
+When selecting tasks to work on, the team prioritises by what returns the most value to the customer.  This requires constant communication with the customer.  If done well, the team deliver a product that delivers the majority of the value quickly.  The [*Pareto Principle*](https://en.wikipedia.org/wiki/Pareto_principle) tells us that 80% of the value comes from 20% of the features.  If we can deliver that 20% first, we provide the most value to the customer quickly.
 
-Scrum works using an **Inspect and Adapt** cycle.  We are constantly *inspecting* how we work, and then *adapting* based on observation.  We want to do work, try something, and see how we do.  We want to fail fast so we can fix our problems quickly.  Spot a mistake and fix it straight away.  Otherwise you you will pay for it in the future when you have forgotten the details.  Failure is one of the best lessons you can have.
+Scrum defines an **Inspect and Adapt** cycle.  We are constantly *inspecting* how we work, and then *adapting* based on that observation.  We want to do work, try something, and check how we do.  We want to fail fast so we can fix our problems quickly - *spot a mistake and fix it straight away*.  Otherwise you you will pay for the mistake in the future when you have forgotten the details of the error or work done.  Failure is one of the best teachers.
 
-Scrum also deals with waste.  Waste is a concept from lean, and we will look at Lean Software Development in [Lecture 4](../lecture04).  We will talk more about waste then.
+Scrum also deals with waste.  Waste is a concept from lean, and we will look at *Lean Software Development* in [Lecture 4](../lecture04).  We will talk more about waste then.
 
-Finally, work is changed by focusing on the team.  The job of management in the organisation is on freeing up the team and increasing the *flow of work through the system.*  Management need to remove obstructions from the team to improve effectiveness.  A standard management approach - adding manpower - has been [shown](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) to actually increase delivery time on software projects, and probably projects in general.
+Finally, work is changed by focusing on the team.  The job of management in the organisation is to free the team to increase the *flow of work through the system.*  Management need to remove obstructions from the team to improve their effectiveness.  A standard management approach - adding manpower - has been [shown](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) to increase delivery time on software projects, and likely projects in general.
 
 ### Work as a Reward
 
-Scrum rewards the team based on work effectively, not on its completion.  Goals and results should be celebrated, but they are short lived.  Work, and doing work, should be its own reward.  See the process as supporting how you work, making you life easier, and making you more effective.  That is the goal of Scrum.  The project will be delivered faster because you enjoy the work more.  And if you don't enjoy the work, Scrum has mechanisms built in to capture that and fix it.
+Scrum rewards the team based on work, not on its completion.  Goals and results should be celebrated, but they are short-lived.  Work, and doing work, should be its own reward.  See the process as supporting how you work, making your life easier, and making you more effective.  That is the goal of Scrum.  The project will be delivered faster because you enjoy the work more.  And if you don't enjoy the work, Scrum has mechanisms built in to capture that and fix it.
 
-It is a good point to repeat one of the mantras of the module: **education is not a competition.**  You will get far more out of the educational experience by working together and doing the learning.  Focusing just on grades will not make you as happy as enjoying the journey to get those good grades and learning from the experience working with others.
+It is a good point to repeat one of the mantras of the module: **education is not a competition.**  You will get far more out of the educational experience by working together and undertaking the learning.  Focusing just on grades will not make you as happy as enjoying the journey to get those good grades and learning from the experience working with others.
 
 ## Components of Scrum
 
@@ -62,15 +62,15 @@ In Scrum we use the following terminology:
 - Story Points.
 - Planning Poker.
 - Daily Standup.
-- Sprint Retrospective.
+- Sprint Review and Retrospective.
 
 ###  Product Backlog
 
-The Product Backlog is the list of all current tasks.  It is that easy.  You start off defining the all the tasks you can think of at the start.  We will look at defining tasks later.  The tasks need to be prioritised by the **Product Owner** to determine what tasks provide the most value quickly.
+The Product Backlog is the list of all currently identified tasks.  You start by defining all the tasks you can think of at the start of the project.  We will look at defining tasks later.  The tasks are prioritised by the **Product Owner** to determine which provide the greatest amount of value quickly to the customer.
 
 ### Task Board
 
-To keep track of your tasks we put all the tasks on sticky-notes and place then on a whiteboard, something as follows:
+To keep track of your tasks we write them on sticky-notes and place them on a whiteboard, something as follows:
 
 <a title="By Dr ian mitchell [CC BY-SA 2.5 
  (https://creativecommons.org/licenses/by-sa/2.5
@@ -83,7 +83,7 @@ We will look at Kanban in [Lecture 8](../lecture08) to provide more detail.   To
 3. In progress.
 4. Done (or *Closed Issues*).
 
-Tasks flow from the the Backlog to Done as they are completed.  There are plenty of online tools to achieve this.  We will use the one built into GitHub.  [Trello](https://trello.com/) is another popular tool.
+Tasks flow from the the Backlog to Done as they are completed.  There are many online tools to achieve this.  We will use the one built into GitHub.  [Trello](https://trello.com/) is another popular tool.
 
 ### User Stories
 
@@ -95,15 +95,15 @@ This story has a number of tasks associated with it.  We need to upload a file. 
 
 ### Sprints
 
-A Sprint is a period of time when you do work.  The typical length of time is a week.  At the end of the Sprint the product must have moved forward and be usable by the customer.  That is, the customer has to see new features added and completed so they can judge them.  If the product is not usable at the end of the Sprint you have a problem.  If a task is not fully finished at the end of the Sprint then it is not done - the effort was wasted in this Sprint and something else could have been developed and shown to the customer.
+A Sprint is a period of time when a team does work.  The typical length of time is a week.  At the end of the Sprint the product must have moved forward and be usable by the customer.  That is, the customer has to see new features added and completed so they can judge them.  If the product is not usable at the end of the Sprint you have a problem.  If a task is not fully finished at the end of the Sprint then it is not done - the effort was wasted in this Sprint and something else could have been developed and shown to the customer instead.
 
 ### Sprint Planning
 
-To plan a Sprint, the team selects tasks they believe they can complete during the Sprint.  This is selected from the prioritised task list.
+To plan a Sprint, the team selects tasks they believe they can complete during the Sprint.  These tasks are selected from the prioritised task list.
 
 ### Story Points
 
-Each task needs to be graded based on its estimated cost.  We don't talk about hours, days, or any other concept of time.  We are allocating points.  And points are a relative score.  For example, we could rate our tasks using animal sizes:
+Each task is scored based on an estimated cost.  We don't talk about hours, days, or any other concept of time.  We are allocating points.  And points are a relative score.  For example, we could rate our tasks using animal sizes:
 
 - Mouse.
 - Dog.
@@ -112,7 +112,7 @@ Each task needs to be graded based on its estimated cost.  We don't talk about h
 - Elephant.
 - Blue Whale.
 
-Humans cannot judge the time it will take to complete a task.  But they can compare tasks.  For example:
+Humans cannot judge the time it will take to complete a task.  But they can compare sizes really well.  For example:
 
 - Student can login (mouse).
 - Student can upload a file (dog).
@@ -128,15 +128,15 @@ Each of the sizes is given a value:
 - Elephant (8).
 - Blue Whale (13).
 
-This is the Fibonacci sequence, and has been found to be the best approach to estimate tasks.  And we use the entire team to estimate, because collectively you can come to a better estimate.  This is done via Planning Poker.
+This is the Fibonacci sequence, and has been found to be the best approach to estimate relative task size.  And we use the entire team to estimate, because collectively you can come to a better estimate.  Estimation is done via Planning Poker.
 
 ### Planning Poker
 
-Planning Poker doesn't use animals but numbers - you just need to remember what these numbers are.  We are comparing task size, not determining days of work.  Planning Poker card decks are available:
+Planning Poker doesn't use animals but numbers - you just need to remember what the numbers represent.  We are comparing task size, not determining days of work.  Planning Poker card decks are available:
 
 <a title="By Hkniberg at English Wikipedia (Transferred from en.wikipedia to Commons.) [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:CrispPlanningPokerDeck.jpg"><img width="256" alt="CrispPlanningPokerDeck" src="https://upload.wikimedia.org/wikipedia/commons/e/eb/CrispPlanningPokerDeck.jpg"></a>
 
-The process is as follows:
+The process is:
 
 1. Select a task.
 2. Everyone picks a card from their deck to score the task, but does not reveal it.
@@ -148,7 +148,7 @@ Remember - **this is an estimate**, and an estimate for a tiny part of the proje
 
 ### Daily Stand-up
 
-**At the same time every day** the team meets for 15 minutes.  Each person answers the following three questions:
+**At the same time every day** the team meets for up to 15 minutes.  Each person answers the following three questions:
 
 1. What did you do since the last stand-up?  
 2. What are you going to do before the next stand-up?  
@@ -177,16 +177,16 @@ The team then vote on which improvement to make and execute it in the next Sprin
 
 ## Scrum Team and Roles
 
-A team must have the necessary skills to get the work done.  A team should contain all the members needed to deliver the project/product, but should be seven people (plus or minus two) in size.  Any bigger creates too many communication channels.  Smaller teams (as you will have in the module) is fine for smaller projects.
+A team must have the necessary skills to get the work done.  A team should contain all the members needed to deliver the project/product, but should be seven people (plus or minus two) in size.  Any larger will create too many communication channels.  Smaller teams (as you will have in the module) is fine for smaller projects.
 
 By all skills, we mean everything.  Remember the DevOps intersection:
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Devops.svg#/media/File:Devops.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Devops.svg/1200px-Devops.svg.png" alt="Devops.svg"></a><br>By <a href="//commons.wikimedia.org/wiki/File:Devops.png" title="File:Devops.png">Devops.png</a>: <a href="//commons.wikimedia.org/w/index.php?title=User:Rajiv.Pant&amp;action=edit&amp;redlink=1" class="new" title="User:Rajiv.Pant (page does not exist)">Rajiv.Pant</a>
 derivative work: <a href="//commons.wikimedia.org/wiki/User:Wylve" title="User:Wylve">Wylve</a> - This file was derived from:&nbsp;<a href="//commons.wikimedia.org/wiki/File:Devops.png" title="File:Devops.png">Devops.png</a>:&nbsp;<a href="//commons.wikimedia.org/wiki/File:Devops.png" class="image"></a>, <a href="https://creativecommons.org/licenses/by/3.0" title="Creative Commons Attribution 3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=20202905">Link</a></p>
 
-IT Operations are part of your team.  They help you deliver your product.  Your team might include sales, admin, or other people.  The team needs all the skills for your product.
+IT Operations are part of your team.  They help you deliver your product.  Your team might include sales, admin, or other people.  The team needs all the skills for your product/project.
 
-Also, a team member should only be a member of that team.  No other.  If a team member is dividing their attention across multiple projects/products then they aren't committed to either.
+Also, a team member should only be a member of that one team.  No other.  If a team member is dividing their attention across multiple projects/products then they aren't committed to either.
 
 ### Being a Team Member
 
@@ -196,40 +196,40 @@ Key to successful Scrum is being a good member of the team.  It is working with 
 - **Mastery** of the what they are doing.
 - **Purpose**, or a reason why they are doing something.
 
-There are areas where actions taken are done for individual benefit for short-term benefit.  This is not a sustainable model as it does not consider what is beneficial for everyone.  It is harmful - individuals crashed the global economy in 2008 for personal, individual, short-term gain.  Having no thought for others is not good.
+There are areas where actions taken are for individual and short-term benefit.  This is not a sustainable model as it does not consider what is beneficial for everyone.  It is harmful - individuals crashed the global economy in 2008 for personal, individual, short-term gain.  Having no thought for others is not good.
 
-Carlo M. Cipolla, an economic historian, defined the [Laws of Stupidity](https://en.wikipedia.org/wiki/Carlo_M._Cipolla#Essays).
+Carlo M. Cipolla, an economic historian, defined the [Laws of Stupidity](https://en.wikipedia.org/wiki/Carlo_M._Cipolla#Essays).  Cipolla defined the following taxonomy:
 
 <a title="By Vincedevries [CC BY-SA 4.0 
  (https://creativecommons.org/licenses/by-sa/4.0
 )], from Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Cipolla-matrix.png"><img width="512" alt="Cipolla-matrix" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cipolla-matrix.png/512px-Cipolla-matrix.png"></a>
 
-Don't be a bandit in your team.  If you are only working for yourself you are not a team member.  Remember, *education is not a competition.*  Work together and you will learn more and get better results.
+Don't be a bandit.  If you are only working for yourself you are not a team member.  Remember, *education is not a competition.*  Work together and you will learn more and get better results in the long-term.  Industry wants team players, not individuals.
 
 Also, don't be a passive team member.  Passive means not engaging with the team and the work being undertaken.  It is not only lazy, but also hurts the rest of the team as they get annoyed and become less productive.  As a team, if passivity is spotted **it needs to be stopped immediately.**
 
-However, do not get caught in blaming others for perceived character traits.  This is the [**Fundamental Attribution Error**](https://en.wikipedia.org/wiki/Fundamental_attribution_error) and we all suffer from it.  If you make a mistake, you can provide external reasons for why it happened.  When others make mistakes, you will likely blame some characteristic of the person.  This is the Fundamental Attribution Error in practice.  Be aware of it and be supportive of others in the team.
+However, do not get caught in blaming others for perceived character traits.  Doing so is the [**Fundamental Attribution Error**](https://en.wikipedia.org/wiki/Fundamental_attribution_error) and we all suffer from it.  If you make a mistake, you can provide external reasons for why it happened.  When others make mistakes, you will likely blame some characteristic of the person.  This is the Fundamental Attribution Error in action.  Be aware of it and be supportive of others in the team.
 
-However, do not let a team member cause *emotional waste.*  This is generated by a team member acting in a way that winds up others and making them upset.  To quote Jeff Sutherland from *Scrum: The Art of Doing Twice the Work in Half the Time*: *"Don't be an asshole - and don't allow, abet, or accept that behaviour in others."*
+However, do not let a team member cause *emotional waste* generated by a team member acting in a way that winds up others and to make them upset.  To quote Jeff Sutherland from *Scrum: The Art of Doing Twice the Work in Half the Time*: *"Don't be an asshole - and don't allow, abet, or accept that behaviour in others."*
 
 ### Work-Life Balance
 
-There has been enough research done now to show a good work-life balance is more beneficial for individual productivity than the amount of work they do.  It goes back to the idea of a happy worker.  Happiness is a precursor to productivity and success, not vice-versa.
-
-You are not a good multi-tasker.  Do you know why?  Because no one is.  Again, all research points to the cost of multi-tasking.  Every time you switch tasks you lose time due to switching your brain from one task to another.  That time is never zero.  You also cannot physically do to things at once.  People actually multi-task because they are distracted and they have trouble controlling their impulse to do other activities.  They cannot control their distraction.
+There has been enough research done to show a good work-life balance is more beneficial for individual productivity than the amount of time they.  It goes back to the idea of a happy worker.  Happiness is a precursor to productivity and success, not vice-versa.
 
 While you are working (including planning) you are making decisions, and decisions take energy.  Again, research has shown that our ability to make clear good decisions degrades throughout the day.  You also degrade the ability to regulate yourself, leading to more errors.  So the more the work, the worse you work.
 
 And as you create errors, you create work.  Someone has to fix the error.  So the longer you work, the more potential you have to create errors that someone has to fix, meaning you eventually add no value in your effort, and perhaps cost the project.
 
-Finally, if your team requires people to overwork to deliver the project something has gone wrong.  Something is not working as it should.  If the team is jumping from one crisis to the next then they are not improving.  No one cares how many hours someone worked to deliver something.  The key is how quickly it was delivered and its quality.
+You are also not a good multi-tasker.  Do you know why?  Because no one is.  Again, all research points to the cost of multi-tasking.  Every time you switch tasks you lose time due to switching your brain from one task to another.  That time is never zero.  You also cannot physically do two things at once.  People multi-task because they are distracted and they have trouble controlling their impulse to do other activities.  They cannot control their distraction.  Be aware and focus on one task till it is done.
+
+Finally, if your team requires people to overwork to deliver the project something has gone wrong - something is not working as it should.  If the team is jumping from one crisis to the next then they are not improving.  No one cares how many hours someone worked to deliver something.  The key is how quickly it was delivered and its quality.
 
 ### Roles
 
 Scrum defines two roles within the team:
 
-1. The **Product Owner** decides what the work should be.  He or she owns the Backlog, what's on it, and most important, what order it's in.
-2. The **Scrum Master** keeps the team working, solves blockages, keeps the rhythm going.  There job is to help the team work as best they can.
+1. The **Product Owner** decides what the work should be.  He or she owns the Backlog, what's on it, and most importantly, what order it's in.
+2. The **Scrum Master** keeps the team working, solves blockages, and keeps the rhythm going.  Their job is to help the team work as best they can.
 
 Notice there is no Project Manager, no leader, no boss.  Teams are autonomous and self-organising.  If there is a problem in the team they collectively solve it.  Deal with problem team members.  Reflect and be honest.  Have integrity and honesty.  Get the work done and support the team.
 
@@ -241,7 +241,7 @@ Scrum also avoids handing off tasks between teams.  On a handoff information is 
 
 ## Scrum Process
 
-How do we run a Scrum team?  The idea is simple:
+How do we run a Scrum team?
 
 1. Produce an initial product backlog.
 2. Prioritise the backlog.
@@ -250,7 +250,7 @@ How do we run a Scrum team?  The idea is simple:
 5. Every day have a daily stand-up - *Daily Scrum*.
 6. End of the Sprint, review - *Sprint Review*.
 7. Analyse how the team has worked and modify based on outcome of review: update estimates, add new tasks, learn lessons, etc. - *Sprint Retrospective*.
-8. Repeat 4-7 until product is delivered to customer.
+8. Repeat 4-7 until product is delivered to the customer.
 
 Scrum uses a **Plan, Do, Check, Act (PDCA) Cycle**:
 
@@ -286,7 +286,7 @@ For a *Definition of Ready*, we can use the **INVEST Criteria**:
 
 For a *Definition of Done* we use the *testable* condition.
 
-To decide what tasks to do, you select from the prioritised product backlog.  The **Product Owner** needs to have answered the following questions:
+To decide what tasks to do, you select from the prioritised product backlog.  The **Product Owner** needs to answer the following questions:
 
 - What tasks will provide the biggest impact?
 - What tasks are most important to the customer?
@@ -297,11 +297,9 @@ Remember you will be constantly reviewing, so the priority of tasks will change.
 
 ### Sprint Execution
 
-Basically, **do the work**.  Try and complete the tasks in the Sprint Plan.  Work is only completed when it is **Done**.  Done means you have a complete deliverable product that can be used by the customer.  **Work that is half-done is not done.**  You expended resources, effort and time and not produced a deliverable product.  That is the aim of a Sprint.
+Basically, **do the work**.  Try and complete the tasks in the Sprint Plan.  Work is only completed when it is **Done**.  Done means you have a complete, deliverable product that can be used by the customer.  **Work that is half-done is not done.**  You expended resources, effort and time and not produced a deliverable product.  That is the aim of a Sprint.
 
 At the end of the Sprint you need to be able to demo the product to the customer.  **Demo or die.**
-
-"Every iteration, or Sprint, the team tries to get a number of things done.  But that "Done" implies a complete, deliverable product that can be used by a customer.  If something is half done at the end of the Spring, you're worse off than if you hadn't started at all.  You've expended resources, effort, and time and gotten nothing to a deliverable state."
 
 ### Daily Standup
 
@@ -315,7 +313,7 @@ The daily standup builds routine.  It builds a rhythm for the team.  It is essen
 
 ### Sprint Review and Retrospective
 
-At the end of the Sprint the team counts the number of points completed that iteration.  This is the team **velocity**.  You need to know and measure your velocity, but doing it once is not enough.  It will take a number of Sprints to get an understanding of how fast the team can work.
+At the end of the Sprint the team counts the number of points completed that iteration: the team **velocity**.  You need to know and measure your velocity, but doing it once is not enough.  It will take a number of Sprints to get an understanding of how fast the team can work.
 
 Once you know your team velocity, you can perform one of two estimates:
 

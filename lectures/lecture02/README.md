@@ -1,13 +1,29 @@
 # Lecture 02: Team Forming
 
-- [ ] TODO: Need to add something on Scrum.
+This lecture will be used to form the teams to undertake the assessment.  The notes will overview the general idea of Scrum.
 
-This lecture will be used to form the teams to undertake the assessment.
+## What is Scrum?
 
-## Recommended Reading
+Basic idea - when a project is created, check in regularly to see if the project is going well.  **Inspect and Adapt Cycle** - every so often stop what you are doing and review what has been done to see if you should still be doing it.
 
-![Scrum Book](img/scrum-book.jpg)
+Scrum sets a sequence of goals to be completed in a fixed time period (e.g. weekly, monthly).
 
-*Scrum: The Art of Doing Twice the Work in Half the Time* by Jeff Sutherland.
+In Scrum everyone is required to see the end goal and deliver toward it.  Multiple review points mean we can see how people are contributing.
 
-This is a good read in general.  It will step you through building a Scrum team and process, why Scrum uses the mechanisms it does, and provides an overview of how Scrum operates.  I highly recommend reading the whole book, but at least accessing the appendix on *Implementing Scrum - How to Begin.*
+**Plan, but do not blindly follow the plan.**
+
+**Fast failure so you can fix early.**
+
+## Principles of Scrum
+
+### Cycles
+
+### Sprints
+
+### Feedback
+
+## Scrum Cycle
+
+## Using Scrum in the Module
+
+You will work in a team of about three people.  Your task

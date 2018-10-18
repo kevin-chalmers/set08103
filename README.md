@@ -2,7 +2,7 @@
 
 | Week | Lectures | Lab | Assessment |
 |------|----------|-----|------------|
-| 1 | [Lecture 01: Introduction to the Module](lectures/lecture01) <br> [Lecture 02: Team Forming](lectures/lecture02) | [Lab 01: Setup](labs/lab01) | Coursework Released |
+| 1 | [Lecture 01: Introduction to the Module](lectures/lecture01) <br> [Lecture 02: Scrum and Team Forming](lectures/lecture02) | [Lab 01: Setup](labs/lab01) | Coursework Released |
 | 2 | [Lecture 03: Version Control and Git](lectures/lecture03) <br> [Lecture 04](lectures/lecture04) | [Lab 02: Continous Integration Setup](labs/lab02) | |
 | 3 | [Lecture 05](lectures/lecture05) <br> [Lecture 06](lectures/lecture06) | [Lab 03](labs/lab03) | Code Review 1 |
 | 4 | [Lecture 07](lectures/lecture07) <br> [Lecture 08](lectures/lecture08) | [Lab 04](labs/lab04) | |
@@ -19,3 +19,9 @@
 | 15 | | | Final Deliverable |
 
 ## Example Project
+
+## Copyright Notice
+
+All material provided is &copy; 2018 Kevin Chalmers and Edinburgh Napier Univeristy unless otherwise stated.  Use and copying of this material is permitted under the Apache 2.0 license with suitable attribution given to the author.
+
+The author accepts no liability in the use of this material.

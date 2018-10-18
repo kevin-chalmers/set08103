@@ -21,6 +21,8 @@
 
 ## Coursework Specification
 
+You will work on the project as a Scrum team.  Details on Scrum are provided in [Lecture 2](../lectures/lecture02), including an FAQ on how to apply Scrum in the module.
+
 ### Group Submission
 
 ### Individual Assessment
@@ -48,10 +50,10 @@ The meetings will take place during the lab sessions.  Each group will be given 
 ##### Checklist Submission 1 (16% of CW mark)
 
 - [ ] GitHub project for coursework set-up.
-- [ ] MongoDB integrated into project.
+- [ ] Product Backlog created.
 - [ ] Project builds to self-contained JAR with Maven.
 - [ ] Dockerfile for project set-up and works.
-- [ ] Travis CI for project set-up and build is working using JAR, Docker, and MongoDB on Travis CI.
+- [ ] Travis CI for project set-up and build is working using JAR, and Docker on Travis CI.
 - [ ] Correct branches for GitFlow workflow created - includes `master`, `develop`, and `release` branches.
 - [ ] Correct usage of branches.
 - [ ] First release created on GitHub.

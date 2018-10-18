@@ -339,14 +339,14 @@ To summarise the Scrum Framework see below:
 ## Your Task
 
 1. Pick a **team**.  You need four people for your team.
-2. Pick a **Product Owner**.
-3. Pick a **Scrum Master**.
-4. Create and prioritize a **Product Backlog.**
-5. Refine and estimate the **Product Backlog.**
-6. Sprint planning.
-7. Make work **Visible**.
+2. Define a **Code of Conduct**.  See slides and [Lecture 21](../lecture21) for assisstance.
+3. Pick a **Product Owner**.
+4. Pick a **Scrum Master**.
+5. Create and prioritize a **Product Backlog.**
+6. Refine and estimate the **Product Backlog.**
+7. Schedule **Sprint planning session**.
 8. Schedule **daily stand-up**.
-9. Schedule **spring review**.
+9. Schedule **Sprint review**.
 10. Schedule **Sprint retrospective**.
 
 Your team should work on everything together.  **Work on the labs together.**  **Study the material together.** **Work on the coursework together.**  By this, you will increase the overall capability of the team above what the individuals can do by helping each other.  **Remember, you are a team.**

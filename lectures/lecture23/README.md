@@ -1,4 +1,4 @@
-# Lecture 23: Ethics, Professionalism, and Security
+# Lecture 23: Security Concerns
 
 - [ ] Basics of Security for SE
 - [ ] GDPR

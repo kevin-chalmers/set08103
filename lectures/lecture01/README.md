@@ -70,7 +70,7 @@ This module has you working in a team, and you need to have respect for your tea
 
 Fundamentally, you should recognise that **education is not a competition**.  You will learn more through collaboration rather than competition.
 
-## Behavioural Objectivess
+## Behavioural Objectives
 
 At the end of this lecture you will be able to:
 

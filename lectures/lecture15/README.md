@@ -1,1 +1,1 @@
-# Lecture 15: Continuous Integrations
+# Lecture 15: Continuous Integration

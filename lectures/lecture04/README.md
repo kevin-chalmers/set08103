@@ -340,17 +340,34 @@ In [Lecture 05](../lecture05) we will look at modern software architecture that 
 
 ### Tool 19: Refactoring
 
-We will not look at this in detail, but the general idea is to improve your code base quality.  Making your code better is important.  Improved quality solutions make your life easier.
+We will not look at this in detail, but the general idea is to improve your code base quality.  Making your code better is important.  Improved quality solutions make your life easier.  Letting bad quality build up in a system will impact its integrity.
 
 ### Tool 20: Testing
 
+We will cover testing in [Lecture 14](../lecture14).
+
 ## See the Whole
+
+A system is better than the sum of its parts.  Also, the best parts do not necessarily make the best system.  Seeing the whole is about optimising for system performance rather than individual component performance.
+
+We won't discuss this area in detail as the module does not focus on these areas.  There are two tools.
 
 ### Tool 21: Measurements
 
+Make sure you measure correctly for complete system performance, not local optimisation.
+
 ### Tool 22: Contracts
 
+Make sure the contract negotiated is correct.  See *Lean Software Development* for some example contract types.
+
 ## Review
+
+In review, we have covered the following areas:
+
+- We defined the seven key principles of Lean Software Development: eliminate waste; amplify learning; decide as late as possible; deliver as fast as possible; empower the team; build integrity in; and see the whole.
+- We discussed how Lean Software Development can be applied via the 22 tools.
+- We explained some of the tools for Lean Software Development.  The recommended reading goes into more detail.
+- We identified Lean Software Development tools to apply to your software development process by examining where the 22 tools can be applied, pointing to explicit lectures in the module.
 
 ## Recommended Reading
 

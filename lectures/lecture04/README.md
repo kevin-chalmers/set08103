@@ -31,7 +31,7 @@ Waste is a concept from lean thinking.  In its simplest form:
 
 > Waste is anything that does not create value to the customer.
 
-For example, consider you as a student.  The value to you in university is getting an education.  Anything not providing an education at university is a waste.  The question a university has to ask is what does a student consider valuable as part of their education?  Anything else that a university does is a waste.
+For example, consider you as a student.  The value to you in university is getting an education.  Anything not providing an education at university is a waste in lean thinking.  The question a university has to ask is what does a student consider valuable as part of their education?  Anything else that a university does is a waste.
 
 In lean, elimination of waste is the fundamental principle that everything comes from.  To do this, we need to learn how to see waste, uncover the biggest sources of waste, eliminate these, and repeat.
 
@@ -41,9 +41,9 @@ In lean, elimination of waste is the fundamental principle that everything comes
 
 > "[While] many additional development steps are required, none contribute as directly to the final product as analysis and coding, and all drive up the development costs."
 
-Royce was a pioneer in systems development, and he wrote a paper which led to the development of the Waterfall model.  *This was **not** Royce's intention.*
+Royce was a pioneer in systems development, and he wrote a paper which led to the development of the Waterfall model.  *This was **not** Royce's intention.*  He considered Waterfall not to scale to future problems.
 
-Taking Royce's definition and the definition of waste:
+Taking Royce's definition and the definition of waste in the Software Development Lifecycle:
 
 - *Requirements gathering* **has waste**.
 - *Analysis* is not waste.
@@ -52,7 +52,7 @@ Taking Royce's definition and the definition of waste:
 - *Testing* **has waste.**
 - *Operation* **has waste**.
 
-**Just a step has waste does not mean it should not be done.**  The point is there is potential to automate these processes to allow software engineers to focus on the two important tasks - analysis and coding.
+**Just because a step has waste does not mean it should not be done.**  The point is there is potential to automate these processes to allow software engineers to focus on the two important tasks - analysis and coding.
 
 *Lean Software Development* defines **The Seven Wastes of Software Development**:
 
@@ -66,7 +66,7 @@ Taking Royce's definition and the definition of waste:
 
 #### Partially Done Work
 
-Basically, any feature not completed.  It is a waste as the resources dedicated to the task have provided no return of investment.
+Basically, any feature not completed.  It is a waste as the resources dedicated to the task have provided no Return of Investment (RoI).
 
 Consider your work as a student.  If you start an assessment and don't finish and submit it, you have wasted your effort and time (resources).  It is partially done work, and partially done work is not done.
 
@@ -131,7 +131,7 @@ If an assessment only takes two weeks of effort, there are ten weeks of capacity
 
 A key concept in lean is the ability to adapt.  To do that, the team must get information from the process.  Feedback is necessary to allow people to improve.  **Trying and failing fast is better than delaying.**
 
-Having points to check how progress is also important.  Iterative development really helps here.
+Having points to check progress is also important.  Iterative development really helps here.
 
 ### Tool 3: Feedback
 
@@ -190,14 +190,14 @@ How did Microsoft become a dominant software company?  Simple, by options thinki
 - It was pushing DOS and an early version of Windows.
 - It was pushing OS/2 for IBM-based machines.
 - It had a version of UNIX.
-- There were new versions of Word and Excel, considered inferior on DOS and Windows that WordPerfect and Lotus.
+- There were new versions of Word and Excel, considered inferior on DOS and Windows than WordPerfect and Lotus.
 
 But Microsoft succeeded because it had options.  No platform was dominant in 1988, so:
 
 - The hope was Windows would win.
 - DOS and/or OS/2 could be utilised if they won.
 - If UNIX won, Microsoft had an option.
-- If Apple won, Word and Excel were better options on their hardware.
+- If Apple won, Word and Excel were better options than WordPerfect and Lotus on their hardware.
 
 The options were there, and Microsoft won.  The 1990s and 2000s were dominated by Microsoft OS and applications.  Bill Gates became the richest man in the world.
 
@@ -241,7 +241,7 @@ This is not about rushing without thought.  We are talking about being faster th
 
 Netflix and Spotify have a business model based on fast delivery.  Movie and music piracy were major problems in the early 2000s.  The belief was price was a problem.  But when Netflix and Spotify offered instant access to large catalogues, people paid for the service.  The *free* piracy route shrank.
 
-Netflix and Spotify deliver movies and music as fast as possible.  As faster (slightly) than the pirates.  And people are happy to pay for it.
+Netflix and Spotify deliver movies and music as fast as possible.  Faster (slightly) than the pirates.  And people are happy to pay for it.
 
 ### Tool 10: Pull Systems
 
@@ -277,7 +277,7 @@ As Lean Software Development points out, this wisdom is wrong.  Getting the prod
 
 *Lean Software Development* provides some examples, but the general idea is the same as Scrum.
 
-**Happy team members with increased job satisfaction is worth more to the organisation as the team are more productive.**
+**Happy team members with increased job satisfaction are worth more to the organisation as the team are more productive.**
 
 To meet this goal, the team needs to be empowered.  There are a few ideas here, although our discussion on Scrum in [Lecture 02](../lecture02) also provides insight.
 
@@ -307,7 +307,7 @@ Motivation is built from:
 
 ### Tool 15: Leadership
 
-We won't go into this here.  Leadership is a big field.  From *Lean Software Development* focuses on the idea of masters who understand the product and the necessary techniques to deliver it best.
+We won't go into this here.  Leadership is a big field.  *Lean Software Development* focuses on the idea of masters who understand the product and the necessary techniques to deliver it best.
 
 ### Tool 16: Expertise
 

@@ -4,7 +4,15 @@ In this lab we will automate our build process using [Travis CI](https://travis-
 
 ## Behavioural Objectives
 
-- [ ] To do
+After this lab you will be able to:
+
+- [ ] **Pull your project** to *return to your previous development state.*
+- [ ] **Add** *continuous integration with Travis CI to your project.*
+- [ ] **Integrate** *Docker into Travis CI build step.*
+- [ ] **Define** the *Gitflow Workflow.*
+- [ ] **Link** *Docker containers.*
+- [ ] **Package** an **application JAR with IntelliJ.*
+- [ ] **Create** a *release on GitHub.*
 
 ## Pulling Back Your Project
 

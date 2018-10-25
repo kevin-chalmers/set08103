@@ -12,7 +12,14 @@ These provide a modern software development and delivery environment.  These too
 
 ## Behavioural Objectives
 
-- [ ] TODO - use verbs that can be ticked off.
+After this lab you will be able to:
+
+- [ ] **Setup** a *development environment in IntelliJ.*
+- [ ] **Setup** a *GitHub repository.*
+- [ ] **Pull** a *Docker container.*
+- [ ] **Manage** a *Docker container using basic commands.*
+- [ ] **Define** a *Dockerfile to create your own container.*
+- [ ] **Deploy** to a *Docker container from IntelliJ.*
 
 ## IntelliJ Setup
 
@@ -303,6 +310,33 @@ The output explains what Docker actually did when you issued the command.  We wi
 If Docker is installed and working skip to [Basic Docker Usage](#basic-docker-usage).  If not, continue reading.
 
 #### Installing Docker
+
+Installing Docker on Linux is easy - you should find it in your package manager.  For example, with Ubuntu use:
+
+```shell
+sudo apt install docker
+```
+
+For Windows, use the installation instructions found [here](https://docs.docker.com/docker-for-windows/install/).  For Mac OS X the install instructions are [here](https://docs.docker.com/docker-for-mac/install/).
+
+To test that Docker has been installed correctly, run the following command from the shell:
+
+```shell
+docker run hello-world
+```
+
+Which should produce output similar to:
+
+```shell
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+ca4f61b1923c: Pull complete
+Digest: sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+```
 
 ### Basic Docker Usage
 

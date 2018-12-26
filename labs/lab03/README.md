@@ -1,13 +1,15 @@
 # Lab 03: Requirements and Issues
 
-Steps:
-
-18. Close feature.
-19. Do release.
-
 In this lab we will use GitHub issues to start tracking our work.  This is stage one of starting a Kanban system to monitor our work.  We will start by defining our **Vision** for the application, using this to define **features**, and from these **User Stories**.
 
 ## Behavioural Objectives
+
+After this lab you will be able to:
+
+- [ ] **Create** *issues on GitHub*.
+- [ ] **Define** a *basic user story.*
+- [ ] **Create** a *composed Docker service using Docker Compose.*
+- [ ] **Use** an *SQL database from Java.*
 
 ## Vision Statement
 
@@ -206,6 +208,8 @@ services:
     restart: always
 ```
 
+When running Docker from the command line, we use `docker compose up` to build and run a composed service.  IntelliJ understands Docker compose files, so we don't have to worry.  We will modify our Travis CI file.
+
 ### Test MySQL Connection
 
 Now we need to update our main application to move from MongoDB to MySQL.  A MySQL server takes a bit more time to start-up, so we need to have code to attempt to connect multiple times.  The Java code below is our new application.
@@ -239,9 +243,9 @@ public class App
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(10000);
+                Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306?verifyServerCertificate=false&useSSL=true", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://db:3306/employees?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 // Wait a bit
                 Thread.sleep(10000);
@@ -281,10 +285,11 @@ Now we can test the application and MySQL database together by undertaking the f
 2. Package the application.
 3. Deploy the composed Docker services - we do this by running the `docker-compose.yml` file as any other Dockerfile.
 4. Wait for the application to start-up.
-
-
+5. Check that "Successfully Connected" is displayed.
 
 ### Update Travis File
+
+Now we can update our Travis file to use the Docker compose file.  This is below:
 
 ```yml
 sudo: required
@@ -295,13 +300,365 @@ services:
   - docker
 
 after_success:
-  - docker-compose up
+  - docker-compose up --abort-on-container-exit
 ```
+
+The `--abort-on-container-exit` parameter tells Docker to stop all services once one container has finished.  This will gracefully exit the MySQL container when the main application exits in Travis CI.
 
 ### Push Changes
 
+With our files updated we can test that our CI build still works.  To do this, follow the following two steps:
+
+1. Commit the file changes.
+2. Push the changes to your GitHub repository.
+
+And that is it.
+
 ### Check CI Build
+
+Finally log into Travis and check that the build is successful.  Hopefully you will get something as follows:
+
+![Successful Travis Build](img/travis-success.png)
+
+And we have successfully connected to our existing database.  That is task one of our user story completed.  Let us now move onto the next task - extracting an employee's information.
 
 ## Extract Employee Information
 
+Our next step is to extract an employee's information from the SQL database.  Looking at the [information](https://dev.mysql.com/doc/employee/en/employees-introduction.html) about the database we can determine an initial SQL query as:
+
+```sql
+SELECT emp_no, first_name, last_name
+FROM employees
+WHERE emp_no = <ID>
+```
+
+Hopefully you remember these basic ideas from database systems.  Constructing this query string is easy.  First we will extract our current application behaviour to make our good easier to work with.
+
+### Extracting Connect and Disconnect Functionality
+
+At the moment we have two pieces of behaviour: connecting to the database and disconnecting from the database.  We can separate these behaviours into two methods: `connect` and `disconnect`:
+
+```java
+    /**
+     * Connection to MySQL database.
+     */
+    private Connection con = null;
+
+    /**
+     * Connect to the MySQL database.
+     */
+    public void connect()
+    {
+        try
+        {
+            // Load Database driver
+            Class.forName("com.mysql.jdbc.Driver");
+        }
+        catch (ClassNotFoundException e)
+        {
+            System.out.println("Could not load SQL driver");
+            System.exit(-1);
+        }
+
+        int retries = 10;
+        for (int i = 0; i < retries; ++i)
+        {
+            System.out.println("Connecting to database...");
+            try
+            {
+                // Wait a bit for db to start
+                Thread.sleep(30000);
+                // Connect to database
+                con = DriverManager.getConnection("jdbc:mysql://db:3306/employees?useSSL=false", "root", "example");
+                System.out.println("Successfully connected");
+                break;
+            }
+            catch (SQLException sqle)
+            {
+                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println(sqle.getMessage());
+            }
+            catch (InterruptedException ie)
+            {
+                System.out.println("Thread interrupted? Should not happen.");
+            }
+        }
+    }
+
+    /**
+     * Disconnect from the MySQL database.
+     */
+    public void disconnect()
+    {
+        if (con != null)
+        {
+            try
+            {
+                // Close connection
+                con.close();
+            }
+            catch (Exception e)
+            {
+                System.out.println("Error closing connection to database");
+            }
+        }
+    }
+```
+
+As we update our application you will see why this change is useful.  Next we will test the new version of the application:
+
+### Updated Main
+
+The updated `main` method is as follows:
+
+```java
+    public static void main(String[] args)
+    {
+        // Create new Application
+        App a = new App();
+
+        // Connect to database
+        a.connect();
+
+        // Disconnect from database
+        a.disconnect();
+    }
+```
+
+We now create an `App` object and call `connect` and `disconnect` on the object.  This is fundamentally the same as the previous application version.  Run it to test.
+
+#### Commit the Change
+
+Even this small change is a commit point through our history.  Create a new commit with these changes and push it to GitHub.
+
+### Getting an Employee
+
+We are now ready to add a new method to extract the employee information.  To make life easier, we will create an `Employee` class.  To do this, perform the following steps:
+
+1. **Right-click** on the **com.sem.napier** package in the **Project** explorer in IntelliJ.
+2. Select **New**, **Java Class** to open the **Create New Class** window.
+3. Call the class **Employee** and click **OK**.
+
+We are now ready to add the `Employee` class.
+
+#### Employee Class
+
+The `Employee` class is just data.  The full code listing is given below, and should be straightforward to understand.
+
+```java
+package com.napier.sem;
+
+/**
+ * Represents an employee
+ */
+public class Employee
+{
+    /**
+     * Employee number
+     */
+    public int emp_no;
+
+    /**
+     * Employee's first name
+     */
+    public String first_name;
+
+    /**
+     * Employee's last name
+     */
+    public String last_name;
+
+    /**
+     * Employee's job title
+     */
+    public String title;
+
+    /**
+     * Employee's salary
+     */
+    public int salary;
+
+    /**
+     * Employee's current department
+     */
+    public String dept_name;
+
+    /**
+     * Employee's manager
+     */
+    public String manager;
+}
+```
+
+#### Get Employee Method
+
+We can now extract employee information from the database.  Remember our SQL statement:
+
+```sql
+SELECT emp_no, first_name, last_name
+FROM employees
+WHERE emp_no = <ID>
+```
+
+The method will therefore:
+
+- Return an *Employee* (or `null`).
+- Requires an *ID* to lookup (and `int`).
+
+Working with SQL in Java requires a bit of knowledge.  A [more comprehensive tutorial](https://www.tutorialspoint.com/jdbc/) covers the details.  Here we will cover the following points:
+
+- Create a SQL statement - a `Statement` object from the database connection.
+- Define the SQL query string to execute.
+- Execute a query (`executeQuery`) to extract data from the database.  This will return a `ResultSet` object.
+- Test that the `ResultSet` has a value - call `next` on the `ResultSet` and check this is `true`.
+- Extract the information from the current record in the `ResultSet` using `getInt` for integer data, `getString` for string data, etc.
+
+The code for `getEmployee` is below.  Read the description above to understand the lines of code provided.
+
+```java
+    public Employee getEmployee(int ID)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT emp_no, first_name, last_name "
+                    + "FROM employees "
+                    + "WHERE emp_no = " + ID;
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new employee if valid.
+            // Check one is returned
+            if (rset.next())
+            {
+                Employee emp = new Employee();
+                emp.emp_no = rset.getInt("emp_no");
+                emp.first_name = rset.getString("first_name");
+                emp.last_name = rset.getString("last_name");
+                return emp;
+            }
+            else
+                return null;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get employee details");
+            return null;
+        }
+    }
+```
+
+Now run the application and hopefully you will get no errors.
+
+#### Push Update
+
+Once again, it is time to commit your updates.  Do so now.
+
 ## Display Employee Information
+
+We cannot really test our get employee functionality until we display the output.  At the moment, we will just display to the console.  The `displayEmployee` method for our `App` is below:
+
+```java
+    public void displayEmployee(Employee emp)
+    {
+        if (emp != null)
+        {
+            System.out.println(
+                    emp.emp_no + " "
+                    + emp.first_name + " "
+                    + emp.last_name + "\n"
+                    + emp.title + "\n"
+                    + "Salary:" + emp.salary + "\n"
+                    + emp.dept_name + "\n"
+                    + "Manager: " + emp.manager + "\n");
+        }
+    }
+```
+
+And we can now update our `main` to test the application:
+
+```java
+    public static void main(String[] args)
+    {
+        // Create new Application
+        App a = new App();
+
+        // Connect to database
+        a.connect();
+        // Get Employee
+        Employee emp = a.getEmployee(255530);
+        // Display results
+        a.displayEmployee(emp);
+
+        // Disconnect from database
+        a.disconnect();
+    }
+```
+
+And running this version of the application will give us:
+
+```shell
+Connecting to database...
+Successfully connected
+255530 Ronghao Garigliano
+null
+Salary:0
+null
+Manager: null
+```
+
+### Problems
+
+OK, if this didn't work, try the following first:
+
+- Make sure you have performed the following steps via Maven: **Compile** and **Package**.
+- Stop all the running containers, delete them, and delete the current `sem_db` and `sem_app` Docker images.  Then rebuild everything and restart.
+- Make sure the SQL connection string is correct and the logs from the running database and application.
+
+If this doesn't solve the problem them ask for help.
+
+### Exercise
+
+Complete the SQL query so the employee's current (most recent) job title, salary, department, and manager is displayed.  The SQL schema diagram is available [here](https://dev.mysql.com/doc/employee/en/sakila-structure.html) for reference.
+
+## Close the Issue
+
+We can now close our issue on GitHub.  Go to GitHub, open the issues, and select the view record issue.  At the bottom of the page you will find the **Close Issue** button
+
+![Close GitHub Issue](img/github-close-issue.png)
+
+**Click** the button to close the issue.  And we are done.
+
+## Close Branch and Create Release
+
+We are now ready to merge everything together.  Remember what we did last week:
+
+1. Updated the version number in Maven.  Remember to update the copied JAR file name in the Dockerfile as well.
+2. Merged our feature branch into `develop`.
+3. Merged `develop` into `release`.
+4. Created a release - including version tag.
+5. Merged `release` into `master`.
+6. Merged `release` into `develop`.
+7. Clean up.
+
+Our current process has not changed from last week, except we are now using GitHub issues to drive our work.  Therefore we have:
+
+1. Select an issue to work on.
+2. Pull the latest `develop` branch.
+3. Start a new feature branch for the issue.
+4. Once feature is finished, create JAR file.
+5. Update and test Docker configuration with Travis.
+6. Update feature branch with `develop` to ensure feature is up-to-date.
+7. Check feature branch still works.
+8. Merge feature branch into `develop`.
+9. Repeat 2-7 until release is ready.
+10. Merge `develop` branch into `release` and create release.
+11. Merge `release` into `master` and `develop`.
+12. Close the issue.
+
+## Exercise
+
+Follow the [SQL and Java tutorial](https://www.tutorialspoint.com/jdbc/) to explore this topic further.  You will find it useful.

@@ -622,7 +622,7 @@ If this doesn't solve the problem them ask for help.
 
 ### Exercise
 
-Complete the SQL query so the employee's current (most recent) job title, salary, department, and manager is displayed.  The SQL schema diagram is available [here](https://dev.mysql.com/doc/employee/en/sakila-structure.html) for reference.
+Complete the SQL query so the employee's current (most recent) job title, salary, department, and manager is displayed.  The SQL schema diagram is available [here](https://dev.mysql.com/doc/employee/en/sakila-structure.html) for reference.  The database uses an end-date of `9999-01-01` to represent the current entry.
 
 ## Close the Issue
 

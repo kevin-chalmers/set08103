@@ -67,32 +67,36 @@ The meetings will take place during the lab sessions.  Each group will be given 
 
 ##### SUBMISSION DEADLINE: Midnight Sunday of Week 6
 
-##### Checklist Submission 2
+##### Checklist Submission 2 (14% of CW mark)
 
-- [ ] Issues being used.
+- [ ] Issues being used on GitHub.
+- [ ] Tasks defined as user stories.
+- [ ] Project integrated with Zube.io.
 - [ ] Kanban/Project Board being used.
-- [ ] Use cases defined.
+- [ ] Sprint Boards being used.
+- [ ] Full use cases defined.
 - [ ] Acceptance tests defined.
 
-##### Graded Criteria Submission 2
+##### Graded Criteria Submission 2 (6% of CW mark)
 
 - Metrics from GitHub.  Also used to assess individual contribution.
 - Code quality including comments.
 - Correct usage of branches.
 - Continuous integration working.
+- Use cases well defined.
 - Project requirements met.
 
 #### Code Review 3
 
 ##### SUBMISSION DEADLINE: Midnight Sunday of Week 9
 
-##### Checklist Submission 3
+##### Checklist Submission 3 (12% of CW mark)
 
 - [ ] UML developed.
 - [ ] Unit tests defined.
 - [ ] TDD set-up.
 
-##### Graded Criteria Submission 3
+##### Graded Criteria Submission 3 (8% of CW mark)
 
 - Metrics from GitHub.  Also used to assess individual contribution.
 - Code quality including comments.
@@ -106,12 +110,12 @@ The meetings will take place during the lab sessions.  Each group will be given 
 
 ##### SUBMISSION DEADLINE: Midnight Sunday of Week 12
 
-##### Checklist Submission 4
+##### Checklist Submission 4 (10% of CW mark)
 
 - [ ] Deployment working.
 - [ ] Bug reporting system set-up.
 
-##### Graded Criteria Submission 4
+##### Graded Criteria Submission 4 (10% of CW mark)
 
 - Metrics from GitHub.  Also used to assess individual contribution.
 - Code quality including comments.
@@ -122,6 +126,6 @@ The meetings will take place during the lab sessions.  Each group will be given 
 - Unit tests being met.
 - Project requirements met.
 
-### Final Submission
+### Final Submission (20% of CW mark)
 
 #### SUBMISSION DEADLINE: Midnight Sunday of Week 15

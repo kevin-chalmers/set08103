@@ -4,7 +4,9 @@ Our next step is to extend our task management system beyond simple GitHub issue
 
 ## Behavioural Objectives
 
-- [ ] TODO
+- [ ] **Create** a *Kanban Board on Zube.*
+- [ ] **Create** a *Sprint Board on Zube.*
+- [ ] **Run** a *Sprint*.
 
 ## Setting up Zube.io
 

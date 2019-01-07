@@ -75,7 +75,7 @@ The meetings will take place during the lab sessions.  Each group will be given 
 - [ ] Kanban/Project Board being used.
 - [ ] Sprint Boards being used.
 - [ ] Full use cases defined.
-- [ ] Acceptance tests defined.
+- [ ] Use case diagram created.
 
 ##### Graded Criteria Submission 2 (6% of CW mark)
 

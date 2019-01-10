@@ -249,37 +249,47 @@ Remember the steps you took last week for executing a Sprint:
 
 We only have one task to do this week: get the salaries by department.  This is very similar to the last feature - get all salaries - but with an additional restriction.  Therefore it is your task to implement this feature on your own.
 
-### Exercise: Implement Salaries by Department Feature
+### Exercise: Implement Salaries by Role Feature
 
 The SQL required for this query is below:
 
 ```sql
 SELECT employees.emp_no, employees.first_name, employees.last_name, salaries.salary
-FROM employees, salaries, dept_emp, departments
+FROM employees, salaries, titles
 WHERE employees.emp_no = salaries.emp_no
-AND employees.emp_no = dept_emp.emp_no
-AND dept_emp.dept_no = departments.dept_no
-AND departments.dept_name = '<dept>'
+AND employees.emp_no = titles.emp_no
 AND salaries.to_date = '9999-01-01'
+AND titles.to_date = '9999-01-01'
+AND titles.title = '<title>'
 ORDER BY employees.emp_no ASC
 ```
 
-`<dept>` is replaced by the name of the department.  For example, the end of the `Sales` department information is:
+`<title>` is replaced by the name of the role (title).  For example, the end of the `Engineer` salary information is:
 
 
 ```shell
 ...
-499902     Aloke           Wuwongse             100339  
-499919     Masako          Angiulli             107704  
-499920     Christ          Murtagh              123461  
-499926     Youpyo          Perfilyeva           109498  
-499953     Leszek          Pulkowski            114876  
-499960     Gaetan          Veldwijk             94157   
-499966     Mihalis         Crabtree             98388   
-499976     Guozhong        Felder               107386  
-499980     Gino            Usery                108364  
-499986     Nathan          Ranta                119906  
-499987     Rimli           Dusink               56336  
+499838     Annemarie       Peroz                53972   
+499843     Vitaly          Zucker               66847   
+499855     Constantine     Michaels             49559   
+499856     Yoshinari       Theuretzbacher       50966   
+499857     Leszek          Tempesti             60478   
+499896     Gianluca        Rando                59952   
+499900     Leon            Baba                 51414   
+499904     Kazuhiro        Velasco              47104   
+499913     Masako          Heiserman            73788   
+499918     Hilary          Rodiger              55843   
+499927     Manohar         Heemskerk            83769   
+499935     Ymte            Perelgut             77520   
+499936     Chiranjit       Himler               54253   
+499948     Cordelia        Paludetto            45625   
+499962     Yongqiao        Dalton               57667   
+499973     Lobel           Taubman              61400   
+499979     Prasadram       Waleschkowski        54088   
+499990     Khaled          Kohling              45512   
+499993     DeForest        Mullainathan         44305   
+499995     Dekang          Lichtner             52868   
+499999     Sachin          Tsukuda              77303   
 ```
 
 ## Cleaning Up and Committing

@@ -6,8 +6,8 @@
 | 2 | [Lecture 03: Version Control and Git](lectures/lecture03) <br> [Lecture 04: Lean Software Development](lectures/lecture04) | [Lab 02: Continuous Integration Setup](labs/lab02) | |
 | 3 | [Lecture 05](lectures/lecture05) <br> [Lecture 06](lectures/lecture06) | [Lab 03: Requirements and Issues](labs/lab03) | Code Review 1 |
 | 4 | [Lecture 07](lectures/lecture07) <br> [Lecture 08](lectures/lecture08) | [Lab 04: Task Management and Kanban](labs/lab04) | |
-| 5 | [Lecture 09](lectures/lecture09) <br> [Lecture 10](lectures/lecture10) | [Lab 05](labs/lab05) | |
-| 6 | [Lecture 11](lectures/lecture11) <br> [Lecture 12](lectures/lecture12) | [Lab 06](labs/lab06) | Code Review 2 |
+| 5 | [Lecture 09](lectures/lecture09) <br> [Lecture 10](lectures/lecture10) | [Lab 05: Use Cases and Use Case Diagrams](labs/lab05) | |
+| 6 | [Lecture 11](lectures/lecture11) <br> [Lecture 12](lectures/lecture12) | [Lab 06: UML](labs/lab06) | Code Review 2 |
 | 7 | [Lecture 13](lectures/lecture13) <br> [Lecture 14](lectures/lecture14) | [Lab 07](labs/lab07) | |
 | 8 | [Lecture 15](lectures/lecture15) <br> [Lecture 16](lectures/lecture16) | [Lab 08](labs/lab08) | |
 | 9 | Reading Week | Reading Week | Code Review 3 |
@@ -19,6 +19,8 @@
 | 15 | | | Final Deliverable |
 
 ## Example Project
+
+An example project from the lab series is available [here](https://github.com/kevin-chalmers/sem).
 
 ## Copyright Notice
 

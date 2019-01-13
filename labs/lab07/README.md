@@ -4,7 +4,10 @@ In this lab we will add automated testing to our method.  Unit Testing is a tech
 
 ## Behavioural Objectives
 
-- [ ] TODO
+- [ ] **Describe** a *unit test.*
+- [ ] **Create** *unit tests*.
+- [ ] **Execute** *unit tests in IntelliJ.*
+- [ ] **Use code coverage** to *visualise code tested.*
 
 ## What is Unit Testing?
 
@@ -59,6 +62,10 @@ Maven and IntelliJ both support unit testing as part of their workflows.  This m
 
 ### Maven Configuration Code for JUnit
 
+For this lab we will just work in the `develop` branch.  Check out the project as normal and switch to the `develop` branch.
+
+As SQL, we need to add a `dependency` to our Maven project to support unit testing via the JUnit framework.  The following should be **added to the `dependencies` section of the project's `pom.xml` file**:
+
 ```xml
 <dependency>
     <groupId>org.junit.jupiter</groupId>
@@ -67,6 +74,8 @@ Maven and IntelliJ both support unit testing as part of their workflows.  This m
     <scope>test</scope>
 </dependency>
 ```
+
+For reference, your `dependencies` section should look as follows:
 
 ```xml
 <dependencies>
@@ -84,6 +93,8 @@ Maven and IntelliJ both support unit testing as part of their workflows.  This m
     </dependency>
 </dependencies>
 ```
+
+We also need to add plugin's so Maven can run our unit tests correctly.  **Add the following to the `plugins` section**:
 
 ```xml
 <plugin>
@@ -105,11 +116,16 @@ Maven and IntelliJ both support unit testing as part of their workflows.  This m
 </plugin>
 ```
 
+Save the file and IntelliJ should automatically pull the necessary files to support JUnit.
+
 ### Our First Unit Test
 
-Add test folder to src.
+We are now ready to write our first unit test.  In Java, it is traditional and considered good practice to store test classes in a separate directory.  Let us do this now:
 
-Add test class.
+1. **Add a new folder - `test` - to the `src` folder of the project**.
+2. **Add a new folder - `java` - to the `test` folder**.
+3. **Add a new file - `MyTest.java` - to the new `java` folder**.
+4. **Add the following code to `MyTest.java`**:
 
 ```java
 import org.junit.jupiter.api.*;
@@ -126,7 +142,15 @@ class MyTest
 }
 ```
 
+There are three pieces of code you might be unfamiliar with:
+
+- `import static` allows us to import the `static` methods of a class; `Assertions` in this case.
+- `@Test` denotes that a method is a test method.
+- `assertEquals` is a `static` method from `Assertions`.  It is a check to see if two values are equal.  If they are not the test will fail.
+
 ### Running the Tests via Maven
+
+To run the test using Maven, **open the Maven view on the right** and select the **test lifecycle stage**.  Maven should build your code and run the tests, providing the following output:
 
 ```shell
 -------------------------------------------------------
@@ -140,19 +164,37 @@ Results :
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 ```
 
+So our test had 0 failures and 0 errors, so it passed.
+
 ### Adding a JUnit Configuration to IntelliJ Build
 
-Set test folder.  File, Project Structure.
+Having Maven run our tests is important when we combine our tests into our continuous integration process.  However, a textual response is not as easy to read.  IntelliJ can provide us with better visual feedback.  First though we need to tell IntelliJ how to run our tests.
+
+First, we need to tell IntelliJ where our tests are.  This is done via the **Project Structure Dialogue**.  **Select File then Project Structure**.  This will open the following window:
 
 ![IntelliJ Project Structure Dialogue](img/intellij-project-structure.png)
 
-Add configuration.
+**Select the `src/test/java` folder** and **click the Tests button at the top of the structure view.**  This tells IntelliJ that our tests are in this folder.  **Click OK** to exit.
+
+Now we need to add a **Run/Debug Configuration**.  **Select Run then Edit Configurations** to open the new view:
 
 ![IntelliJ Run Configurations Dialogue](img/intellij-run-configurations.png)
 
+Modify the dialogue to match.  That is:
+
+- Use the JUnit template on the left.
+- Select `seMethods` as the classpath of module.
+- Use `MyTest` as the Class.
+
+**Click OK** and IntelliJ is now ready to run the tests.
+
 ### Running Tests
 
+To run the tests you should just be able to **click the green run button**.  If not, ensure that the new build configuration is selected as the run target and try again.  Once completed, you should get the following output:
+
 ![IntelliJ Tests Passed](img/intellij-tests-passed.png)
+
+The green tick means the test passed.  Now let us see what happens when a test fails.  Add the following code to `MyTest`:
 
 ```java
 @Test
@@ -162,11 +204,22 @@ void unitTest2()
 }
 ```
 
+Run the tests again and this time you will get the following:
+
+`unitTest2` has failed, and on the right we see why:
+
+```shell
+Expected :5
+Actual   :4
+```
+
 ![IntelliJ Tests Failed](img/intellij-tests-failed.png)
 
 Notice also the failing test is red underlined in the code.
 
 ### Other Test Examples
+
+Add the following to `MyTest`.  They illustrate some other test types:
 
 ```java
 @Test
@@ -225,27 +278,39 @@ void throwsException() throws NullPointerException
 }
 ```
 
+- `unitTest3` illustrates how we can add a message to a test.
+- `unitTest4` illustrates how to test floating point values with an error range.
+- `unitTest5` illustrates how to compare array contents in a test.
+- `unitTest6` illustrates how to test if a value is `true`.
+- `unitTest7` illustrates how to test if a value is `false`.
+- `unitTest8` illustrates how to test if a value is `null`.
+- `unitTest9` illustrates how to test if a value is not `null`.
+- `unitTest10` illustrates how to test if a method throws an exception.  By default, any exception thrown fails a test if no `assertThrows` matches.
+
 ## Adding Tests to the HR System: Printing Salaries
+
+Let us add unit tests to our HR System.  We will only add tests for printing salaries now.  We will add more tests as we progress.
 
 ### Inputs to Printing Salaries
 
-null
+A good technique for defining unit tests is to think about the possible values that can be provided as parameters.  `printSalaries` takes an `ArrayList<Employee>` as a parameter.  There are four possible values that can be provided:
 
-empty list
+- `null`.
+- an empty list.
+- a list with `null` member in it.
+- a list with all non-null members (a normal list).
 
-list with null member
-
-list with all non-null members
+We will create these four tests, updating our `printSalaries` code as required.
 
 ### Unit Tests for Printing Salaries
 
-Delete existing test file.
-
-Update configuration.
+First, **delete the existing test file**.  We don't want it confusing the test results.  Then **add a new package to `src/test/java` called `com.napier.sem`**.  Finally, we need to update our test configuration.  Change it to the following, where we run all tests in a package:
 
 ![IntelliJ Package Tests](img/intellij-package-tests.png)
 
 #### Employees is `null`
+
+First we will add the test to check what happens when we pass `null` to `printSalaries`.  We don't want any error to occur, so really we just want to call the method.  The test code is:
 
 ```java
 package com.napier.sem;
@@ -276,6 +341,10 @@ public class AppTest
 }
 ```
 
+The method `init` is called `@BeforeAll` the tests are run.  It allows us to do some initial construction work to manage the tests.  Here, we are creating an instance of `App` to work with.  The `@Test` method will then call `printSalaries` with `null`.
+
+When you run the test, it will fail.  This is because a `NullPointerException` is thrown.  We can fix that by updating `printSalaries` to check if `employees` is null:
+
 ```java
 public void printSalaries(ArrayList<Employee> employees)
 {
@@ -298,14 +367,38 @@ public void printSalaries(ArrayList<Employee> employees)
 }
 ```
 
+Run the test now and it will pass.
+
+#### Employees is Empty
+
+Let us test what happens when `employees` is empty:
+
 ```java
-@Test 
+@Test
 void printSalariesTestEmpty()
 {
     ArrayList<Employee> employess = new ArrayList<Employee>();
     app.printSalaries(employess);
 }
 ```
+
+This test will pass, so let us move on.
+
+#### Employees Contains `null`
+
+Our next test will try and print a list with a `null` value in it:
+
+```java
+@Test
+void printSalariesTestContainsNull()
+{
+    ArrayList<Employee> employess = new ArrayList<Employee>();
+    employess.add(null);
+    app.printSalaries(employess);
+}
+```
+
+Running this test also fails.  We need to update `printSalaries` to check if an `Employee` is `null`:
 
 ```java
 public void printSalaries(ArrayList<Employee> employees)
@@ -331,6 +424,12 @@ public void printSalaries(ArrayList<Employee> employees)
 }
 ```
 
+Run the tests again and it will pass.
+
+#### Employee Contains All Non-`null`
+
+Our final test is for normal conditions.  The test code is:
+
 ```java
 @Test
 void printSalaries()
@@ -347,20 +446,46 @@ void printSalaries()
 }
 ```
 
+This test will also pass.
+
 ## Code Coverage
+
+To end our examination of unit testing we will look at **Code Coverage**.  Coverage allows us to examine how much of our code is tested.
+
+To enable code coverage, select **Run then Edit Configurations**.  Open the **Code Coverage** tab and ensure it looks the same as this:
 
 ![IntelliJ Code Coverage](img/intellij-code-coverage.png)
 
-Run, run with coverage.
+**Click OK** to close the window.  Then **select Run and Run with Coverage.**  This will open the **Code Coverage View** on the right:
 
 ![IntelliJ Package Coverage](img/intellij-package-coverage.png)
 
+It details the percentage of classes, methods and lines covered by tests.  **Double-click `com.napier.sem`** to open a per-class view:
+
 ![IntelliJ Class Coverage](img/intellij-class-coverage.png)
+
+As you can see, it is the `App` class that needs the most work.  We can actually see the lines covered and not covered by tests in the source file:
 
 ![IntelliJ Code Coverage Highlighting](img/intellij-code-coverage-highlight.png)
 
-## Next Feature: Department Manager Printing Salaries
+Lines with red next to them (e.g., lines 196 to 201) are not tested.  Lines with green next to them (e.g., lines 230 to 235) are tested.  This allows us to ensure **all** our code is tested.
 
 ## Exercise: Add Unit Tests for Display Employee
 
+Now add unit tests for the `displayEmployee` method.  Follow the same pattern:
+
+- Define the possible inputs for the method.
+- Write a test for each input.
+- Update `displayEmployee` until all tests pass.
+
+## Next Feature: Department Manager Printing Salaries
+
+Our next feature is:
+
+3. As an *department manager* I want *to produce a report on the salary of employees in my department* so that *I can support financial reporting for my department.*
+
+We have already implemented this feature, so move it to done in your Zube board.
+
 ## Cleanup
+
+Now clean-up as normal, ensuring you commit everything to GitHub.

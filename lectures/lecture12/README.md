@@ -1,1 +1,1 @@
-# Lecture 12: Model Driven Development
+# Lecture 12: UML Workflow

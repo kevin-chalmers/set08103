@@ -1,1 +1,1 @@
-# Lecture 11: UML Workflow
+# Lecture 11: UML Diagrams

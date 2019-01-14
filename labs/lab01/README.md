@@ -317,7 +317,7 @@ Installing Docker on Linux is easy - you should find it in your package manager.
 sudo apt install docker
 ```
 
-For Windows, use the installation instructions found [here](https://docs.docker.com/docker-for-windows/install/).  For Mac OS X the install instructions are [here](https://docs.docker.com/docker-for-mac/install/).
+For Windows, use the installation instructions found [here](https://docs.docker.com/docker-for-windows/install/).  For Mac OS X the install instructions are [here](https://docs.docker.com/docker-for-mac/install/).  **Ensure that the Docker service has started**.  See the relevant instructions.  On some systems, Docker is not running at the start.
 
 To test that Docker has been installed correctly, run the following command from the shell:
 
@@ -544,7 +544,7 @@ Once IntelliJ has restarted we are ready to complete the Docker integration.  Se
 
 ![Docker Settings in IntelliJ](img/intellij-docker-settings.png)
 
-**Click** the **+** near the top of the window, and Docker should be detected.  You will know when as the message **Connection successful** will appear as below.  When it does click on **OK**.  
+**On Windows, right-click the Docker deamon in the activity icon area of Windows, and goto settings. Then turn on the Expose daemon on tcp://localhost:2375 without TLS option.**  **Click** the **+** near the top of the window, and Docker should be detected.  You will know when as the message **Connection successful** will appear as below.  When it does click on **OK**.  
 
 ![Adding Docker to IntelliJ](img/intellij-added-docker.png)
 

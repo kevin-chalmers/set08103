@@ -418,7 +418,7 @@ Problems arise when you have changed a file that has also been changed by someon
 
 A powerful technique of version control is the ability to create different *branches*.  A **branch** is a new *version* of the code that is independent to other branches, including the main one.  For example:
 
-![Git Branches](img/branches.png)
+![Git Branches](img/branches.PNG)
 
 Here, four branches are in operation.  The one on the left will be `master`.  From this two further branches were made, and from one of these a further branch, leading to four.  Each have their own commits and therefore history.
 

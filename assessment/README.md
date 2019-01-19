@@ -1,5 +1,7 @@
 # Coursework Assessment Details
 
+Group times are available [here](groups).
+
 ## Coursework Proforma
 
 | | |
@@ -205,7 +207,7 @@ The following criteria will be assessed for overall quality:
 
 The aim of this code review is to check that testing has been correctly specified.  At this stage, at least 50% of the work of the project should be completed.
 
-#### Checklist Submission 3 (6% of CW mark)
+#### Checklist Submission 3 (12% of CW mark)
 
 The following must be in place:
 
@@ -213,7 +215,7 @@ The following must be in place:
 - [ ] TDD used.
 - [ ] Tests running on Travis CI.
 
-#### Graded Criteria Submission 3 (14% of CW mark)
+#### Graded Criteria Submission 3 (8% of CW mark)
 
 The following criteria will be assessed for overall quality:
 

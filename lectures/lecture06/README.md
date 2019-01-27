@@ -1,12 +1,22 @@
 # Lecture 06: The Three Ways - Underpinning Principles of DevOps
 
-Concepts of WIP and time to deliver.
-
-GitFlow workflow
+In this lecture we will explore the key principles of DevOps and how these are mapped to the work in the rest of the module.  DevOps, and the culture surrounding it, has become a desirable trend for graduates.  In this module we skate over the principles with a software engineering lens.  The principles you will find are similar to ones already discussed in the module.
 
 ## Behavioural Objectives
 
+- [ ] TODO
+
 ## Overview of DevOps
+
+DevOps tries to address the boundary between the developers (the creators of software) and operations (the management of software).  DevOps is a set of principles and techniques that enable improved working between these two groups, driven by a number of the ideas we have already presented in this module:
+
+- The Lean Movement (we covered [Lean Software Development in Lecture 04](../lecture04)).
+- The Agile Manifesto (we covered [Agile in Lecture 01](../lecture01)).
+- Agile Infrastructure and Velocity Movement ([modern software architectures in Lecture 05](../lecture05) is related to this idea).
+- The Continuous Delivery Movement (we cover [Continuous Delivery in Lecture 16](../lecture16)).
+- The Toyota Kata - which is about continuous improvement.
+
+In [Lecture 05](../lecture05) we examined modern software architecture.  The following table summarises how these trends have affected business practices.
 
 |       | **1970s-1980s** | **1990s** | **2000s-Present** |
 |-------|-----------------|-----------|-------------------|
@@ -17,7 +27,22 @@ GitFlow workflow
 | **At risk** | The whole company | Product line or division | Product feature |
 | **Cost of failure** | Bankruptcy | Revenue miss | Negligible |
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wyWI3gLpB8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+This is taken from Adrian Cockcroft's talk *Velocity and Volume (or Speed Wins)* which you can watch below.  Adrian was Cloud Architect at Netflix at the time, and is now Vice President for Cloud Architecture Strategy at Amazon Web Services.
+
+[![Velocity and Volume (or Speed Wins)](https://img.youtube.com/vi/wyWI3gLpB8o/0.jpg)](https://www.youtube.com/watch?v=wyWI3gLpB8o)
+
+These forces has led to two conflicting goals in IT organisations:
+
+- Respond to the rapidly changing competitive landscape.
+- Provide stable, reliable, and secure service to the customer.
+
+### An Example
+
+Why is this a problem?  Let us consider an abstract scenario in an IT business (adapted from *The DevOps Manual*).
+
+First, our applications and infrastructure can become fragile over time.  This is due to system complexity, poor documentation, and work arounds being used.  **Technical debt** (where quick and easy solutions lead to long-term problems) means that systems get into a mess.  Operations promise to fix the problems, but the costs is prohibitive.  Any change is also considered dangerous as it may break the system.
+
+Then bigger promises are made.
 
 ![The Three Ways of DevOps](img/three-ways.jpg)
 

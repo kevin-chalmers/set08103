@@ -150,13 +150,38 @@ Receiving fast and constant feedback from customer to Operations and Development
 
 ### Working Safely with Complex Systems
 
+If a system is complex, it means it is too big for any one person to see the whole and understand how the parts work together.  Components are strongly coupled leading to system behaviour not easily explained via component behaviour.
+
+A complex system will not always behave the same way under the same conditions.  Therefore, using static means of monitoring a system is not sufficient.  As failure will occur, we need conditions to work safer with complex systems.  These are:
+
+- Manage complex work so that problems are revealed.
+- When a problem arises they are *swarmed and solved*, leading to new learning.
+- New knowledge is exploited throughout the organisation.
+- Leaders create other leaders who grow these capabilities.
+
 ### See Problems as They Occur
+
+It is one thing to test your software.  It is another to ensure the results of those tests are visible to the team.  The more automated our processes become, the more information we can gather and present to the team to visualise the problem.  This is a feedback loop.  Quick and informative feedback will allow the team to solve problems quickly before they become a bigger issue.
 
 ### Swarm and Solve Problems to Build New Knowledge
 
+Essentially, stop waiting to fix a problem: **fix the problem now.**  Waiting to schedule a fix is not beneficial, as the context of the problem degrades over time.  Fix the problem now, and gain the new knowledge from performing that fix.
+
+Swarming is when everyone on the team gets behind fixing the problem.  It is necessary as:
+
+- It prevents a problem progressing downstream where it becomes more expensive to fix.
+- It prevents the team starting new work which may introduce further errors.
+- If the problem is not fixed, it could become recurrent at the next operation, leading to further errors to fix.
+
 ### Keep Pushing Quality Closer to the Source
 
+Surprisingly, in complex systems, more checks and approvals increases the chance of future failure.  This is because these checks and approvals happen further away from the team who undertook the work.  This means the checkers and approvers have less knowledge about what they are looking at.
+
+By the production team being responsible for testing and quality (via automation), everyone sees quality as their responsibility.  This will improve overall quality as a team will ensure quality is baked in.  They will not expect someone else to do the checking for them.
+
 ### Enable Optimising for Downstream Work Centres
+
+This is really about seeing where your work goes next.  Working with customers is very important, but if you forget the next step after development (e.g., operation or QA), then you make work harder for them.  Focus on where the work goes next to optimise for this area.
 
 ## The Third Way of DevOps: The Principles of Continual Learning and Experimentation
 

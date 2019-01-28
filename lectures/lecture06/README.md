@@ -187,15 +187,45 @@ This is really about seeing where your work goes next.  Working with customers i
 
 The Third Way is about building a high-trust culture that supports a scientific approach to experimentation and learning from those experiments.  People test ideas to see what can improve the delivery of value, and this new knowledge is shared across the organisation.
 
+A culture of fear and low trust emerges where mistakes are punished.  If people who make suggestions or point out problems are seen as troublemakers then improvements will not occur.  How we deal with these issues is important in any cultural environment.
+
 ### Enabling Organisational Learning and a Safety Culture
+
+We want to create an organisation that learns and trusts the people within it.  
+
+| Pathological | Bureaucratic | Generative |
+|--------------|--------------|------------|
+| Information is hidden | Information may be ignored | Information is actively sought |
+| Messengers are "shot" | Messengers are tolerated | Messengers are trained |
+| Responsibilities are shirked | Responsibilities are compartmented | Responsibilities are shared |
+| Bridging between teams is discouraged | Bridging between teams is allowed but discouraged | Bridging between teams is rewarded |
+| Failure is covered up | Organisation is just and merciful | Failure causes inquiry |
+| New ideas are crushed | New ideas create problems | New ideas are welcomed |
+Taken from *A Typology of Organisation Cultures* by *R. Westrum*.  http://dx.doi.org/10.1136/qshc.2003.009522
+
+We want to be a *generative organisation*.  This allows information and learning to be shared in a culture of support and safety.
+
+- [ ] Reflect on your own experiences working in an organisation.  Can you relate to the different aspects from your previous experience?  What about your experience of the University?
 
 ### Institutionalise the Improvement of Daily Work
 
+Basically, schedule time to fix defects and improve the code base.  Do not leave this as a task to do later.  Explicitly schedule - routinely - the time to pay off technical debt.  This will make the system safer.
+
 ### Transform Local Discoveries into Global Improvements
+
+The simple answer is to create mechanisms to share knowledge within the organisation.  This can be done through documenting processes and automating work.  Shared code and repositories really helps here.
 
 ### Inject Resilience Patterns into Our Daily Work
 
+Experiment with how work is conducted.  This can be done in several ways, including:
+
+- running scripts that randomly fail some servers to see how the system responds.
+- adding faults into code intentionally to check the response.
+- challenging the team to increase the number of deploys per day to see what happens.
+
 ### Leaders Reinforce a Learning Culture
+
+A leader's role should be to create a great team environment to allow the team to do their best work.  This means the leader and team are dependent on each other.  A leader should reinforce the learning and encourage the experimentation that leads to a more successful team overall.
 
 ## Mapping the Module
 

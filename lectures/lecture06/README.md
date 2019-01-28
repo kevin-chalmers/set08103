@@ -4,7 +4,9 @@ In this lecture we will explore the key principles of DevOps and how these are m
 
 ## Behavioural Objectives
 
-- [ ] TODO
+- [ ] **Define** *DevOps*.
+- [ ] **Describe** the *Three Ways of DevOps.*
+- [ ] **Reflect on** how *the lectures map to the Three Ways.*
 
 ## Overview of DevOps
 
@@ -271,6 +273,12 @@ The mapping is loose and based on our need to cover methods and develop our appl
 - Continual Learning and Experimentation.
 
 ## Summary
+
+To summarise, we have covered the following:
+
+- Defined what we mean by DevOps - a software development methodology built on agile and lean, integrating bot development and operation of software.
+- Described the Three Ways of DevOps: flow, feedback, and continual experimentation and learning.
+- Reflected on how the module maps to the Three Ways by listing the lectures in each sub-area.
 
 ## Further Reading
 

@@ -98,9 +98,9 @@ As the Internet grew and the requirements for software to be delivered over the 
 
 The problem with the monolith architecture was it had low-tolerance.  It was a single point-of-failure.  It was a single bottleneck.  It was a single application.  It became harder for software engineers to update without bringing down other systems.  It also became difficult to update.  So, a solution for the Internet age was needed.
 
-### Service Orientated Architectures
+### Service Oriented Architectures
 
-To mitigate monolithic issues, **Service Orientated Architectures** (SOA) emerged.  With SOA, application logic is further divided into different services or APIs which can communicate with different or shared databases:
+To mitigate monolithic issues, **Service Oriented Architectures** (SOA) emerged.  With SOA, application logic is further divided into different services or APIs which can communicate with different or shared databases:
 
 ![Service Architecture](img/service-architecture.png)
 

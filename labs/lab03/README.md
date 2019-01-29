@@ -120,7 +120,19 @@ A Docker container [is available for MySQL](https://hub.docker.com/_/mysql/).  T
 
 #### Git Submodules
 
-A **Git Submodule** is when we have other Git repositories linked to our main one.  This is useful when we want to include external libraries in our build pipeline.  Git submodules are not included in the tracking of the local repository, so do not add anything to your main repository.  To use submodules, we add a `.gitmodules` file to the root of the project folder.  The contents of this file are:
+A **Git Submodule** is when we have other Git repositories linked to our main one.  This is useful when we want to include external libraries in our build pipeline.  Git submodules are not included in the tracking of the local repository, so do not add anything to your main repository.  Unfortunately, IntelliJ is not very good at managing submodules, so we will have to do this in the terminal.  IntelliJ does provide a terminal - there is a tab at the bottom:
+
+![IntelliJ Terminal](img/intellij-terminal.png)
+
+From the terminal we need to execute the following two commands:
+
+```shell
+git submodule add https://github.com/datacharmer/test_db db/
+git submodule init
+git submodule update
+```
+
+This will create a `.gitmodules` file to the root of the project folder.  The contents of this file are:
 
 ```
 [submodule "db/test_db"]
@@ -128,16 +140,7 @@ path = db/test_db
 url = https://github.com/datacharmer/test_db
 ```
 
-This will add the files from example SQL database to the folder `db/test_db` once we initialise the Git submodule.  Unfortunately, IntelliJ is not very good at managing submodules, so we will have to do this in the terminal.  IntelliJ does provide a terminal - there is a tab at the bottom:
-
-![IntelliJ Terminal](img/intellij-terminal.png)
-
-From the terminal we need to execute the following two commands:
-
-```shell
-git submodule init
-git submodule update
-```
+This will add the files from example SQL database to the folder `db/test_db` once we initialise the Git submodule.
 
 Git will pull the repository.  You should now have the `db/test_db` folder.
 

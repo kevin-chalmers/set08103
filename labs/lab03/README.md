@@ -127,7 +127,7 @@ A **Git Submodule** is when we have other Git repositories linked to our main on
 From the terminal we need to execute the following two commands:
 
 ```shell
-git submodule add https://github.com/datacharmer/test_db db/
+git submodule add https://github.com/datacharmer/test_db db/test_db
 git submodule init
 git submodule update
 ```

@@ -353,6 +353,12 @@ To summarise the Scrum Framework see below:
 
 Your team should work on everything together.  **Work on the labs together.**  **Study the material together.** **Work on the coursework together.**  By this, you will increase the overall capability of the team above what the individuals can do by helping each other.  **Remember, you are a team.**
 
+## Spotify Engineering Culture
+
+To illustrate how Scrum ideals (and agile principles in general) can work, watch the following video by Spotify:
+
+[![Spotify Engineering Culture](https://img.youtube.com/vi/4GK1NDTWbkY/0.jpg)](https://www.youtube.com/watch?v=4GK1NDTWbkY)
+
 ## FAQs - Scrum Usage in the Module
 
 1. **Do we really need to meet once a day?**

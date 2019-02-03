@@ -34,11 +34,11 @@ As illustrated, flow occurs when the skill required to do a task is high (from t
 
 - [ ] Reflect on your own experiences when you might have experienced flow (playing video games is one known area for example).
 - [ ] Reflect on which of the mental states as illustrated above you might have been in during the following tasks:
-    - Attending a lecture.
-    - Watching a movie.
-    - Working on a lab for university.
-    - Working on a coursework for university.
-    - Doing an exam for university.
+  - Attending a lecture.
+  - Watching a movie.
+  - Working on a lab for university.
+  - Working on a coursework for university.
+  - Doing an exam for university.
 
 A further seven conditions of flow (taken from [Wikipedia](https://en.wikipedia.org/wiki/Flow_(psychology))) are:
 
@@ -68,48 +68,36 @@ A key factor we are working on is the use of version control.  We have been subm
 
 ### Step 1: Enable On-demand Creation of Dev, Test, and Production Environments
 
-We want developers to run production-like environments on their own workstations.
+We want developers to run production-like environments on their own workstations.  The "it runs on my laptop" excuse should not be acceptable.
 
-Developers can run and test their code in production-like environments as part of their daily work.
-
-For example, use containers and deploy to the cloud.
+For example, we use containers and deploy to the cloud.  Developers can run and test their code in production-like environments as part of their daily work by using these same containers.
 
 ### Step 2: Create Our Single Repository of Truth for the Entire System
 
-Ensure all parts of out software system are shared in VCS.
-
-For example, code, database, configuration (Docker), tests, etc.
-
-Not sufficient to recreate previous state; recreate entire build process.
+We should ensure all parts of out software system are shared in VCS so they can be easily recreated.  For example, code, database, configuration (Docker), tests, etc. can all be in version control.  It is not sufficient just to recreate previous state.  We nee to be able to recreate entire build processes.
 
 ### Step 3: Make Infrastructure Easier to Rebuild than to Repair
 
-Automated configuration systems (e.g., Puppet, Ansible, etc.).
+This is where operations really comes in.  We need to use automated configuration systems (e.g., Puppet, Ansible, etc.) which only require text files.  This is "configuration as code".
 
-Create new VMs or containers and deploy them, destroying the old ones.
-
-Immutable infrastructure - no manual changes, must be rebuilt from VCS.
+Furthermore, we create new VMs or containers and deploy them, destroying the old ones.  This is known as immutable infrastructure - no manual changes to infrastructure.  It must be rebuilt from VCS.
 
 ### Step 4: Modify our Definition of Development "Done" to Include Running in Production-like Environments
 
-DoD is beyond correct code.
-
-Each development increment:
+We introduced Definition of Done (DoD) in [Lecture 02 on Scrum](../lecture02).  DoD needs to go beyond just having correct code.  For each development increment, our code must be:
 
 - Integrated.
 - Tested.
 - Working and potentially shippable.
 - Demonstrated in production-like environment.
 
-Prevents a feature being called done because it ran on a developer's machine and no where else.
+This prevents a feature being called done because it ran on a developer's machine and nowhere else.
 
 ## Enable Fast and Reliable Automated Testing
 
-Without automated testing larger code bases cost more to test.  This is unscalable.
+Without automated testing larger code bases cost more to test.  This is unscalable.  Developers become afraid to commit changes.  New team members don't understand the code.  Existing team members understand too well the problems in the system that will cause problems when changes occur.
 
-Without automate testing, developers become afraid to commit changes.  New team members don't understand, and existing team members understand too well the problems in the system.
-
-From Google's automated testing and integration approach, in 2013 4000 teams of developers were changing 50% of their code per month.  Also:
+ In 2013, due to Google's automated testing and integration approach, 4000 teams of developers were changing 50% of their code per month.  Also:
 
 - 40,000 code commits per day.
 - 50,000 builds per day, sometimes up to 90,000.
@@ -124,9 +112,7 @@ Build quality into our product at the earliest stage by developers building auto
 
 Taken from *Continuous Delivery* by Humble and Farley.
 
-Commit Stage builds and packages software, runs unit tests, static analysis, etc.
-
-Acceptance Stage deploys into production-like environment for automated acceptance tests.
+Commit Stage builds and packages software, runs unit tests, static analysis, etc.  Acceptance Stage deploys into production-like environment for automated acceptance tests.
 
 Continuous integration practices require three capabilities:
 
@@ -134,17 +120,21 @@ Continuous integration practices require three capabilities:
 - culture to stop the entire production line when validation tests fail.
 - developers working in small batches on trunk rather than long-lived feature branches.
 
+We will examine [Continuous Integration in Lecture 15](../lecture15) and [Continuous Delivery in Lecture 16](../lecture16).
+
 ### Step 2: Build a Fast and Reliable Automated Validation Test Suite
 
 Three types of automated test:
 
-1. **Unit tests**.
-2. **Acceptance tests** to check operates as designed - does what the customer wants.
+1. **Unit tests** which we cover in [Lecture 14](../lecture14).
+2. **Acceptance tests** to check software operates as designed - does it do what the customer wants?
 3. **Integration tests** to check application interacts with other applications and services correctly.
 
-Ten-minute build and test is reasonable for local tests.
+It is quite reasonable for software to take ten-minutes to build and test locally.
 
 ### Step 3: Catch Errors as Early in Our Automated Testing as Possible
+
+The **Test Pyramid** allows us to understand the cost and level of our tests.
 
 [![Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid/testPyramid.png)](https://martinfowler.com/articles/practical-test-pyramid.html)
 
@@ -152,7 +142,15 @@ Taken from Martin Fowler, *The Practical Test Pyramid* https://martinfowler.com/
 
 - [ ] Read Martin Fowler's post on *The Practical Test Pyramid* for a deeper understanding of test automation.
 
+The Test Pyramid has three levels:
+
+- **UI tests** which are slow (expensive) but allow us to test a fully integrated system.
+- **Service tests** are the midway point in speed and integration.
+- **Unit tests** provide the least integration, but are fast.
+
 ### Step 4: Ensure Tests Run Quickly (in Parallel if Necessary)
+
+Basically, if there are tests that can be run at the same time, do so.
 
 ![Parallel Testing Pipeline](img/parallel-testing.png)
 
@@ -160,7 +158,7 @@ Taken from *Continuous Delivery* by Humble and Farley.
 
 ### Step 5: Write Our Automated Tests Before We Write the Code ("Test Driven Development")
 
-Begin every change to the system by writing the automated test to test the expected behaviour.  Test fails, and we write code to pass the test.
+Begin every change to the system by writing the automated test to test the expected behaviour.  Test fails, and we write code to pass the test.  This is **Test Driven Development**.
 
 Three steps of Test-Driven Development:
 
@@ -170,70 +168,59 @@ Three steps of Test-Driven Development:
 
 ### Step 6: Automate as Many of Our Manual Tests as Possible
 
-Having humans executing tests that can be automated is a waste of human potential.
-
-Start with a small number of automated tests and grow them over time, increasing the level of assurance that we can quickly detect changes to the system that break the build.
+Having humans executing tests that can be automated is a waste of human potential.  To start, build a small number of automated tests and grow them over time, increasing the level of assurance that we can quickly detect changes to the system that break the build.
 
 ### Step 7: Integrate Performance Testing into Our Test Suite
 
-Build performance testing environment at the start of the project.
+Performance testing is a whole subject in itself.  We need to know our application works under stress, and so we need to build a specialist environment to stress test the application.  Build the performance testing environment at the start of the project.
 
 ### Step 8: Integrate Non-functional Requirements Testing into Our Test Suite
 
-For example, security, scalability, availability.
-
-Can be managed via correct configuration.
+Non-functional requirements typically inclue security, scalability, and availability concerns (as well as others).  These can normally be managed via correct configuration and suitable management of the configuration.
 
 ### Step 9: Pull Our Andon Cord When the Deployment Pipeline Breaks
 
-When our deployment pipeline breaks at a minimum we notify the entire team of the failure so anyone can fix the problem or we can rollback the build.
-
-#### Why We Need to Pull the Andon Cord
-
-We end up with an unpredictable "stabilization phase" where the team is doing fixes to get the tests to pass, accumulating technical debt, and effectively back in a waterfall method.
+When our deployment pipeline breaks, at a minimum we notify the entire team of the failure so anyone can fix the problem or we can rollback the build.  Why do we need to pull the Andon Cord?  
+If not, we end up with an unpredictable "stabilization phase" where the team is doing fixes to get the tests to pass, accumulating technical debt, and effectively back in a waterfall method.
 
 ## Enable and Practice Continuous Integration
 
-The longer developers work in isolated branches the more difficult it becomes to integrate and merge everyone together.
+The longer developers work in isolated branches the more difficult it becomes to integrate and merge everyone together.  If merging code is painful, we will do it less often, making the problem worse over time.  Our practice should be:
 
-If merging code is painful, we will do it less often, making the problem worse over time.
+- Multiple builds per day.
+- Multiple commits per day.
+- 1000s of new lines of code per day.
 
-Multiple builds per day.
+This is different than single builds, commits, and a few lines of code per day seen in rigid organisations.
 
-Multiple commits per day.
+### Small Batch Development and What Happens When we Commit Code to Trunk (`develop`) Infrequently
 
-1000s new lines of code per day.
-
-### Small Batch Development and What Happens When we Commit Code to Trunk Infrequently
+We discussed small batch sizes in [Lecture 06](../lecture06).  We used the following image:
 
 [![Small](https://cdn-images-1.medium.com/max/2000/1*YtshITZLqxYGzfYBHqTZNA.gif)](https://medium.com/@stefanluyten/single-piece-flow-5d2c2bec845b)  Taken from *Single Piece Flow* by Stefan Luyten: https://medium.com/@stefanluyten/single-piece-flow-5d2c2bec845b.
 
-When changes break the build, swarm to bring the deployment pipeline back up.
+If merging is difficult, we don't do it.  Then we don't do refactoring work to improve code quality, which leads to an ongoing build-up of technical debt.  A lack of refactoring means normal changes become difficult over time, slowing down the rate of new feature development.
 
-Spectrum of methods of working with branches:
+There are two ends to the spectrum of working with branches:
 
 - **Optimise for individual productivity** - bad as collaboration becomes extremely difficult.  Everyone only sees their own problems.
 - **Optimise for team productivity** - better as everyone sees everything.  A single commit can break everything though, and stop progress.
 
-If merging is difficult, we don't do it.  Then we don't do refactoring work to improve code quality.  This leads to an ongoing build-up of technical debt.
-
-A lack of refactoring means normal changes become difficult over time, slowing down the rate of new feature development.
-
 ### Adopt Trunk-based Development Practices
 
-All developers commit to `develop` at least once per-day.
+To do better we need to reduce the work of a merge.  All developers commit to `develop` at least once per-day.  This reduces batch size to the work of a developer per day.  More frequent check-ins lead to smaller batch sizes and better single-piece flow.
 
-Reduces batch size to the work of a developer per day.
+We can have *gated commits* - if the commit breaks deployment then reject it.  Then the team swarm to solve the problem.
 
-More frequent check-ins lead to smaller batch sizes and better single-piece flow.
+Our Definition of Done now becomes (from *The DevOps Handbook*):
 
-Can have *gated commits* - if the commit breaks deployment then reject it.
-
-DoD becomes:
-
-At the end of each development interval, we must have integrated, tested, working, and potentially shippable code, demonstrated in a production-like environment, created from develop using a one-click process, and validated with automated tests.
+> At the end of each development interval, we must have integrated, tested, working, and potentially shippable code, demonstrated in a production-like environment, created from develop using a one-click process, and validated with automated tests.
 
 ## Automate and Enable Low-risk Releases
+
+If we can get our releases to be low-risk, we will perform more of them.  This is the definition of flow: *releasing value quickly to the customer*.
+
+Developers need to be able to deploy code to achieve fast, low-risk releases.  For example, at Facebook deploys were simplified to support the growth in developer numbers:
 
 [![Developers Deploying Per Week at Facebook](https://scontent.flhr4-1.fna.fbcdn.net/v/t1.0-9/418740_10151076511697200_122890827_n.jpg?_nc_cat=108&_nc_ht=scontent.flhr4-1.fna&oh=7bbd9b4ca7e32135b2cae9c777c3ab65&oe=5CBC8A57)](https://www.facebook.com/notes/facebook-engineering/ship-early-and-ship-twice-as-often/10150985860363920/)
 
@@ -241,9 +228,7 @@ Taken from *Ship Early and Ship Twice as Often*: https://www.facebook.com/notes/
 
 ### Step 1: Automate Our Deployment Process
 
-Fully document the steps in the deployment process.
-
-Simplify and automate manual steps:
+Deployment should be automated.  The deployment process and steps involved **must** be fully documented.  Then we can simplify and automate the manual steps, such as:
 
 - Packaging code for deployment.
 - Creating virtual machines and containers.
@@ -253,17 +238,15 @@ Simplify and automate manual steps:
 - Generating configuration files from templates.
 - Running test procedures.
 
-Deployment pipeline should:
+Our deployment pipeline should:
 
-- Deploy the same to every environment.
+- Deploy the same build to every environment.
 - Smoke test (sanity check core functionality) our deployments.
 - Ensure environments are consistent.
 
 ### Step 2: Enable Automated Self-service Deployments
 
-Developers can commit and it appears directly in deployment.
-
-Affects following stages:
+The goal is to go from commit to deployment in a single step.  Developers can commit and it appears directly in deployment if checks are passed.  This affects following stages:
 
 - **Build** - create packages from version control to deploy.
 - **Test** - anyone able to run test suite.
@@ -271,37 +254,31 @@ Affects following stages:
 
 ### Step 3: Integrate Code Deployment into the Deployment Pipeline
 
-Ensure packages created during continuous integration are suitable for deployment.
+First, we must ensure packages created during continuous integration are suitable for deployment.  Then we provide a push-button, self-service deployment to the developers.
 
-Show readiness of production environments at a glance.
-
-Provide push-button, self-service deployment.
-
-Record automatically which commands were run when, where, and by who.
-
-Run smoke test on deployment machine to ensure everything is correct.
-
-Provide fast-feedback so developers know if deploy was successful.
+Self-service deployments like this requires more information to development and operations.  We need to show the readiness of production environments at a glance.  For audit reasons, we need to record automatically which commands were run when, where, and by who.  Also, we need to run smoke tests on the deployment machine to ensure everything is correct.  All of these provide fast-feedback so developers know if a deploy was successful.
 
 ### Step 4: Decouple Deployments from Releases
 
-Deployment is the installation of a specified version of the software.
+Deployments and releases have different motivations.  A deployment is the installation of a specified version of the software.  It can be continuously done to ensure software is of the highest quality.  A release is a feature (or set of features) made available to the customer.  It requires deployment, but is normally defined via marketing or sales agreements with customers.
 
-Release is a feature (or set of features) made available.
+There are different manners to release software: environment-based and application-based.
 
 #### Environment-based Release Patterns
 
+We can run two sets of servers, called **the Blue-green deployment pattern**:
+
 ![Blue-Green Deployment Pattern](img/blue-green.png)
 
-Database can follow blue-green, or decouple database from application change.
+Our databases can also follow blue-green deployment, or we can decouple database changes from application changes.
 
-Deploy to internal, then sub-set of users, then full-deployment (Canary Pattern)
+We can also use the **Canary Pattern** where we deploy first to internal customers, then a sub-set of external customers, then finally full-deployment.  If any point goes wrong, we roll-back.
 
 #### Application-based  Release Patterns
 
-Feature toggles.
+There are two methods to release an application then test and activate features over time.  First we can use [**Feature Toggles**](https://en.wikipedia.org/wiki/Feature_toggle).  A feature toggle simply allows us to switch off features in a deployed application, for example via a compiler flag.
 
-Dark launches.
+**Dark launches** are similar, but allow developers and testers to experiment with the code while it is hidden from the customer.
 
 ## Architecture
 
@@ -309,4 +286,13 @@ We covered [modern software architecture in Lecture 05](../lecture05).  Microser
 
 ## Summary
 
+- We've explained the psychology of flow, and specifically mapped that back to some of the ideas we have introduced around Scrum, DevOps, and lean/agile.
+- We've described good deployment pipeline practice, discussing ideas around version control and rebuilding infrastructure.
+- We've describe good testing practices for flow, focusing on test automation which we cover in more detail later in the module.
+- We've described release methods to encourage flow, and in particular the difference between deploying and releasing.
+
 ## Further Reading
+
+The goto book on DevOps if *The DevOps Handbook: How to Create World-class Agility, Reliability & Security in Technology Organisations* by Gene Kim, Jez Humble, Patrick Debois, and John Willis.
+
+![The DevOps Handbook](../lecture06/img/devops-book.jpg)

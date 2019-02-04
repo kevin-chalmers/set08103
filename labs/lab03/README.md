@@ -215,6 +215,18 @@ When running Docker from the command line, we use `docker compose up` to build a
 
 ### Test MySQL Connection
 
+First, we need to update the `pom.xml` file to add MySQL support.  Open the file in IntelliJ and add the following to the dependancies:
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.44</version>
+    </dependency>
+</dependencies>
+```
+
 Now we need to update our main application to move from MongoDB to MySQL.  A MySQL server takes a bit more time to start-up, so we need to have code to attempt to connect multiple times.  The Java code below is our new application.
 
 ```java

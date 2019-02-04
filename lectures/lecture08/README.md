@@ -67,17 +67,67 @@ Kanban in software development appears to have evolved from Microsoft in the 200
 
 ### Kanban Board
 
-In simple terms, a Kanban board is 
+In simple terms, a Kanban board is a set of columns that have Kanban cards in them.  Below is a simple Kanban board.
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Simple-kanban-board-.jpg#/media/File:Simple-kanban-board-.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Simple-kanban-board-.jpg" alt="Simple-kanban-board-.jpg" height="382" width="640"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Jeff.lasovski&amp;action=edit&amp;redlink=1" class="new" title="User:Jeff.lasovski (page does not exist)">Jeff.lasovski</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=19121595">Link</a></p>
 
+This is the simplest form of Kanban board, and is used in many places.  We have three columns:
+
+- a **To Do** column which contains cards that need to be worked on.
+- a **Doing** column which contains cards currently being worked on.
+- a **Done** column which contains cards where the work is completed.
+
+These three columns are a simple **value stream**.  We introduced value streams in [Lecture 04 on Lean Software Development](../lecture04).  An example value stream is below:
+
+<p><a href="https://commons.wikimedia.org/wiki/File:ValueStreamMapParts.png#/media/File:ValueStreamMapParts.png"><img src="https://upload.wikimedia.org/wikipedia/commons/9/99/ValueStreamMapParts.png" alt="ValueStreamMapParts.png" height="415" width="640"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:DanielPenfield&amp;action=edit&amp;redlink=1" class="new" title="User:DanielPenfield (page does not exist)">DanielPenfield</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/3.0" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=28553995">Link</a></p>
+
+Here, our columns would be *Process A*, *Process B*, *Process C*, and *Shipping*.  Remember the roots of Kanban from manufacturing.  The cards will be pulled through the system based on capacity and need.  The aim with a Kanban board is to simulate a value stream.  Below is a more detailed Kanban board.
+
 <p><a href="https://commons.wikimedia.org/wiki/File:Kanban_board_example.jpg#/media/File:Kanban_board_example.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Kanban_board_example.jpg" alt="Kanban board example.jpg" height="480" width="581"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Dr_ian_mitchell&amp;action=edit&amp;redlink=1" class="new" title="User:Dr ian mitchell (page does not exist)">Dr ian mitchell</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/2.5" title="Creative Commons Attribution-Share Alike 2.5">CC BY-SA 2.5</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=20245783">Link</a></p>
+
+This board tries to model a software production value stream:
+
+- **backlog** is our product or spring backlog.
+- **in progress** is the work currently being done.
+- **peer review** is tasks requiring a review from another member of the team.
+- **in test** is tasks that need tested.
+- **done** is the completed tasks.
+- **blocked** is tasks that are blocked for some reason.
+
+Also notice the numbers in column titles.  This is our card limit for that column, or the WiP limit.  The column should not have more cards than this number.
+
+Kanban boards can be more detailed still.  Below is a final example:
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Sample_Kanban_Board.png#/media/File:Sample_Kanban_Board.png"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Sample_Kanban_Board.png/1200px-Sample_Kanban_Board.png" alt="Sample Kanban Board.png"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Andycarmichaeluk&amp;action=edit&amp;redlink=1" class="new" title="User:Andycarmichaeluk (page does not exist)">Andy Carmichael</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=55448101">Link</a></p>
 
+We don't cover **epics** in the module, but these are just bigger stories really.  Zube also supports epics, card limits, and point limits in columns.
+
+- [ ] Examine Zube's support for better Kanban practice.  Your team might want to use these features to improve their working practice.
+
 ### Scrumban
 
+Scrumban (the conjoining of Scrum and Kanban) was originally used as a method to transition from Scrum to Kanban.  However, it is now used as a method in its own right.
+
+Scrumban differs from Scrum in the principles and practices it emphasises (taken from [Wikipedia](https://en.wikipedia.org/wiki/Scrumban)):
+
+- recognizing the important role of organizational management (self-organization remains an objective but within the context of specific boundaries).
+- allowing for specialized teams and functions.
+- applying explicit policies around ways of working.
+- applying the laws of flow and queuing theory.
+- deliberate economic prioritization.
+
+Scrumban also differs from Kanban as it:
+
+- prescribes an underlying software development process framework (Scrum) as its core.
+- is organized around teams.
+- recognizes the value of time-boxed iterations when appropriate.
+- formalizes continuous improvement techniques within specific ceremonies.
+
+Scrumban also allows long-term planning using buckets.  The following image illustrates:
+
 <p><a href="https://commons.wikimedia.org/wiki/File:Bucket_size_planning.jpg#/media/File:Bucket_size_planning.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Bucket_size_planning.jpg" alt="Bucket size planning.jpg"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Garbanea&amp;action=edit&amp;redlink=1" class="new" title="User:Garbanea (page does not exist)">Garbanea</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=37433093">Link</a></p>
+
+The method is to bring forward ideas into actual work in the Kanban board over time.  This allows the organisation to think about long-term plans over just ideas.
 
 ## Personal Kanban
 

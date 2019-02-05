@@ -2,6 +2,10 @@
 
 ## Behavioural Objectives
 
+- [ ] **Describe** the *origins of Kanban in lean manufacturing*.
+- [ ] **Define** the *principles of Kanban*.
+- [ ] **Describe** *Scrumban*.
+
 ## Kanban
 
 Kanban is a Japanese word (看板) meaning signboard or billboard.  This doesn't tell us much on its own.  Boards we will discuss later, but they are only part of the Kanban idea.
@@ -131,16 +135,39 @@ The method is to bring forward ideas into actual work in the Kanban board over t
 
 ## Personal Kanban
 
+Kanban has become popular enough that a *Personal Kanban* movement has sprung up.  The idea is to use the features of Kanban (task board, limiting WiP, etc.) to manage your personal tasks and life.  Personal Kanban also takes ideas such as priority lists to feed through to doing, and long-term task viewing.
+
+You can find out more about Personal Kanban from:
+
+- The [Personal Kanban wiki](http://personalkanban.com/pk/).
+- The [Lifehacker Page on Personal Kanban](https://lifehacker.com/productivity-101-how-to-use-personal-kanban-to-visuali-1687948640).
+- The book *Personal Kanban: Mapping Work/Navigating Life* by Jim Benson and Tonianne DeMaria Barry (see recommended reading).
+
 ## Tools
 
-GitHub Projects
+Kanban has seen the rise of a number of tools.  Really, most of these tools just provide task boards which are in themselves not enough for Kanban.  Scrum for example defines task boards.  However, we've put these under the Kanban tool banner as this is how people generally view them.
 
-Jira
-
-Trello
-
-Zube
+- **GitHub Projects** provides a view of your issues in a task board style.  There is also automation of issue status based on the column a card is placed.
+- **Jira** provides a fairly substantial Kanban solution (see [here](https://www.atlassian.com/agile/tutorials/how-to-do-kanban-with-jira-software) for a tutorial).  Jira is a large issue tracking piece of software, so works in a manner similar to GitHub under the hood.
+- **Trello** is perhaps the most well known task board solution.  Via extensions it is possible to implement stronger Kanban features, but Trello itself is designed for easy entry for list management.
+- **Zube** is what we are using.  Zube also provides mechanisms to limit WiP and automate card status.  It is not as fully featured as Jira, but does well for free software.
 
 ## Summary
 
+In this lecture, we have:
+
+- Described the origins of Kanban in lean manufacturing, examining Toyota's Six Rules and Just-in-Time manufacturing.
+- Defined the principles of Kanban, namely Kanban boards, pull-based systems, limiting Work-in-Progress, and Just-in-Time working.
+- Described Scrumban as the coming together of Scrum and Kanban ideals.
+
 ## Recommended Reading
+
+There are many Kanban books available.  The basic premise of Kanban is easy, but making it work takes practice and effort.  These books can help reinforce the ideas.
+
+*Real World Kanban: Do Less, Accomplish More with Lean Thinking* by Mattias Skarin is considered a good text for teams developing Kanban principles.
+
+![Real World Kanban](img/real-world-kanban.jpeg)
+
+*Personal Kanban: Mapping Work/Navigating Life* by Jim Benson and Tonianne DeMaria Barry is popular with individuals applying Kanban to their own lives.
+
+![Personal Kanban](img/personal-kanban.png)

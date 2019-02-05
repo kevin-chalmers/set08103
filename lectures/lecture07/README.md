@@ -11,7 +11,7 @@ In this lecture we will cover the technical practices of flow.  Flow is our abil
 
 ## The Psychology of Flow
 
-The concept of [Flow](https://en.wikipedia.org/wiki/Flow_(psychology)) was initially defined by  Mihály Csíkszentmihályi.  A Flow state involves the following six characteristics (taken from [Wikipedia](https://en.wikipedia.org/wiki/Flow_(psychology))):
+The concept of [Flow](https://en.wikipedia.org/wiki/Flow_(psychology)) was initially defined by Mihály Csíkszentmihályi.  A Flow state involves the following six characteristics (taken from [Wikipedia](https://en.wikipedia.org/wiki/Flow_(psychology))):
 
 1. Intense and focused concentration on the present moment.
 2. Merging of action and awareness
@@ -176,12 +176,11 @@ Performance testing is a whole subject in itself.  We need to know our applicati
 
 ### Step 8: Integrate Non-functional Requirements Testing into Our Test Suite
 
-Non-functional requirements typically inclue security, scalability, and availability concerns (as well as others).  These can normally be managed via correct configuration and suitable management of the configuration.
+Non-functional requirements typically include security, scalability, and availability concerns (as well as others).  These can normally be managed via correct configuration and suitable management of the configuration.
 
 ### Step 9: Pull Our Andon Cord When the Deployment Pipeline Breaks
 
-When our deployment pipeline breaks, at a minimum we notify the entire team of the failure so anyone can fix the problem or we can rollback the build.  Why do we need to pull the Andon Cord?  
-If not, we end up with an unpredictable "stabilization phase" where the team is doing fixes to get the tests to pass, accumulating technical debt, and effectively back in a waterfall method.
+When our deployment pipeline breaks, at a minimum we notify the entire team of the failure so anyone can fix the problem or we can rollback the build.  Why do we need to pull the Andon Cord?  If not, we end up with an unpredictable "stabilization phase" where the team is doing fixes to get the tests to pass, accumulating technical debt, and effectively back in a waterfall method.
 
 ## Enable and Practice Continuous Integration
 

@@ -1,5 +1,7 @@
 # Lecture 08: Kanban
 
+In this lecture we will examine Kanban.  Kanban is more than just a board on the wall, although that is a good starting point.  We will examine the origins of Kanban in lean manufacturing, and then move onto how Kanban is used in software development.
+
 ## Behavioural Objectives
 
 - [ ] **Describe** the *origins of Kanban in lean manufacturing*.
@@ -90,7 +92,7 @@ Here, our columns would be *Process A*, *Process B*, *Process C*, and *Shipping*
 
 This board tries to model a software production value stream:
 
-- **backlog** is our product or spring backlog.
+- **backlog** is our product or Spring backlog.
 - **in progress** is the work currently being done.
 - **peer review** is tasks requiring a review from another member of the team.
 - **in test** is tasks that need tested.

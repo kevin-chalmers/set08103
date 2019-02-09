@@ -134,6 +134,12 @@ Scrumban also allows long-term planning using buckets.  The following image illu
 
 The method is to bring forward ideas into actual work in the Kanban board over time.  This allows the organisation to think about long-term plans over just ideas.
 
+The following video goes into more detail on the Scrumban process:
+
+[![Scrumban: Mixing Agile and Lean](https://img.youtube.com/vi/uaNHFsFz7Yw/0.jpg)](https://www.youtube.com/watch?v=uaNHFsFz7Yw)
+
+- [ ] Watch the video on Scrumban and consider some of the ideas in your teams delivery process.
+
 ## Personal Kanban
 
 Kanban has become popular enough that a *Personal Kanban* movement has sprung up.  The idea is to use the features of Kanban (task board, limiting WiP, etc.) to manage your personal tasks and life.  Personal Kanban also takes ideas such as priority lists to feed through to doing, and long-term task viewing.

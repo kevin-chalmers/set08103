@@ -29,15 +29,15 @@ There are a number of different requirement types and definitions, including:
 | **Term** | **Definition** |
 |----------|----------------|
 | **Business requirement** | A high-level organisation objective. | 
-| **Business rule** | A policy, guideline, standard, or regulation that defines or constrains the business. | 
-| **Constraint** | A restriction on development choices. | 
+| **Business rule** | A policy, guideline, standard, or regulation that defines or constrains the business. |
+| **Constraint** | A restriction on development choices. |
 | **External interface requirement** | Requirements on how a system interacts with external users, services, and applications. |
 | **Feature** | Capability required by the customer, defined as a set of functional requirements. |
 | **Functional requirement** | Behaviour that the system must exhibit. |
 | **Nonfunctional requirement** | A property of the system. |
 | **Quality attribute** | A nonfunctional requirement for service or performance levels. |
 | **System requirement** | Top-level requirement for a large system with multiple components. |
-| **User requirement** | Goal or task that a user wishes to perform with the system. | 
+| **User requirement** | Goal or task that a user wishes to perform with the system. |
 
 ### Problem and Solution Domains
 
@@ -129,7 +129,7 @@ Another approach is to use a **Business Model Canvas** which can contain importa
 A key part of project management is working with the **project stakeholders.**  A system stakeholder is someone who:
 
 – uses the system (the **users**);
-– uses the results from users;
+– uses the results from the system;
 – are impacted by the deployment and use of the system;
 
 A project stakeholder is someone who:

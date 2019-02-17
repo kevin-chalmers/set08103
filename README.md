@@ -7,7 +7,7 @@
 | 3 | [Lecture 05: Modern Software Development](lectures/lecture05) <br> [Lecture 06: Three Ways of DevOps](lectures/lecture06) | [Lab 03: Requirements and Issues](labs/lab03) | Code Review 1 |
 | 4 | [Lecture 07: The First Way of DevOps - Flow](lectures/lecture07) <br> [Lecture 08: Kanban](lectures/lecture08) | [Lab 04: Task Management and Kanban](labs/lab04) | |
 | 5 | [Lecture 09: Requirements Gathering](lectures/lecture09) <br> [Lecture 10: User Stories and Use Cases](lectures/lecture10) | [Lab 05: Use Cases and Use Case Diagrams](labs/lab05) | |
-| 6 | [Lecture 11](lectures/lecture11) <br> [Lecture 12](lectures/lecture12) | [Lab 06: UML](labs/lab06) | Code Review 2 |
+| 6 | [Lecture 11: UML Diagrams](lectures/lecture11) <br> [Lecture 12: UML Workflow](lectures/lecture12) | [Lab 06: UML](labs/lab06) | Code Review 2 |
 | 7 | [Lecture 13](lectures/lecture13) <br> [Lecture 14](lectures/lecture14) | [Lab 07: Unit Testing](labs/lab07) | |
 | 8 | [Lecture 15](lectures/lecture15) <br> [Lecture 16](lectures/lecture16) | [Lab 08](labs/lab08) | |
 | 9 | Reading Week | Reading Week | Code Review 3 |

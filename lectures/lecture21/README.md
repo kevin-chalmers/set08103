@@ -215,7 +215,7 @@ The Linux Code of Conduct is concerned mainly with stopping harassment and promo
 The British Computer Society (BCS) is the recognised professional body for IT in the UK.  It defines a [Code of Conduct](https://www.bcs.org/category/6030) that its members must adhere to.  Under **Public Interest**, a member shall:
 
 > 1. have due regard for public health, privacy, security and wellbeing of others and the environment.
-> 2. have due regard for the legitimate rights of Third Parties*.
+> 2. have due regard for the legitimate rights of Third Parties.
 > 3. conduct your professional activities without discrimination on the grounds of sex, sexual orientation, marital status, nationality, colour, race, ethnic origin, religion, age or disability, or of any other condition or requirement  
 > 4. promote equal access to the benefits of IT and seek to promote the inclusion of all sectors in society wherever opportunities arise.
 

@@ -39,7 +39,19 @@ Ideally we should have APIs to allow easy access to the telemetry data.
 
 ### Create Application Logging Telemetry That Helps Production
 
+Every feature should be instrumented: if it was important enough for an engineer to implement, it is certainly important enough to generate enough production telemetry so that we can confirm that it is operating as designed and that the desired outcomes are being achieved.
 
+Logging levels:
+
+- **DEBUG**: anything that happens in the program.
+- **INFO**: actions that are user-driven or system specific.
+- **WARN**: conditions that could potentially become an error.  Should initiate an alert.
+- **ERROR**: error conditions (e.g., API call failures, internal error conditions).
+- **FATAL**: when we must terminate (e.g., failed to create network socket).
+
+List of logging events:
+
+- Authentication/authorization decisions (including logoff).
 
 ### Use Telemetry to Guide Problem-solving
 

@@ -98,3 +98,4 @@ Ideally we should have APIs to allow easy access to the telemetry data.
 ## Summary
 
 ## Recommended Reading
+### Create Our Centralised Telemetry infrastructure

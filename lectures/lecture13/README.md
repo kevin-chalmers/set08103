@@ -187,85 +187,89 @@ Product launch guidance can be produced to support new development teams.  *The 
 
 Our aim is to meet business goals.  Developers working on long-term features and products need to confirm that the work they are doing is meeting these business goals, or indeed is being used at all.
 
-Before building a feature, 
-
-Before we build a feature , we should rigorously ask ourselves , “ Should we build it , and why ? ” We should then perform the cheapest and fastest experiments possible to validate through user research whether the intended feature will actually achieve the desired outcomes .
-
-The faster we can experiment , iterate , and integrate feedback into our product or service , the faster we can learn and out - experiment the competition .
+Before building a feature, we should ask ourselves the question: should we build it, and why?  We then need to undertake the cheapest and fastest experiment to check our thinking.  This will require some form of user research.  The faster our experiment-iterate-feedback cycle, the faster we can produce products the customer wants.
 
 ### A Brief History of A/B Testing
 
-A / B testing techniques were pioneered in direct response marketing , which is one of the two major categories of marketing strategies .
+A/B testing is where we provide two different versions of a product to different groups of users.  We then analyse how these versions are used and pick which one provides the outcomes we are looking for.
 
-In previous eras , before email and social media , direct response marketing meant sending thousands of postcards or flyers via postal mail , and asking prospects to accept an offer by calling a telephone number , returning a postcard , or placing an order . In these campaigns , experiments were performed to determine which offer had the highest conversion rates . They experimented with modifying and adapting the offer , re - wording the offer , varying the copywriting styles , design and typography , packaging , and so forth , to determine which was most effective in generating the desired action ( e.g . , calling a phone number , ordering a product ) .
+A/B testing was initially used in direct response marketing.  This meant sending physical mail (e.g., postcards, flyers) asking customers to accept an offer by calling a telephone number, returning the card, or placing an order. The offer was modified and adapted (e.g., reworded, changing design, etc.) to determine which version gained the highest response.
 
-Well - documented cases of A / B testing include campaign fundraising , Internet marketing , and the Lean Startup methodology . Interestingly , it has also been used by the British government to determine which letters were most effective in collecting overdue tax revenue from delinquent citizens .
+A/B testing has also been used for political fundraising and Internet marketing.  Amazon and Google are well known for using this technique on their websites.  Users may see a slightly different version of Amazon or Google and the usage monitored to determine which version improves the metrics under test. The UK government has even used A/B testing for tax collection letter.
 
 ### Integrate A/B Testing into Our Feature Testing
 
-The most commonly used A / B technique in modern UX practice involves a website where visitors are randomly selected to be shown one of two versions of a page , either a control ( the “ A ” ) or a treatment ( the “ B ” ) . Based on statistical analysis of the subsequent behavior of these two cohorts of users , we demonstrate whether there is a significant difference in the outcomes of the two , establishing a causal link between the treatment ( e.g . , a change in a feature , design element , background color ) and the outcome ( e.g . , conversion rate , average order size ) .
+A/B testing on websites involves visitors randomly being shown either a control (**A**) or a treatment (**B**).  By performing statistical analysis on visitor behaviour we can determine if certain features (e.g., design element, colour) cause different outcomes (e.g., conversion rate, order size).
 
-If we are not performing user research , the odds are that two - thirds of the features we are building deliver zero or negative value to our organization , even as they make our codebase ever more complex , thus increasing our maintenance costs over time and making our software more difficult to change 
-
-Our countermeasure is to integrate A / B testing into the way we design , implement , test , and deploy our features . Performing meaningful user research and experiments ensures that our efforts help achieve our customer and organizational goals , and help us win in the marketplace .
+Without user research, we will build features that deliver no, or worse negative, value to the organisation.  At the same time, we increase the size of our codebase, and thus maintenance costs.  A/B testing ensures we meet our goals.
 
 ### Integrate A/B Testing into Our Release
 
-Fast and iterative A / B testing is made possible by being able to quickly and easily do production deployments on demand , using feature toggles and potentially delivering multiple versions of our code simultaneously to customer segments .
+We can integrate A/B testing into our releases using [Feature Toggles](https://en.wikipedia.org/wiki/Feature_toggle).  Thereby we can deliver multiple versions of code on-demand to different customer groups.
 
 ### Integrating A/B Testing into Our Feature Planning
 
-how we can frame hypotheses in feature development in the following form : We Believe that increasing the size of hotel images on the booking page Will Result in improved customer engagement and conversion We Will Have Confidence To Proceed When we see a 5 % increase in customers who review hotel images who then proceed to book in forty - eight hours .
+Hypothesis testing should be part of our backlog.  We can write cards in the following form:
+
+> We believe **[TYPE OF USER]** has a problem **[DOING THING]**. We can help them with **[OUR SOLUTION]**. We'll know we're right if **[CHANGE IN METRIC]**.
 
 ## Create Review and Coordination Processes to Increase Quality of Or Current Work
 
-Our goal in this chapter is to enable Development and Operations to reduce the risk of production changes before they are made .
+Peer review is one of the most powerful techniques available to reduce risk.  *The DevOps Handbook* provides an example from GitHub.  Pull requests are used to tell others about changes pushed to a repository on GitHub.  People review the changes and discuss further modifications and produced further commits if necessary. Pull requests get votes (+1, +2, or @mention). GitHub flow integrates this feedback into its development cycle:
 
-The peer review process at GitHub is a striking example of how inspection can increase quality , make deployments safe , and be integrated into the flow of everyone’s daily work .
-
-Scott Chacon , CIO and co - founder of GitHub , wrote on his website that pull requests are the mechanism that lets engineers tell others about changes they have pushed to a repository on GitHub . Once a pull request is sent , interested parties can review the set of changes , discuss potential modifications , and even push follow - up commits if necessary . Engineers submitting a pull request will often request a “ + 1 , ” “ + 2 , ” or so forth , depending on how many reviews they need , or “ @ mention ” engineers that they’d like to get reviews from . At GitHub , pull requests are also the mechanism used to deploy code into production through a collective set of practices they call “ GitHub Flow ” — it’s how engineers request code reviews , gather and integrate feedback , and announce that code will be deployed to production ( i.e . , “ master ” branch ) .
-
-GitHub Flow is composed of five steps : To work on something new , the engineer creates a descriptively named branch off of master ( e.g . , “ new - oauth2 - scopes ” ) . The engineer commits to that branch locally , regularly pushing their work to the same named branch on the server . When they need feedback or help , or when they think the branch is ready for merging , they open a pull request . When they get their desired reviews and get any necessary approvals of the feature , the engineer can then merge it into master . Once the code changes are merged and pushed to master , the engineer deploys them into production .
+1. New descriptive branch created from master (e.g., `new-login-feature`).
+2. Commits made to local branch, and regularly pushed the same on the server.
+3. When feedback or help is required, or when the branch is ready to merge, a pull request is opened.
+4. After review and any necessary approval, merge it into master.
+5. Once the code is merged and pushed to master deploy into production.
 
 ### The Dangers of Change Approval Processes
 
-The Knight Capital failure is one of the most prominent software deployment errors in recent memory . A fifteen minute deployment error resulted in a $ 440 million trading loss , during which the engineering teams were unable to disable the production services . The financial losses jeopardized the firm’s operations and forced the company to be sold over the weekend so they could continue operating without jeopardizing the entire financial system .
+*The DevOps Handbook* retells the story of Knight Capital.  A software deployment failure resulted in a 15 minute error that incurred a $440 million trading loss (or almost $30 million per minute). The loss resulted in Knight Capital being sold that weekend just to allow continued operation.
 
-John Allspaw observed that when high - profile incidents occur , such as the Knight Capital deployment accident , there are typically two counterfactual narratives for why the accident occurred . † The first narrative is that the accident was due to a change control failure , which seems valid because we can imagine a situation where better change control practices could have detected the risk earlier and prevented the change from going into production . And if we couldn’t prevent it , we might have taken steps to enable faster detection and recovery . The second narrative is that the accident was due to a testing failure . This also seems valid , with better testing practices we could have identified the risk earlier and canceled the risky deployment , or we could have at least taken steps to enable faster detection and recovery .
+When failures happen there are often two counter-explanations:
 
-The surprising reality is that in environments with low - trust , command - and - control cultures , the outcomes of these types of change control and testing countermeasures often result in an increased likelihood that problems will occur again , potentially with even worse outcomes .
+1. The failure was due to change control failure, and we believe better change control practices could have prevented the problem, or at least allowed faster detection.
+2. The failure was due to a testing failure, and we believe better testing practices could have detected the problem and prevented it happening or escalating.
+
+Actually, low-trust, command-and-control cultures are likely to result in problems reoccurring, and sometimes worse.
 
 ### Potential Dangers of "Overly Controlling Changes"
 
-Traditional change controls can lead to unintended outcomes , such as contributing to long lead times , and reducing the strength and immediacy of feedback from the deployment process . In order to understand how this happens , let us examine the controls we often put in place when change control failures occur : Adding more questions that need to be answered to the change request form Requiring more authorizations , such as one more level of management approval ( e.g . , instead of merely the VP of Operations approving , we now require that the CIO also approve ) or more stakeholders ( e.g . , network engineering , architecture review boards , etc . ) Requiring more lead time for change approvals so that change requests can be properly evaluated
+Change controls will lead to:
 
-These controls often add more friction to the deployment process by multiplying the number of steps and approvals , and increasing batch sizes and deployment lead times , which we know reduces the likelihood of successful production outcomes for both Dev and Ops . These controls also reduce how quickly we get feedback from our work .
+- Longer lead times.
+- Reduce the strength of feedback.
+- Slow feedback.
 
-One of the core beliefs in the Toyota Production System is that “ people closest to a problem typically know the most about it . ”
+This is because change control typically:
 
-As has been proven time and again , the further the distance between the person doing the work ( i.e . , the change implementer ) and the person deciding to do the work ( i.e . , the change authorizer ) , the worse the outcome .
+- adds more questions that need to be answered.
+- adds more authorisations (e.g., one more level of management approval, more stakeholder approval).
+- adds time so that changes can be properly evaluated.
 
-At one extreme , we cannot reliably predict whether a change will be successful either by reading a hundred - word description of the change or by merely validating that a checklist has been completed . At the other extreme , painfully scrutinizing thousands of lines of code changes is unlikely to reveal any new insights . Part of this is the nature of making changes inside of a complex system . Even the engineers who work inside the codebase as part of their daily work are often surprised by the side effects of what should be low - risk changes .
+All we are doing is increasing the number of steps involved in making a change, and thereby increasing batch sizes, and thus deploy times.  All of these we know increases our work and introduces risk.
 
-we need to create effective control practices that more closely resemble peer review , reducing our reliance on external bodies to authorize our changes .
+The Toyota Production System states: 
+
+> People closest to a problem typically know the most about it.
+
+The further the person doing the work is from the person deciding the work, the worse the outcome.  Reading a long textual description of a change or using a checklist does not predict success.  Reading all the lines of code that have changed also does not tell us anything.  Peer review reduces our reliance on external bodies to authorize our changes.
 
 ### Enable Coordination and Scheduling of Changes
 
-Whenever we have multiple groups working on systems that share dependencies , our changes will likely need to be coordinated to ensure that they don’t interfere with each other ( e.g . , marshaling , batching , and sequencing the changes ) .
-
-For more complex organizations and organizations with more tightly - coupled architectures , we may need to deliberately schedule our changes , where representatives from the teams get together , not to authorize changes , but to schedule and sequence their changes in order to minimize accidents .
+If multiple groups are changing dependant systems, we need to coordinate to ensure we do not interfere with each other.  We may even have to schedule changes where groups work together to schedule the sequence of changes to minimise problems.
 
 ### Enable Peer Review of Changes
 
-Instead of requiring approval from an external body prior to deployment , we may require engineers to get peer reviews of their changes . In Development , this practice has been called code review , but it is equally applicable to any change we make to our applications or environments , including servers , networking , and databases .
+Code review can be used in any part of development and operations.  Reviewing before committing to master minimises the impact change has on a global level.  We also use small batch sizes.  The larger the change, the longer we need to review, and the likelihood of missing a problem is increased.
 
-A logical place to require reviews is prior to committing code to trunk in source control , where changes could potentially have a team - wide or global impact .
+*The DevOps Handbook* outlines some guidelines for code review:
 
-The principle of small batch sizes also applies to code reviews . The larger the size of the change that needs to be reviewed , the longer it takes to understand and the larger the burden on the reviewing engineer .
-
-Furthermore , our ability to meaningfully critique code changes goes down as the change size goes up . As Giray Özil tweeted , “ Ask a programmer to review ten lines of code , he’ll find ten issues . Ask him to do five hundred lines , and he’ll say it looks good . ”
-
-Guidelines for code reviews include : Everyone must have someone to review their changes ( e.g . , to the code , environment , etc . ) before committing to trunk . Everyone should monitor the commit stream of their fellow team members so that potential conflicts can be identified and reviewed . Define which changes qualify as high risk and may require review from a designated subject matter expert ( e.g . , database changes , security - sensitive modules such as authentication , etc . ) . § If someone submits a change that is too large to reason about easily — in other words , you can’t understand its impact after reading through it a couple of times , or you need to ask the submitter for clarification — it should be split up into multiple , smaller changes that can be understood at a glance .
+- Everyone has a reviewer before committing to master.
+- Everyone monitors commits to identify and review any conflicts.
+- Define which changes are high risk and require an expert.
+- Any change to large to understand is split into smaller changes.
 
 Code reviews come in various forms : Pair programming : programmers work in pairs ( see section below ) “ Over - the - shoulder ” : One developer looks over the author’s shoulder as the latter walks through the code . Email pass - around : A source code management system emails code to reviewers automatically after the code is checked in . Tool - assisted code review : Authors and reviewers use specialized tools designed for peer code review ( e.g . , Gerrit , GitHub pull requests , etc . ) or facilities provided by the source code repositories ( e.g . , GitHub , Mercurial , Subversion , as well as other platforms such as Gerrit , Atlassian Stash , and Atlassian Crucible ) .
 

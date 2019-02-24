@@ -153,7 +153,7 @@ If our data does not form a normal distribution we have to use other techniques 
 
 Anomaly detection is *the search for items or events which do not conform to an expected pattern.*  One such technique is smoothing, where we average across a range of the data points rather than at a single data point.  Other techniques include Fast Fourier Transforms, and the Kolmogorov-Smirnov tests.
 
-## Enable Feedback So Development and Operations Can Safely Deploy 
+## Enable Feedback So Development and Operations Can Safely Deploy
 
 Deployment should be a safe act.  This can be done via improved telemetry, peer review, and automated testing.  The aim is to encourage small yet well informed changes so that risk is reduced.  Small changes that anyone can understand is the goal.
 
@@ -200,7 +200,7 @@ A/B testing is where we provide two different versions of a product to different
 
 A/B testing was initially used in direct response marketing.  This meant sending physical mail (e.g., postcards, flyers) asking customers to accept an offer by calling a telephone number, returning the card, or placing an order. The offer was modified and adapted (e.g., reworded, changing design, etc.) to determine which version gained the highest response.
 
-A/B testing has also been used for political fundraising and Internet marketing.  Amazon and Google are well known for using this technique on their websites.  Users may see a slightly different version of Amazon or Google and the usage monitored to determine which version improves the metrics under test. The UK government has even used A/B testing for tax collection letter.
+A/B testing has also been used for political fundraising and Internet marketing.  Amazon and Google are well known for using this technique on their websites.  Users may see a slightly different version of Amazon or Google and the usage monitored to determine which version improves the metrics under test. The UK government has even used A/B testing for tax collection letters.
 
 ### Integrate A/B Testing into Our Feature Testing
 

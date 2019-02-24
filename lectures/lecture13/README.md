@@ -1,14 +1,19 @@
 # Lecture 13: The Second Way of DevOps - Feedback
 
+In this lecture we will cover the technical practices of feedback.  Feedback is our ability to gain information from our peers and systems to improve our work.  Feedback, and using feedback effectively, is important in all aspects of your life, and in development we must ensure we are doing the right work effectively.
+
 ## Behavioural Objectives
 
-- [ ] TODO
+- [ ] **Define** *telemetry in software development*.
+- [ ] **Describe** *how to use telemetry in software development*.
+- [ ] **Describe** *how to use hypothesis-driven development*.
+- [ ] **Describe** *peer reviewing for software development*.
 
 ## Create Telemetry to Enable Seeing and Solving Problems
 
 Telemetry is defined in *The DevOps Handbook* as:
 
-**Telemetry**: an automated communications process by which measurements and other data are collected at remote points and are subsequently transmitted to receiving equipment for monitoring.
+> **Telemetry**: an automated communications process by which measurements and other data are collected at remote points and are subsequently transmitted to receiving equipment for monitoring.
 
 We need to create telemetry from applications, environments, build pipelines, etc. in our pre-production, production and deployment environments.  Our aim is to provide information to allow developers and operations to solve problem collaboratively.  This is to overcome the following scenario:
 
@@ -271,36 +276,42 @@ Code review can be used in any part of development and operations.  Reviewing be
 - Define which changes are high risk and require an expert.
 - Any change to large to understand is split into smaller changes.
 
-Code reviews come in various forms : Pair programming : programmers work in pairs ( see section below ) “ Over - the - shoulder ” : One developer looks over the author’s shoulder as the latter walks through the code . Email pass - around : A source code management system emails code to reviewers automatically after the code is checked in . Tool - assisted code review : Authors and reviewers use specialized tools designed for peer code review ( e.g . , Gerrit , GitHub pull requests , etc . ) or facilities provided by the source code repositories ( e.g . , GitHub , Mercurial , Subversion , as well as other platforms such as Gerrit , Atlassian Stash , and Atlassian Crucible ) .
+*The DevOps Handbook* also defines types of code reviews:
+
+- Pair programming.
+- Over-the-shoulder - one developer looks over shoulder as the author walks through the code. 
+- Email pass-around - source code management system emails for reviews automatically.
+- Tool-assisted code review.
 
 ### Potential Dangers of Doing More Manual Testing and Change Freezes
 
-When testing failures occur , our typical reaction is to do more testing . However , if we are merely performing more testing at the end of the project , we may worsen our outcomes .
-
-Instead of performing testing on large batches of changes that are scheduled around change freeze periods , we want to fully integrate testing in our daily work as part of the smooth and continual flow into production , and increase our deployment frequency . By doing this , we build in quality , which allows us to test , deploy , and release in ever smaller batch sizes .
+If testing is only occurring at the end of the project, increasing the testing when failure occurs may cause more problems.  Avoid large batch testing that is scheduled during work freezes.  Integrate testing into daily work.  This will build quality in, allowing test, deploy, and release in smaller batch sizes.
 
 ### Enable Pair Programming to Improve All Our Changes
 
-Pair programming is when two engineers work together at the same workstation ,
+Pair programming is when two programmers work together at the same machine.  A common model is one programmer acting as the driver writing code, and the other as the navigator reviewing the work.  The navigator can come up with improvements while the driver can focus on completing the task.  Skills are also transferred between the two programmers.  Another model from **Test-Driven Development (TDD)** - see [Lecture 14](../lecture14) - is one programmer writes the test and the other writes the code to pass the test.
 
-In one common pattern of pairing , one engineer fills the role of the driver , the person who actually writes the code , while the other engineer acts as the navigator , observer , or pointer , the person who reviews the work as it is being performed . While reviewing , the observer may also consider the strategic direction of the work , coming up with ideas for improvements and likely future problems to address . This frees the driver to focus all of his or her attention on the tactical aspects of completing the task , using the observer as a safety net and guide . When the two have differing specialties , skills are transferred as an automatic side effect , whether it’s through ad - hoc training or by sharing techniques and workarounds .
-
-Another pair programming pattern reinforces test - driven development ( TDD ) by having one engineer write the automated test and the other engineer implement the code .
-
-Pair programming has the additional benefit of spreading knowledge throughout the organization and increasing information flow within the team 
+One advantage of this approach is knowledge increases throughout the organisation as people work together.
 
 #### Evaluating the Effectiveness of Pull Request Processes
 
-Because the peer review process is an important part of our control environment , we need to be able to determine whether it is working effectively or not . One method is to look at production outages and examine the peer review process for any relevant changes .
-
-When asked to describe the difference between a bad pull request and a good pull request , he said it has little to do with the production outcome . Instead , a bad pull request is one that doesn’t have enough context for the reader , having little or no documentation of what the change is intended to do .
+We also need to monitor the peer review process to ensure it works effectively.  One technique is analysing any problems and then the peer review process of any associated changes.  Also, we need to ensure our changes are properly documented.  Having little documentation means the reader does not understand the change in context, and therefore may accept a bad change.
 
 ### Fearlessly Cut Bureaucratic Processes
 
-These approval processes can significantly increase lead times , not only preventing us from delivering value quickly to customers , but potentially increasing the risk to our organizational objectives . When this happens , we must re - engineer our processes so that we can achieve our goals more quickly and safely .
-
-As Adrian Cockcroft observed , “ A great metric to publish widely is how many meetings and work tickets are mandatory to perform a release — the goal is to relentlessly reduce the effort required for engineers to perform work and deliver it to the customer . ”
+As processes can increase lead times, preventing us from delivering value and increasing the risk to the organisation, we need to be willing to change these processes.  A good metric to publish is the meetings required to perform a release, with the goal to reduce this to only those that are necessary.
 
 ## Summary
 
+We have covered a lot in this lecture, but the core ideas we have examined are:
+
+- We defined telemetry in software development - an automated communications process by which measurements and other data are collected at remote points and are subsequently transmitted to receiving equipment for monitoring.
+- We described how to use telemetry in software development - examining what to measure, how to fill gaps, and the infrastructure to support it.
+- We described how to use hypothesis-driven development - looking at A/B testing and backlog hypothesis items.
+- We described peer reviewing for software development - especially the benefits of pair programming.
+
 ## Recommended Reading
+
+*The DevOps Handbook* Part IV goes into far more detail about how to practice these ideas.
+
+![The DevOps Handbook](img/devops-book.jpg)

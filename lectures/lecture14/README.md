@@ -2,21 +2,24 @@
 
 ## Behavioural Objectives
 
+- [ ] TODO
+
 ## What is Test-Driven Development?
 
-we drive development with automated tests, a style of development called Test-Driven
-Development (TDD). In Test-Driven Development, we
-Write new code only if an automated test has failed
-Eliminate duplication
-These are two simple rules, but they generate complex individual and group behavior with
-technical implications such as the following.
-We must design organically, with running code providing feedback between decisions.
-We must write our own tests, because we can't wait 20 times per day for someone else to
-write a test.
-Our development environment must provide rapid response to small changes.
-Our designs must consist of many highly cohesive, loosely coupled components, just to make
-testing easy.
-The two rules imply an order to the tasks of programming.
+Test-Driven Development is development driven by tests.  We write automated tests first.  Development emerges from this process, in that we:
+
+- Only write new code if an automated test fails.
+- We eliminate duplication as we only write code to pass a test.
+
+TDD changes individual and group behaviour as:
+
+- Design emerges organically and running code provides feedback.
+- Programmers write their own tests, rather than waiting for a QA department.
+- Development environments provide feedback on small batch sizes.
+- Designs create highly cohesive and loosely coupled components to make testing easy.
+
+The TDD mantra is: **red-green-refactor**:
+
 1. Red - Write a little test that doesn't work, and perhaps doesn't even compile at first.
 2. Green - Make the test work quickly, committing whatever sins necessary in the process.
 3. Refactor - Eliminate all of the duplication created in merely getting the test to work.
@@ -247,7 +250,6 @@ better thing.
 It improves the lives of the users of your software.
 It lets your teammates count on you, and you on them.
 It feels good to write it.
-
 
 ### Courage
 

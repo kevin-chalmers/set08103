@@ -189,7 +189,7 @@ As discussed, developers run separate builds on their own machines before commit
 4. Build, including unit tests.
 5. Commit changes to version control.
 
-Our GitFlow workflow mimics this idea:
+Our Gitlow workflow mimics this idea:
 
 1. Create a new `feature` branch from `develop`.
 2. Implement the feature.

@@ -142,7 +142,7 @@ The *Employees Database* has been provided at `kevinchalmers/employees`.  **Ente
 
 ![Create Container Window](img/intellij-create-container.png)
 
-We need to provide the following **Run/Command options**: `-e MYSQL_ROOT_PASSWORD=example -p 3306:3306`.  Then **click Run**.  This will start-up the container.  You can now run your application and connect to the locally running database for debugging your application.
+We need to provide the following **Run/Command options**: `-e MYSQL_ROOT_PASSWORD=example -p 33060:3306`.  Then **click Run**.  This will start-up the container.  You can now run your application and connect to the locally running database for debugging your application.
 
 Another Docker container - `kevinchalmers/world` - has been provided for the coursework.  You should be able to run it in the same manner as above.
 

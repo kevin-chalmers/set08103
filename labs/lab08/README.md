@@ -65,7 +65,7 @@ Below is our updated `connect` method.  The updated lines are:
 - `Driver.getConnection` uses the `location`, and also updates the parameters to use `allowPublicKeyRetrieval=true` as we are using a more up-to-date version of MySQL.
 
 ```java
-public void connect(String hostname)
+public void connect(String location)
 {
     try
     {

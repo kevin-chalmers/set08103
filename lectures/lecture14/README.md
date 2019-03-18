@@ -1,4 +1,4 @@
-# Lecture 14: Unit Testing and Test Driven Development (TDD)
+# Lecture 14: Test-Driven Development (TDD)
 
 In this lecture we will examine the practice of Test-Driven Development (TDD).  TDD is a practice where testing is given the highest priority.  You will find that TDD can improve the overall quality of your code by ensuring that it is well tested from the outset.
 
@@ -52,7 +52,7 @@ There is also a cost in not fixing problems as soon as possible.  As more change
 
 ### Benefits of Automated Testing
 
-As a software engineer we want to know if our code works.  Automated testing means our tests can be fast enough that they are run often.  Doing so means we catch the bug before anyone else sees the errors.  It also means we can find the actual source of a problem rather than  hunting through lots of code for a potential problem that is occurring somewhere else.
+As a software engineer we want to know if our code works.  Automated testing means our tests can be fast enough that they are run often.  Doing so means we catch the bug before anyone else sees the errors.  It also means we can find the actual source of a problem rather than hunting through lots of code for a potential problem that is occurring somewhere else.
 
 We also reduce our cognitive load.  We try to keep all the necessary information in our head, but this just leads to problems:
 
@@ -77,7 +77,7 @@ Kent Beck provides a simple process to get started with TDD:
 2. Write automated tests.
 3. Refactor to add design decisions one at a time.
 
-Which test should you start with? Pick a variant of a test for a method that does nothing.  This means you can answer other questions such as:
+Which test should you start with? Pick a variant of a test for an operation that has no side effects.  This means you can answer other questions such as:
 
 - Where does the operation belong?
 - What are the correct inputs?
@@ -110,7 +110,7 @@ Remember that we want to turn fear into boredom.  So really the answer you have 
 - Operations.
 - Polymorphism.
 
-## How Do You Know If You Have Good Tests?
+### How Do You Know If You Have Good Tests?
 
 Tests need to inform you quickly of problems.  If your tests have the following attributes you have a problem:
 
@@ -151,7 +151,7 @@ We have only brushed over Extreme Programming (XP) as a concept mainly because w
 Kent Beck was also an advocate of Extreme Programming, and therefor makes a special point on how TDD meets XP in *Test-Driven Development by Example*:
 
 - **Pairing**: tests can be written by one programmer and the code to pass it by another.
-- **Work fresh** XP advises to work when you are fresh and stop when you are tired.  Having tests mean we can safely return to work by walking away.
+- **Work fresh**: XP advises to work when you are fresh and stop when you are tired.  Having tests mean we can safely return to work by walking away.
 - **Continuous integration**: we will cover more explicitly in [Lecture 15](../lecture15).  Testing is at the heart of CI.
 - **Simple design**: as code emerges from tests, design is simple to allow such evolution.
 - **Refactoring**: we have already covered.
@@ -206,7 +206,7 @@ In this lecture we have covered the basics of TDD.  As a method, it requires pra
 
 - Defined Test-Driven Development (TDD) as a process where we write tests first.
 - Described the TDD lifecycle - red-green-refactor.
-- Describe the advantages of TDD, focusing mainly on improved code quality, feedback, and working practices.
+- Described the advantages of TDD, focusing mainly on improved code quality, feedback, and working practices.
 
 ## Recommended Reading
 

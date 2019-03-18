@@ -38,7 +38,7 @@ Below is an illustration showing how CD produces releases:
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Continuous_Delivery_process_diagram.svg#/media/File:Continuous_Delivery_process_diagram.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Continuous_Delivery_process_diagram.svg/1200px-Continuous_Delivery_process_diagram.svg.png" alt="Continuous Delivery process diagram.svg"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Gr%C3%A9goire_D%C3%A9trez&amp;action=edit&amp;redlink=1" class="new" title="User:Grégoire Détrez (page does not exist)">Grégoire Détrez</a>, original by Jez Humble - This file was derived from:&nbsp;<a href="//commons.wikimedia.org/wiki/File:Continuous_Delivery_process_diagram.png" title="File:Continuous Delivery process diagram.png">Continuous Delivery process diagram.png</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=43977816">Link</a></p>
 
-### Aims of Continuous Delivery and Deployment
+### Aims of Continuous Delivery
 
 CD attempts to deliver software as quickly as possible.  When we think of a new idea, we want to deliver it fast.  CD does so by allowing us the ability to deliver software whenever we want.
 
@@ -56,12 +56,12 @@ CD enables many of the principles that we have discussed in Agile, Scrum, Lean, 
 - Everybody is responsible for the delivery process.
 - Continuous improvement.
 
-### Problems Overcome via Continuous Delivery and Deployment
+### Problems Overcome via Continuous Delivery
 
 CD also addresses a number of problems seen in modern software engineering:
 
 - **Deploying software manually**: deployments will tend towards automation over time, with humans only selecting the version and pressing *deploy*.
-- **Deploying to a production-like environment only on deployment**: testing, deployment, and release is integrated into normal development.
+- **Running to a production-like environment only on deployment**: testing, deployment, and release is integrated into normal development.
 - **Manual configuration management of production environments**: configuration is stored in version control and used in the automated processes.
 
 ## Implementing Continuous Delivery
@@ -119,7 +119,7 @@ Anything that changes between environments must be captured as configuration inf
 - Can I satisfy all of the compliance regulations that I am subject to?
 - Is it easy for every member of the team to get the information they need, and to make the changes they need to make? Or does the strategy get in the way of efficient delivery, leading to increased cycle time and reduced feedback?
 
-### Smoke Test
+#### Smoke Test
 
 Deployments should be smoke tested.  This is just an automated script that makes sure that a system is up and running.  It can be as simple as running the application and making sure the main screen appears.  It should also check all the services required by the application are up and running.
 
@@ -229,7 +229,7 @@ Risk management is the process of making sure that:
 
 Not all risks can have a mitigation.  CD allows automation of progress and information, improving our risk mitigation strategies.
 
-### How to Do a Risk-Management
+### How to do Risk Management
 
 To manage risks we ask ourselves the following questions (from *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation*):
 
@@ -248,7 +248,7 @@ To manage risks we ask ourselves the following questions (from *Continuous Deliv
 - How are you ensuring that your release plan is workable and acceptable to the operations team?
 - How are you ensuring that your risk-and-issue log is up-to-date?
 
-### Common Delivery Problems: Their Symptoms and Causes
+### Common Delivery Problems
 
 So what type of problems are involved in CD?  Below is a list:
 

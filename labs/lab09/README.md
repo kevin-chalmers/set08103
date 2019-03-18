@@ -1037,10 +1037,101 @@ Now we are doing the following:
 - `http://<external_ip>` which will just display the time (generated from the `index.html` file).
 - `http://<external_ip>/app/employee?id=10002` (or other application end points) to see the JSON generated.
 
-As before, it will take some time for your application to appear.
+As before, it will take some time for your application to appear.  Once you are done, **delete the cluster as before.**
 
 ### Some *Magic* JavaScript
 
+The code here only works for arrays of JSON data (e.g., methods that return an `ArrayList`).  It will not work on a single element like an `Employee`.  You will have to write different code for that.
+
+Now it is time for the last piece of the puzzle - turning the raw JSON data into a table.  To do this, create a new file `salaries_title.html` in the `content` folder for our web image.  The file contents are below:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salaries by Title</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <style>
+        th, td, p, input
+        {
+            font:14px Verdana;
+        }
+        table, th, td
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        th
+        {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="showData">Waiting</div>
+</body>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var title = urlParams.get('title');
+
+    var URL = "http://" + window.location.hostname + "/app/salaries_title?title=" + title;
+
+    $.getJSON(URL, function(data) {
+        // EXTRACT VALUE FOR HTML HEADER.
+        var col = [];
+        for (var i = 0; i < data.length; i++) {
+            for (var key in data[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      // TABLE HEADER.
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < data.length; i++) {
+            tr = table.insertRow(-1);
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = data[i][col[j]];
+            }
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        $(".showData").html(table);
+    });
+</script>
+</html>
+```
+
+The key part is the `<script>` tag at the bottom:
+
+- `var urlParams = new URLSearchParams(window.location.search);` gets any parameters (parts after the question mark) in the URL.  For example, `www.napier.ac.uk/salaries_title.html?title=Engineer&name=Kevin` would provide the `title=Engineer&name=Kevin` part.
+- `var title = urlParams.get('title');` gets the `title` parameter from the URL.  In the example above, this is `Engineer`.
+- `var URL = "http://" + window.location.hostname + "/app/salaries_title?title=" + title;` builds a URL from the current location `window.location.hostname` (i.e., in our application the IP address given by Google Cloud).  It then adds `/app/salaries_title?title=<title>` to the URL.  Because we are going to the `/app` we will get the JSON data.
+- `$.getJSON(URL, ...` gets the JSON data from the URL we specified.  The rest of the code is the function called on completion of this call, which just builds a table.
+
+**Commit and push the updates.**  Wait for everything to get deployed, and you should be able to access the following URL: `http://<external_ip>/salaries_title.html?title=Engineer`.  It will produce a web page as follows:
+
+![Web Table Output](img/web-table-output.png)
+
+And with that we are done.  It has been a long road, but we have now successfully deployed our application to the cloud, and can redeploy whenever we want.
+
 ## Cleanup
 
-Remember to shutdown gcloud.
+**Remember to shutdown your Google Cloud Cluster.**  The account you have been given has limited credit and leaving the cluster running will eventually run out your credit.

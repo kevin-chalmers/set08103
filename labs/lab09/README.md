@@ -1128,7 +1128,7 @@ The key part is the `<script>` tag at the bottom:
 
 **Commit and push the updates.**  Wait for everything to get deployed, and you should be able to access the following URL: `http://<external_ip>/salaries_title.html?title=Engineer`.  It will produce a web page as follows:
 
-![Web Table Output](img/web-table-output.png)
+![Web Table Output](img/web-table-output.PNG)
 
 And with that we are done.  It has been a long road, but we have now successfully deployed our application to the cloud, and can redeploy whenever we want.
 

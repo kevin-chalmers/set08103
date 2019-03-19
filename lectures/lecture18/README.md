@@ -25,7 +25,7 @@ This is a (partial) map of the Internet in 2005.  The lines represent two machin
 
 ### Software Visualisation
 
-*Software Visualisation* is a field of information visualisation research focused on visual representation of software data.  As we have highlighted, there is a lot of data that can be generated about our code and its runtime environment.  Below is an image that represents the Ndepend Tool's unit test code coverage.
+*Software Visualisation* is a field of information visualisation research focused on the visual representation of software data.  As we have highlighted, there is a lot of data that can be generated about our code and its runtime environment.  Below is an image that represents the Ndepend Tool's unit test code coverage.
 
 ![Code Coverage Treemap](img/code-coverage.png)
 
@@ -94,7 +94,7 @@ Monitoring is important.  It is often considered an add-on, much like security. 
 
 - An inability to identify or diagnose faults.
 - An inability to measure the operational performance of your application.
-- An inability to measure the business performance and success of an application or a component, like tracking sales figures or the value of transactions. 
+- An inability to measure the business performance and success of an application or a component, like tracking sales figures or the value of transactions.
 
 Also, we need to recognise that over-instrumentation is best.  You are more likely to complain about not having enough data rather than too much.
 
@@ -104,7 +104,7 @@ Applying monitoring in an organisation is again a cultural issue.  *The Art of M
 
 ### Manual Monitoring or None
 
-Monitoring is a manual process that requires a user to initiate.  It may also be the case that no monitoring is done at all.  Generally, monitoring is done via a checklist, simple script, or other non-automated processes.
+Monitoring is a manual process that requires a person to initiate.  It may also be the case that no monitoring is done at all.  Generally, monitoring is done via a checklist, simple script, or other non-automated processes.
 
 The aim in manual monitoring is to manage assets and avoid downtime, and thus provides little value on user experience and quality of service.  It will not allow the development and operations teams to justify investments and new projects as there is no data to support it.
 

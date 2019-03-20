@@ -274,7 +274,7 @@ Now move the file into your repository folder.  In Google Cloud Shell enter:
 mv ~/<your_credentials_filename>.json ~/<your repo>/client-secret.json
 ```
 
-Entering the name of the credentials file and your repository as needed.
+Where <your_repo> is the directory your repo was cloned to (e.g., `sem`, `semethods`).  Entering the name of the credentials file and your repository as needed.
 
 #### Encrypting Credentials
 

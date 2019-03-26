@@ -119,7 +119,7 @@ The best practices of bug tracking are:
 A key aspect of bug tracking is bug communication. Any good bug report should have:
 
 - Steps required to reproduce the bug.
-- What was the supposed result?
+- What was the expected result?
 - What was the actual result?
 
 These key elements help the development team to find and fix the bug.  Withholding part of this information means the team lacks the knowledge of the defect and thus cannot find or fix it.
@@ -145,7 +145,9 @@ Our bug tracking process must support both types of reporting. We give templates
 
 Good bug reporting practice is essential. To illustrate poor communication, I will use examples from teaching. These examples are universal.  If you’ve written in this fashion before, don’t worry.  Others have sent emails like this before.  From now, improve your delivery of issues.
 
-“I ran the code, and it’s not working.” If you communicate this, you haven’t told the teaching team much. First, what do you mean you ran the code? What does running the code mean? In this module, it could mean:
+### Be Specific
+
+"I ran the code, and it’s not working." If you communicate this, you haven’t told the teaching team much. First, what do you mean you ran the code? What does running the code mean? In this module, it could mean:
 
 - You selected run within IntelliJ. 
 - You ran the Docker container for the application. 
@@ -153,19 +155,29 @@ Good bug reporting practice is essential. To illustrate poor communication, I wi
 
 Saying you ran the code tells us little.  Be specific. No one else lives in your head. Without the specific information you have, we cannot help you fix the bug.
 
-“Lab 3 doesn’t work.” OK, why does lab 3 not work? “The program doesn’t run.” OK, what part of the lab are you doing? “The part with Docker.” And so on.
+### Be Verbose
+
+"Lab 3 doesn’t work." OK, why does lab 3 not work? "The program doesn’t run." OK, what part of the lab are you doing? "The part with Docker." And so on.
 
 Be verbose. Offer as much information as you can in a bug report. It is easy for the developer to ignore irrelevant information. Solving a lack of information can only happen by asking more questions. No one else has the knowledge you have. Thus share as much information as you can.
 
-“It doesn’t work.” What is “it”? Be careful with pronouns and related words (e.g., it, he, she, they, this, etc.).
+### Watch Your Pronouns
 
-“I cannot connect to the database container.” OK, after digging around we are unsure why. “Oh, I installed MySQL on my machine. Is that a problem?” Yes. We find quicker solutions with improved information.  State what configurations you have used, or any extra steps you’ve tried to solve the problem. This information is vital to reduce time wasted trying to resolve the issue.
+"It doesn’t work." What is "it"? Be careful with pronouns and related words (e.g., it, he, she, they, this, etc.).
 
-“Lab 7 isn’t working, and everyone I’ve spoken to says they have the same problem.” Give the developer credit.  They either know the problem or will find it with you. Stating you know someone else with a problem doesn’t help:
+### Inform What Else You've Done
+
+"I cannot connect to the database container." OK, after digging around we are unsure why. "Oh, I installed MySQL on my machine. Is that a problem?" Yes. We find quicker solutions with improved information.  State what configurations you have used, or any extra steps you’ve tried to solve the problem. This information is vital to reduce time wasted trying to resolve the issue.
+
+### Don't Use Anecdotal Evidence or Perform Confirmation Bias
+
+"Lab 7 isn’t working, and everyone I’ve spoken to says they have the same problem." Give the developer credit.  They either know the problem or will find it with you. Stating you know someone else with a problem doesn’t help:
 
 - The other person may have a different problem.
 - The other person may have a different configuration.
 - You’ve performed confirmation bias. You don’t know who has a working system. You are trying to justify your problem. If a legitimate problem, you need not to justify it.
+
+### Proof Read
 
 Finally, read what you wrote. Always review and edit any text you send to others. If you rush and want it done and sent, you might not make sense, you might miss information, or you might offend. Time saved rushing disappears because development requests more information to understand the issue. Furthermore, people can become confused or upset. If submitting coursework, you will lose marks. So take your time and review what you have done.
 

@@ -12,8 +12,8 @@
 | 8 | [Lecture 15: Continuous Integration](lectures/lecture15) <br> [Lecture 16: Continuous Delivery](lectures/lecture16) | [Lab 08: Integration Testing](labs/lab08) | |
 | 9 | Reading Week | Reading Week | Code Review 3 |
 | 10 | [Lecture 17: Deployment](lectures/lecture17) <br> [Lecture 18: Monitoring Software](lectures/lecture18) | [Lab 09: Deployment](labs/lab09) |  |
-| 11 | [Lecture 19](lectures/lecture19) <br> [Lecture 20](lectures/lecture20) | [Lab 10](labs/lab10) | |
-| 12 | [Lecture 21](lectures/lecture21) <br> [Lecture 22](lectures/lecture22) | [Lab 11](labs/lab11) | Code Review 4 |
+| 11 | [Lecture 19: Bug Tracking](lectures/lecture19) <br> [Lecture 20: The Third Way of DevOps - Continuous Experimentation and Learning](lectures/lecture20) | [Lab 10: Bug Tracking](labs/lab10) | |
+| 12 | [Lecture 21: Ethics and Professionalism](lectures/lecture21) <br> [Lecture 22](lectures/lecture22) | [Lab 11](labs/lab11) | Code Review 4 |
 | 13 | [Lecture 23](lectures/lecture23) <br> [Lecture 24](lectures/lecture24) | [Lab 12](labs/lab12) | |
 | 14 | | | |
 | 15 | | | Final Deliverable |

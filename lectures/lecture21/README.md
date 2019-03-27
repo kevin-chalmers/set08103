@@ -185,8 +185,7 @@ Codes of Conduct are also prominent in IT.  In 2018, there was some controversy 
 > - Trolling, insulting/derogatory comments, and personal or political attacks
 > - Public or private harassment
 > - Publishing others’ private information, such as a physical or electronic address, without explicit permission
-> - Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+> - Other conduct which could reasonably be considered inappropriate in a professional setting
 >
 > **Our Responsibilities**
 >
@@ -272,7 +271,7 @@ Although you might have found this lecture dry since we did not discuss new tech
 
 In this lecture we have:
 
-- Define ethics in the context of IT professionals - looking at applied ethics as they relate to engineering, technology, and business.
+- Defined ethics in the context of IT professionals - looking at applied ethics as they relate to engineering, technology, and business.
 - Described the core principles of engineering ethics - focusing on the three key principles: *Obligation to Society*; *Reporting Misconduct*; and *General Conduct*.
 - Reviewed the ACM Code of Ethics - comparing it to engineering ethics and scoring ourselves against the criteria.
 - Given examples of Code of Conducts - the Student Code of Conduct and the Linux Code of Conduct in particular.

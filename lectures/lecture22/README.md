@@ -86,7 +86,7 @@ Consent is defined as:
 
 ## Data Protection Act 2018 and the General Data Protection Regulation (GDPR)
 
-The [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) has greater implications than the previous Data Protection Act.  The aim of GDPR is protection of EU citizen data, proving said citizens with greater control of their personal data.  The Data Protection Act 2018 is broadly similar to the Data Protection Act 1998, and was introduced prior to full implementation of GDPR.  The 2018 act ensures GDPR is met in the UK.
+The [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) has greater implications than the previous Data Protection Act.  The aim of GDPR is protection of EU citizen data, providing said citizens with greater control of their personal data.  The Data Protection Act 2018 is broadly similar to the Data Protection Act 1998, and was introduced prior to full implementation of GDPR.  The 2018 act ensures GDPR is met in the UK.
 
 GDPR affects any organisation offering goods and services to EU citizens.  Any organisation holding personal data on EU citizens can be held accountable under GDPR no matter where in the world they are based.  Personal data is anything that can be linked to an individual, including:
 
@@ -154,13 +154,13 @@ We will examine copyright and patents as the two relevant forms of IP in softwar
 You wouldn't steal a movie?  That was the old advert that targeted film *piracy* and copyright infringement.  This advert was legally incorrect as copyright infringement is not theft.  In the UK:
 
 > Basic definition of theft:
-> 
+>
 > 1. A person is guilty of theft if he dishonestly appropriates property belonging to another with the intention of permanently depriving the other of it; and "thief" and "steal" shall be construed accordingly.
 > 2. It is immaterial whether the appropriation is made with a view to gain, or is made for the thief’s own benefit.
 
 Point 1. is the important one: *intention of permanently depriving*.  Downloading a movie does not permanently deprive anyone of their property.  In fact, theft is considered a criminal offence in the UK whereas copyright is a civil matter.
 
-Copyright deals with intellectual property theft and the laws exist to support individuals and organisations making civil cases.  From [Wikipedia](https://en.wikipedia.org/wiki/Copyright):
+Copyright deals with intellectual property protection and the laws exist to support individuals and organisations making civil cases.  From [Wikipedia](https://en.wikipedia.org/wiki/Copyright):
 
 > Copyright is a legal right, existing in many countries, that grants the creator of an original work exclusive rights to determine whether, and under what conditions, this original work may be used by others.
 
@@ -199,11 +199,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Patent):
 
 Patents are about protecting an idea rather than a creative work.  For example, if you design a better CPU, you will want to protect that idea so you can make the most money from it.  Patents aim to protect inventions.
 
-Patents are typically applied to physically realisable ideas.  [Software patents](https://en.wikipedia.org/wiki/Software_patent) are an evolving field, but typically a program cannot be patented in most of the world.  The US is different.  A key element is the definition of a program: a form of algorithm.  As an algorithm is a mathematical idea, this cannot be patented as they are considered already to exist and are just discovered.  However, it is not as clear cut.
+Patents are typically applied to physically realisable ideas.  [Software patents](https://en.wikipedia.org/wiki/Software_patent) are an evolving field, but typically a program cannot be patented in most of the world.  The US is different.  A key element is the definition of a program: a form of algorithm.  As an algorithm is a mathematical idea, and this cannot be patented as they are considered already to exist and are just discovered.  However, it is not as clear cut.
 
 In the UK, *programs for computers* are not patentable as defined in law.  In other words, computation is not patentable.  Implementing a business process as a piece of software is such an example.  However, if a program makes a significant, non-obvious, part of a technical solution it might be patentable.  A control system for an industrial process might be patentable.
 
-As with copyright, any patents will likely be claimed by your employer.  Depending on your organisation, they may seek patents in the US where such things are easier.  Some organisations may give a bonus for patentable work as long term it provides a competitive advantage to the organisation.
+As with copyright, any patents will normally be claimed by your employer.  Depending on your organisation, they may seek patents in the US where such things are easier.  Some organisations may give a bonus for patentable work as long term it provides a competitive advantage to the organisation.
 
 ### Licensing
 

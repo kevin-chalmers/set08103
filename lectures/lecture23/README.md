@@ -76,7 +76,7 @@ White hats generally agree on the ethics published by (ISC)<sup>2</sup>.  To pro
 
 ### (ISC)<sup>2</sup> Code of Ethics
 
-The International Information System Security Certification Consortium (ISC)2 provides training and certification in computer security.  They also have a defined code of ethics adopted by white hats.  The (ISC)2 Code of Ethics is similar to the ACM Code of Ethics and the BCS Code of Conduct, albeit focused on being lawful and protecting others.  The fundamental principles of the (ISC)2 Code of Ethics are:
+The International Information System Security Certification Consortium (ISC)<sup>2</sup> provides training and certification in computer security.  They also have a defined code of ethics adopted by white hats.  The (ISC)<sup>2</sup> Code of Ethics is similar to the ACM Code of Ethics and the BCS Code of Conduct, albeit focused on being lawful and protecting others.  The fundamental principles of the (ISC)<sup>2</sup> Code of Ethics are:
 
 - Protect: white hats have a responsibility to:
   - Protect society from threats.
@@ -243,7 +243,7 @@ An attack vector is a path an attacker takes to access an asset.  An attack vect
 
 As a software engineer, we concern ourselves with understanding attack vectors.  Attack vectors help illustrate the vulnerabilities that lead to an attacker compromising an asset.  Let us consider an example, adapted from Security for Software Engineers:
 
-- Scenario: a malicious student wishes to change their gade on the records system.
+- Scenario: a malicious student wishes to change their grade on the records system.
 - Asset: the grade.
 - Threat: damage the integrity of the grade by altering it.
 - Vulnerability: for example, an administrator could have an unsafe password written on a piece of paper.
@@ -254,7 +254,7 @@ As a software engineer, we concern ourselves with understanding attack vectors. 
 
 Threats are our starting point when considering our risks and how to mitigate them.  Threat modelling is the process of analysing a system for vulnerabilities.  It is best to do this during system specification and design rather than retrofitting later.
 
-As Agile practitioners, we should add user stories, conditions of satisfaction, tests, and other features to our work.  We can also dedicate Sprints to improving our security via producing thread models taken from understanding our attack vectors and building further mitigations.
+As Agile practitioners, we should add user stories, conditions of satisfaction, tests, and other features to our work.  We can also dedicate Sprints to improving our security via producing threat models taken from understanding our attack vectors and building further mitigations.
 
 ### Disclosure, Alteration, and Denial
 
@@ -300,7 +300,7 @@ Denial of Service (DoS) attacks target service availability.  Again, these attac
 
 #### Elevation of Privilege
 
-Elevation of privilege is finding a method of performing tasks the attack is not authorised to do.  Doing so enables other types of attacks.  The attacker is not spoofing but is changing their rights of access.  Examples include:
+Elevation of privilege is finding a method of performing tasks the attacker is not authorised to do.  Doing so enables other types of attacks.  The attacker is not spoofing but is changing their rights of access.  Examples include:
 
 - Buffer overrun attacks.
 - Account modification to increase privileges.
